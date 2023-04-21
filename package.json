@@ -9,13 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.12",
     "autoprefixer": "10.4.14",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
+    "graphql": "^16.6.0",
     "next": "13.3.0",
+    "plyr-react": "^5.2.0",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tailwindcss": "3.3.1"
+    "react-player": "^2.12.0",
+    "sass": "^1.62.0",
+    "scss": "^0.2.4",
+    "tailwindcss": "3.3.1",
+    "tailwindcss-multi-column": "^1.0.2",
+    "video.js": "^8.0.4"
   }
 }

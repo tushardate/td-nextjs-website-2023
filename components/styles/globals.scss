@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "./home.scss";
+@import "./header.scss";
+@import "./singlePage.scss";
+@import "./about.scss";
+
+@layer base {
+	@font-face {
+		font-family: "PP Mori";
+		src: url("/fonts/PPMori/PPMori-Regular.woff2") format("woff2"),
+			url("/fonts/PPMori/PPMori-Regular.woff") format("woff");
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "PP Mori";
+		src: url("/fonts/PPMori/PPMori-SemiBold.woff2") format("woff2"),
+			url("/fonts/PPMori/PPMori-SemiBold.woff") format("woff");
+		font-weight: 600;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Neue Machina";
+		src: url("/fonts/NeueMachina/NeueMachina-Bold.woff2") format("woff2"),
+			url("/fonts/NeueMachina/NeueMachina-Bold.woff") format("woff");
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Neue Machina";
+		src: url("/fonts/NeueMachina/NeueMachina-Black.woff2") format("woff2"),
+			url("/fonts/NeueMachina/NeueMachina-Black.woff") format("woff");
+		font-weight: 900;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Neue Machina";
+		src: url("/fonts/NeueMachina/NeueMachina-Regular.woff2") format("woff2"),
+			url("/fonts/NeueMachina/NeueMachina-Regular.woff") format("woff");
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+}
+
+body {
+	background-color: #14171a;
+	color: white;
+	// background-color: #e5e5e5;
+	// color: #171717;
+}
