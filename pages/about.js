@@ -1,4 +1,5 @@
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import Layout from "@components/Layout";
 import { query } from "@components/queries/aboutPageQuery.js";
 
 export default function About({ about }) {
@@ -24,97 +25,102 @@ export default function About({ about }) {
 	const awardList = [...new Set(filterAwards)];
 
 	return (
-		<div className="px-3 my-40">
-			<div className="px-16 text-lg">
-				<div className="headline -ml-2 pb-12">
-					<p className="ml-auto w-5/6 text-8xl font-neuemachina aboutHeadline">
-						{headline}
-					</p>
-				</div>
-				<div className="contact">
-					<div className="flex">
-						<p className="w-1/6 py-12">Contact</p>
-						<div className="w-5/6 col-count-1 c-gap border-b py-12">
-							<a
-								className="hover:text-tdblue"
-								href={`tel:+1-${phone}`}
-							>
-								<p>{phone}</p>
-							</a>
-							<a
-								className="hover:text-tdblue"
-								href={`mailto:${email}`}
-							>
-								<p>{email}</p>
-							</a>
-							<a
-								className="hover:text-tdblue"
-								href="http://www.linkedin.com/pub/tushar-date/11/315/a25"
-								target="_blank"
-							>
-								<p>LinkedIn</p>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div className="bio">
-					<div className="flex">
-						<p className="w-1/6 py-12">About</p>
-						<p className="w-5/6 col-count-2 c-gap border-b py-12">
-							{bio}
+		<Layout>
+			<div className="px-3 my-40">
+				<div className="px-16 text-lg">
+					<div className="headline -ml-2 pb-12">
+						<p className="ml-auto w-5/6 text-8xl font-neuemachina aboutHeadline">
+							{headline}
 						</p>
 					</div>
-				</div>
-				<div className="experience">
-					<div className="flex">
-						<p className="w-1/6 py-12">Experience</p>
-						<div className="w-5/6 col-count-2 c-gap border-b py-12">
-							{workExperience.map((exp, i) => {
-								return (
-									<div className="pb-4 avoid-break" key={i}>
-										<p>{exp.expRole}</p>
-										<p className="text-sm">
-											{exp.expAgency}
-										</p>
-										<p className="text-sm">
-											{exp.expDates}
-										</p>
-									</div>
-								);
-							})}
+					<div className="contact">
+						<div className="flex">
+							<p className="w-1/6 py-12">Contact</p>
+							<div className="w-5/6 col-count-1 c-gap border-b py-12">
+								<a
+									className="hover:text-tdblue"
+									href={`tel:+1-${phone}`}
+								>
+									<p>{phone}</p>
+								</a>
+								<a
+									className="hover:text-tdblue"
+									href={`mailto:${email}`}
+								>
+									<p>{email}</p>
+								</a>
+								<a
+									className="hover:text-tdblue"
+									href="http://www.linkedin.com/pub/tushar-date/11/315/a25"
+									target="_blank"
+								>
+									<p>LinkedIn</p>
+								</a>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div className="brands">
-					<div className="flex">
-						<p className="w-1/6 py-12">Brands</p>
-						<div className="w-5/6 col-count-3 c-gap border-b py-12">
-							{clients.map((client, j) => {
-								return (
-									<div className="" key={j}>
-										<p>{client}</p>
-									</div>
-								);
-							})}
+					<div className="bio">
+						<div className="flex">
+							<p className="w-1/6 py-12">About</p>
+							<p className="w-5/6 col-count-2 c-gap border-b py-12">
+								{bio}
+							</p>
 						</div>
 					</div>
-				</div>
-				<div className="awards">
-					<div className="flex">
-						<p className="w-1/6 py-12">Recognition</p>
-						<div className="w-5/6 col-count-3 c-gap py-12">
-							{awardList.map((aw, k) => {
-								return (
-									<div className="" key={k}>
-										<p>{aw}</p>
-									</div>
-								);
-							})}
+					<div className="experience">
+						<div className="flex">
+							<p className="w-1/6 py-12">Experience</p>
+							<div className="w-5/6 col-count-2 c-gap border-b py-12">
+								{workExperience.map((exp, i) => {
+									return (
+										<div
+											className="pb-4 avoid-break"
+											key={i}
+										>
+											<p>{exp.expRole}</p>
+											<p className="text-sm">
+												{exp.expAgency}
+											</p>
+											<p className="text-sm">
+												{exp.expDates}
+											</p>
+										</div>
+									);
+								})}
+							</div>
+						</div>
+					</div>
+					<div className="brands">
+						<div className="flex">
+							<p className="w-1/6 py-12">Brands</p>
+							<div className="w-5/6 col-count-3 c-gap border-b py-12">
+								{clients.map((client, j) => {
+									return (
+										<div className="" key={j}>
+											<p>{client}</p>
+										</div>
+									);
+								})}
+							</div>
+						</div>
+					</div>
+					<div className="awards">
+						<div className="flex">
+							<p className="w-1/6 py-12">Recognition</p>
+							<div className="w-5/6 col-count-3 c-gap py-12">
+								{awardList.map((aw, k) => {
+									return (
+										<div className="" key={k}>
+											<p>{aw}</p>
+										</div>
+									);
+								})}
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</Layout>
 	);
 }
 

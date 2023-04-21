@@ -1,10 +1,13 @@
 import "@components/styles/globals.scss";
-import Layout from "@components/Layout";
+import { AnimatePresence } from "framer-motion";
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps, router }) {
 	return (
-		<Layout>
-			<Component {...pageProps} />
-		</Layout>
+		<AnimatePresence
+			mode="wait"
+			onExitComplete={() => window.scrollTo(0, 0)}
+		>
+			<Component {...pageProps} key={router.asPath} />
+		</AnimatePresence>
 	);
 }

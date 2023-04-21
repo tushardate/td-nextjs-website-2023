@@ -4,7 +4,7 @@ export default function Header() {
 	return (
 		<>
 			<div className="nav flex text-white px-6 py-6 w-full justify-between items-baseline fixed top-0 z-50 mix-blend-difference font-ppmori">
-				<Link href="/">
+				<Link href="/" scroll={false}>
 					<div className="flex gap-6 items-baseline logo">
 						<svg
 							width="31"
@@ -18,16 +18,20 @@ export default function Header() {
 						<div className="tickerWrapper">
 							<div className="ticker leading-snug">
 								<p className="message">Tushar Date</p>
-                  <p className="message">Creative Director</p>
-                  <p className="message">Los Angeles</p>
-                  <p className="message">Tushar Date</p>
+								<p className="message">Creative Director</p>
+								<p className="message">Los Angeles</p>
+								<p className="message">Tushar Date</p>
 							</div>
 						</div>
 					</div>
 				</Link>
 				<div className="flex gap-8 menu">
-					<Link href="/">Work</Link>
-					<Link href="/about">About</Link>
+					<Link href="/" scroll={false}>
+						Work
+					</Link>
+					<Link href="/about" scroll={false}>
+						About
+					</Link>
 				</div>
 			</div>
 		</>

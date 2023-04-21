@@ -5,7 +5,7 @@ function ProjectThumbnail(props) {
 	const { title, id, slug, project } = props.data;
 
 	return (
-		<Link as={`/projects/${slug}`} href="/projects/[slug]">
+		<Link as={`/projects/${slug}`} href="/projects/[slug]" scroll={false}>
 			<div className="project-thumbnail">
 				<div className="thumbnailRatio relative w-full rounded-lg">
 					<div

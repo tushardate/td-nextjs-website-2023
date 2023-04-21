@@ -4,10 +4,18 @@ export default function PrevNext(props) {
 
 	return (
 		<div className="z-50 px-9 pt-20 pb-12 flex justify-between text-5xl font-bold">
-			<Link as={`/projects/${prev.slug}`} href="/projects/[slug]">
+			<Link
+				as={`/projects/${prev.slug}`}
+				href="/projects/[slug]"
+				scroll={false}
+			>
 				Prev
 			</Link>
-			<Link as={`/projects/${next.slug}`} href="/projects/[slug]">
+			<Link
+				as={`/projects/${next.slug}`}
+				href="/projects/[slug]"
+				scroll={false}
+			>
 				Next
 			</Link>
 		</div>
