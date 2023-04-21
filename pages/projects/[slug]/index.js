@@ -4,6 +4,7 @@ import { allProjectSlugsQuery } from "@components/queries/allProjectSlugsQuery.j
 import PrevNext from "@components/PrevNext";
 import SingleItem from "@components/SingleItem";
 import Layout from "@components/Layout";
+import { pageTransition } from "@components/animation/animations";
 import { motion } from "framer-motion";
 
 export default function Project({
@@ -25,7 +26,13 @@ export default function Project({
 
 	return (
 		<Layout>
-			<div className="font-ppmori">
+			<motion.div
+				variants={pageTransition}
+				initial="initial"
+				animate="animate"
+				exit="exit"
+				className="font-ppmori"
+			>
 				<div className="w-full h-80 overflow-hidden relative rounded-b-2xl">
 					<img
 						className="absolute top-0 left-0 right-0 bottom-0 object-cover w-full h-full blur-3xl scale-125"
@@ -33,7 +40,12 @@ export default function Project({
 						alt=""
 					/>
 
-					<motion.div initial={{opacity: 0,}} animate={{opacity: 1}} transition={{duration: 0.5, delay: 2}} className="overflow-hidden w-full h-full relative">
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ duration: 0.5, delay: 2 }}
+						className="overflow-hidden w-full h-full relative"
+					>
 						{thumbnailVideo ? (
 							<video
 								className="h-full w-full object-cover"
@@ -97,7 +109,7 @@ export default function Project({
 					</div>
 				</div>
 				<PrevNext prev={prev} next={next} />
-			</div>
+			</motion.div>
 		</Layout>
 	);
 }

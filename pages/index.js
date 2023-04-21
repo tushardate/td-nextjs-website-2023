@@ -3,11 +3,19 @@ import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { query } from "@components/queries/homepageQuery.js";
 import ProjectThumbnail from "@components/ProjectThumbnail";
 import Layout from "@components/Layout";
+import { pageTransition } from "@components/animation/animations";
+import { motion } from "framer-motion";
 
 export default function Home({ projects }) {
 	return (
 		<Layout>
-			<div className="px-3 mt-40 font-ppmori">
+			<motion.div
+				variants={pageTransition}
+				initial="initial"
+				animate="animate"
+				exit="exit"
+				className="px-3 mt-40 font-ppmori"
+			>
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
 					{projects.map((project, i) => {
 						return (
@@ -18,7 +26,7 @@ export default function Home({ projects }) {
 						);
 					})}
 				</div>
-			</div>
+			</motion.div>
 		</Layout>
 	);
 }

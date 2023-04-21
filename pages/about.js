@@ -1,6 +1,8 @@
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import Layout from "@components/Layout";
 import { query } from "@components/queries/aboutPageQuery.js";
+import { pageTransition } from "@components/animation/animations";
+import { motion } from "framer-motion";
 
 export default function About({ about }) {
 	const {
@@ -26,7 +28,13 @@ export default function About({ about }) {
 
 	return (
 		<Layout>
-			<div className="px-3 my-40">
+			<motion.div
+				variants={pageTransition}
+				initial="initial"
+				animate="animate"
+				exit="exit"
+				className="px-3 my-40 font-ppmori"
+			>
 				<div className="px-16 text-lg">
 					<div className="headline -ml-2 pb-12">
 						<p className="ml-auto w-5/6 text-8xl font-neuemachina aboutHeadline">
@@ -62,9 +70,10 @@ export default function About({ about }) {
 					<div className="bio">
 						<div className="flex">
 							<p className="w-1/6 py-12">About</p>
-							<p className="w-5/6 col-count-2 c-gap border-b py-12">
-								{bio}
-							</p>
+							<p
+								className="w-5/6 col-count-2 c-gap border-b py-12"
+								dangerouslySetInnerHTML={{ __html: bio }}
+							></p>
 						</div>
 					</div>
 					<div className="experience">
@@ -119,7 +128,7 @@ export default function About({ about }) {
 						</div>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</Layout>
 	);
 }
