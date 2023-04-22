@@ -1,3 +1,4 @@
+import ImageCompare from "./ImageCompare";
 import Player from "./Player";
 
 export default function SingleItem({ data }) {
@@ -22,7 +23,7 @@ function RenderSingle({ data }) {
 	} else if (data.fieldGroupName === "Project_Project_sections_Items_Video") {
 		return (
 			<div className={`single-item ${data.videoClasses}`}>
-				<Player url={data.url} poster={data.poster} type={data.type}/>
+				<Player url={data.url} poster={data.poster} type={data.type} />
 			</div>
 		);
 	} else if (data.fieldGroupName === "Project_Project_sections_Items_Embed") {
@@ -34,7 +35,7 @@ function RenderSingle({ data }) {
 	} else if (
 		data.fieldGroupName === "Project_Project_sections_Items_ImageCompare"
 	) {
-		return <p>Image Compare</p>;
+		return <ImageCompare before={data.urlLeft} after={data.urlRight} />;
 	} else {
 		return null;
 	}

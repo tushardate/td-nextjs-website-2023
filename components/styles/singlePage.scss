@@ -1,21 +1,51 @@
 .h-80 {
-    height: 100vh;
-    min-height: 400px;
+	height: 100vh;
+	min-height: 400px;
 }
 .td-letter-spacing {
-    letter-spacing: -0.015em;
+	letter-spacing: -0.015em;
 }
 
 .title {
-    letter-spacing: -0.035em;
-    font-size: 7.5vw;
-    line-height: 0.9em;
+	letter-spacing: -0.035em;
+	font-size: max(60px, 7.5vw);
+	line-height: 0.9em;
 }
 
 .headline {
-    font-size: 3.25vw;
-    letter-spacing: -0.0075em;
+	font-size: max(36px, 3.25vw);
+	letter-spacing: -0.0075em;
 }
 .pt {
-    padding-top: 56.25%;
+	padding-top: 56.25%;
+}
+
+.imageCompareWrapper {
+	width: 100%;
+	position: relative;
+}
+
+.image-after-wrapper {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	display: block;
+	filter: drop-shadow(-2px 0 0 hsla(0, 0%, 100%, 0.9));
+}
+.image-after {
+	position: absolute;
+	top: 0;
+	display: block;
+}
+.image {
+	width: 100%;
+	display: block;
+}
+.bar {
+	width: 2px;
+	background-color: red;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
 }

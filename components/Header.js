@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
+import Ticker from "./Ticker";
 
 export default function Header() {
+	const router = useRouter();
 	return (
 		<>
 			<div className="nav flex text-white px-6 py-6 w-full justify-between items-baseline fixed top-0 z-50 mix-blend-difference font-ppmori">
@@ -23,13 +26,25 @@ export default function Header() {
 								<p className="message">Tushar Date</p>
 							</div>
 						</div>
+
+						{/* <Ticker /> */}
 					</div>
 				</Link>
 				<div className="flex gap-8 menu">
-					<Link href="/" scroll={false}>
+					<Link
+						className={`${router.asPath === "/" ? "active" : ""}`}
+						href="/"
+						scroll={false}
+					>
 						Work
 					</Link>
-					<Link href="/about" scroll={false}>
+					<Link
+						className={`${
+							router.asPath === "/about" ? "active" : ""
+						}`}
+						href="/about"
+						scroll={false}
+					>
 						About
 					</Link>
 				</div>

@@ -33,18 +33,18 @@ export default function About({ about }) {
 				initial="initial"
 				animate="animate"
 				exit="exit"
-				className="px-3 my-40 font-ppmori"
+				className="px-3 my-32 lg:my-40 font-ppmori"
 			>
-				<div className="px-16 text-lg">
-					<div className="headline -ml-2 pb-12">
-						<p className="ml-auto w-5/6 text-8xl font-neuemachina aboutHeadline">
+				<div className="px-3 lg:px-16 lg:text-lg">
+					<div className="headline lg:-ml-2 pb-12">
+						<p className="ml-auto lg:w-5/6 text-8xl font-neuemachina aboutHeadline">
 							{headline}
 						</p>
 					</div>
 					<div className="contact">
-						<div className="flex">
-							<p className="w-1/6 py-12">Contact</p>
-							<div className="w-5/6 col-count-1 c-gap border-b py-12">
+						<div className="lg:flex">
+							<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">Contact</p>
+							<div className="lg:w-5/6 col-count-1 c-gap border-b lg:py-12 pb-12">
 								<a
 									className="hover:text-tdblue"
 									href={`tel:+1-${phone}`}
@@ -68,18 +68,18 @@ export default function About({ about }) {
 						</div>
 					</div>
 					<div className="bio">
-						<div className="flex">
-							<p className="w-1/6 py-12">About</p>
+						<div className="lg:flex pt-12 lg:pt-0">
+							<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">About</p>
 							<p
-								className="w-5/6 col-count-2 c-gap border-b py-12"
+								className="lg:w-5/6 lg:col-count-2 c-gap border-b lg:py-12 pb-12"
 								dangerouslySetInnerHTML={{ __html: bio }}
 							></p>
 						</div>
 					</div>
 					<div className="experience">
-						<div className="flex">
-							<p className="w-1/6 py-12">Experience</p>
-							<div className="w-5/6 col-count-2 c-gap border-b py-12">
+						<div className="lg:flex pt-12 lg:pt-0">
+							<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">Experience</p>
+							<div className="lg:w-5/6 lg:col-count-2 c-gap border-b lg:py-12 pb-12">
 								{workExperience.map((exp, i) => {
 									return (
 										<div
@@ -100,9 +100,9 @@ export default function About({ about }) {
 						</div>
 					</div>
 					<div className="brands">
-						<div className="flex">
-							<p className="w-1/6 py-12">Brands</p>
-							<div className="w-5/6 col-count-3 c-gap border-b py-12">
+						<div className="lg:flex pt-12 lg:pt-0">
+							<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">Brands</p>
+							<div className="lg:w-5/6 md:col-count-2 lg:col-count-3 c-gap border-b lg:py-12 pb-12">
 								{clients.map((client, j) => {
 									return (
 										<div className="" key={j}>
@@ -114,9 +114,9 @@ export default function About({ about }) {
 						</div>
 					</div>
 					<div className="awards">
-						<div className="flex">
-							<p className="w-1/6 py-12">Recognition</p>
-							<div className="w-5/6 col-count-3 c-gap py-12">
+						<div className="lg:flex pt-12 lg:pt-0">
+							<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">Recognition</p>
+							<div className="lg:w-5/6 lg:col-count-3 c-gap border-b lg:py-12 pb-12">
 								{awardList.map((aw, k) => {
 									return (
 										<div className="" key={k}>

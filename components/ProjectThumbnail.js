@@ -7,13 +7,13 @@ function ProjectThumbnail(props) {
 	const controls = useAnimationControls();
 
 	const transition = {
-		duration: 0.4,
+		duration: 0.5,
 		ease: [0.33, 1, 0.68, 1],
 	};
 
 	const titleAnim = {
 		initial: {
-			y: 12,
+			y: 5,
 			opacity: 0,
 			transition: transition,
 		},
@@ -41,7 +41,7 @@ function ProjectThumbnail(props) {
 			transition: transition,
 		},
 		hover: {
-			scale: 1.05,
+			scale: 1.035,
 			transition: transition,
 		},
 	};

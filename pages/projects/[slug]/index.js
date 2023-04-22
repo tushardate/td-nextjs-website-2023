@@ -4,7 +4,7 @@ import { allProjectSlugsQuery } from "@components/queries/allProjectSlugsQuery.j
 import PrevNext from "@components/PrevNext";
 import SingleItem from "@components/SingleItem";
 import Layout from "@components/Layout";
-import { pageTransition } from "@components/animation/animations";
+import { pageTransition, fadeIn } from "@components/animation/animations";
 import { motion } from "framer-motion";
 
 export default function Project({
@@ -27,14 +27,14 @@ export default function Project({
 	return (
 		<Layout>
 			<motion.div
-				variants={pageTransition}
 				initial="initial"
 				animate="animate"
 				exit="exit"
 				className="font-ppmori"
 			>
-				<div className="w-full h-80 overflow-hidden relative rounded-b-2xl">
+				<motion.div variants={fadeIn} className="w-full h-80 overflow-hidden relative rounded-b-2xl">
 					<img
+						fetchpriority="high"
 						className="absolute top-0 left-0 right-0 bottom-0 object-cover w-full h-full blur-3xl scale-125"
 						src={`${thumbnailImage}tr=w-1920`}
 						alt=""
@@ -43,12 +43,12 @@ export default function Project({
 					<motion.div
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
-						transition={{ duration: 0.5, delay: 2 }}
+						transition={{ duration: 1, delay: 0.5 }}
 						className="overflow-hidden w-full h-full relative"
 					>
 						{thumbnailVideo ? (
 							<video
-								className="h-full w-full object-cover"
+								className="h-full w-full object-cover absolute inset-0"
 								autoPlay
 								muted
 								loop
@@ -66,26 +66,26 @@ export default function Project({
 						)}
 					</motion.div>
 
-					<div className="w-4/5 absolute left-0 bottom-0 px-20 py-16 text-white">
-						<p className="text-2xl mb-4 ml-1">{`${client}`}</p>
-						<p className="w-4/5 text-8xl font-neuemachina title text-white">{`${title}`}</p>
-					</div>
-				</div>
+					<motion.div variants={pageTransition} className="w-4/5 absolute left-0 bottom-0 p-6 lg:px-20 lg:py-16 text-white">
+						<p className="lg:text-2xl mb-2 lg:mb-4 lg:ml-1">{`${client}`}</p>
+						<p className="lg:w-4/5 text-8xl font-neuemachina title text-white">{`${title}`}</p>
+					</motion.div>
+				</motion.div>
 
-				<div className="w-full px-20 pt-18">
-					<div className="project-details-wrapper flex justify-between">
-						<div className="w-6/12">
-							<p className="headline text-5xl leading-tighter">
+				<motion.div variants={pageTransition} className="w-full p-6 lg:px-20 lg:pt-18">
+					<div className="project-details-wrapper lg:flex justify-between">
+						<div className="lg:w-6/12">
+							<p className="headline text-5xl leading-tighter py-6 lg:py-0">
 								{headline ? headline : title}
 							</p>
 						</div>
-						<div className="w-4/12">
-							<p className="text-xl pb-6">{summary}</p>
+						<div className="lg:w-4/12">
+							<p className="lg:text-xl pb-6">{summary}</p>
 							<p>{`Role: ${role}`}</p>
 						</div>
 					</div>
 
-					<div className="project-details-wrapper mt-20 grid gap-4">
+					<div className="project-details-wrapper mt-12 lg:mt-20 grid gap-4">
 						<div className="w-full grid gap-24 text-xl">
 							{sections.map((section, i) => {
 								return (
@@ -107,7 +107,7 @@ export default function Project({
 							})}
 						</div>
 					</div>
-				</div>
+				</motion.div>
 				<PrevNext prev={prev} next={next} />
 			</motion.div>
 		</Layout>
