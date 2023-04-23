@@ -1,5 +1,7 @@
 import ImageCompare from "./ImageCompare";
 import Player from "./Player";
+import { motion } from "framer-motion";
+import { singleItemAnim } from "./animation/animations";
 
 export default function SingleItem({ data }) {
 	return <RenderSingle data={data}></RenderSingle>;
@@ -9,33 +11,67 @@ function RenderSingle({ data }) {
 	if (data.fieldGroupName === "Project_Project_sections_Items_Text") {
 		if (data.content !== "") {
 			return (
-				<div className={`single-item ${data.textClasses}`}>
+				<motion.div
+					variants={singleItemAnim}
+					initial="initial"
+					whileInView="whileInView"
+					viewport={singleItemAnim.viewport}
+					className={`single-item ${data.textClasses}`}
+				>
 					<div>{data.content}</div>
-				</div>
+				</motion.div>
 			);
 		}
 	} else if (data.fieldGroupName === "Project_Project_sections_Items_Image") {
 		return (
-			<div className={`single-item ${data.imageClasses}`}>
+			<motion.div
+				variants={singleItemAnim}
+				initial="initial"
+				whileInView="whileInView"
+				viewport={singleItemAnim.viewport}
+				className={`single-item ${data.imageClasses}`}
+			>
 				<img src={data.url} alt="" />
-			</div>
+			</motion.div>
 		);
 	} else if (data.fieldGroupName === "Project_Project_sections_Items_Video") {
 		return (
-			<div className={`single-item ${data.videoClasses}`}>
+			<motion.div
+				variants={singleItemAnim}
+				initial="initial"
+				whileInView="whileInView"
+				viewport={singleItemAnim.viewport}
+				className={`single-item ${data.videoClasses}`}
+			>
 				<Player url={data.url} poster={data.poster} type={data.type} />
-			</div>
+			</motion.div>
 		);
 	} else if (data.fieldGroupName === "Project_Project_sections_Items_Embed") {
 		return (
-			<div className={`single-item ${data.embedClasses}`}>
+			<motion.div
+				variants={singleItemAnim}
+				initial="initial"
+				whileInView="whileInView"
+				viewport={singleItemAnim.viewport}
+				className={`single-item ${data.embedClasses}`}
+			>
 				<div> dangerouslySetInnerHTML={{ __html: data.content }}</div>
-			</div>
+			</motion.div>
 		);
 	} else if (
 		data.fieldGroupName === "Project_Project_sections_Items_ImageCompare"
 	) {
-		return <ImageCompare before={data.urlLeft} after={data.urlRight} />;
+		return (
+			<motion.div
+				variants={singleItemAnim}
+				initial="initial"
+				whileInView="whileInView"
+				viewport={singleItemAnim.viewport}
+				className={`single-item ${data.imageCompareClasses}`}
+			>
+				<ImageCompare before={data.urlLeft} after={data.urlRight} />
+			</motion.div>
+		);
 	} else {
 		return null;
 	}

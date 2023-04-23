@@ -32,7 +32,10 @@ export default function Project({
 				exit="exit"
 				className="font-ppmori"
 			>
-				<motion.div variants={fadeIn} className="w-full h-80 overflow-hidden relative rounded-b-2xl">
+				<motion.div
+					variants={fadeIn}
+					className="w-full h-80 overflow-hidden relative rounded-b-2xl"
+				>
 					<img
 						fetchpriority="high"
 						className="absolute top-0 left-0 right-0 bottom-0 object-cover w-full h-full blur-3xl scale-125"
@@ -66,13 +69,19 @@ export default function Project({
 						)}
 					</motion.div>
 
-					<motion.div variants={pageTransition} className="w-4/5 absolute left-0 bottom-0 p-6 lg:px-20 lg:py-16 text-white">
+					<motion.div
+						variants={pageTransition}
+						className="w-4/5 absolute left-0 bottom-0 p-6 lg:px-20 lg:py-16 text-white"
+					>
 						<p className="lg:text-2xl mb-2 lg:mb-4 lg:ml-1">{`${client}`}</p>
 						<p className="lg:w-4/5 text-8xl font-neuemachina title text-white">{`${title}`}</p>
 					</motion.div>
 				</motion.div>
 
-				<motion.div variants={pageTransition} className="w-full p-6 lg:px-20 lg:pt-18">
+				<motion.div
+					variants={pageTransition}
+					className="w-full p-6 lg:px-20 lg:pt-18"
+				>
 					<div className="project-details-wrapper lg:flex justify-between">
 						<div className="lg:w-6/12">
 							<p className="headline text-5xl leading-tighter py-6 lg:py-0">

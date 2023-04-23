@@ -35,7 +35,7 @@ export default function About({ about }) {
 				exit="exit"
 				className="px-3 my-32 lg:my-40 font-ppmori"
 			>
-				<div className="px-3 lg:px-16 lg:text-lg">
+				<div className="px-3 lg:px-16 text-lg">
 					<div className="headline lg:-ml-2 pb-12">
 						<p className="ml-auto lg:w-5/6 text-8xl font-neuemachina aboutHeadline">
 							{headline}
