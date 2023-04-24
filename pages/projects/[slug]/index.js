@@ -4,7 +4,11 @@ import { allProjectSlugsQuery } from "@components/queries/allProjectSlugsQuery.j
 import PrevNext from "@components/PrevNext";
 import SingleItem from "@components/SingleItem";
 import Layout from "@components/Layout";
-import { pageTransition, fadeIn } from "@components/animation/animations";
+import {
+	pageTransition,
+	fadeIn,
+	singleItemAnim,
+} from "@components/animation/animations";
 import { motion } from "framer-motion";
 
 export default function Project({
@@ -83,15 +87,27 @@ export default function Project({
 					className="w-full p-6 lg:px-20 lg:pt-18"
 				>
 					<div className="project-details-wrapper lg:flex justify-between">
-						<div className="lg:w-6/12">
+						<motion.div
+							variants={singleItemAnim}
+							initial="initial"
+							whileInView="whileInView"
+							viewport={singleItemAnim.viewport}
+							className="lg:w-6/12"
+						>
 							<p className="headline text-5xl leading-tighter py-6 lg:py-0">
 								{headline ? headline : title}
 							</p>
-						</div>
-						<div className="lg:w-4/12">
+						</motion.div>
+						<motion.div
+							variants={singleItemAnim}
+							initial="initial"
+							whileInView="whileInView"
+							viewport={singleItemAnim.viewport}
+							className="lg:w-4/12"
+						>
 							<p className="lg:text-xl pb-6">{summary}</p>
 							<p>{`Role: ${role}`}</p>
-						</div>
+						</motion.div>
 					</div>
 
 					<div className="project-details-wrapper mt-12 lg:mt-20 grid gap-4">

@@ -8,6 +8,8 @@ export default function SingleItem({ data }) {
 }
 
 function RenderSingle({ data }) {
+	
+
 	if (data.fieldGroupName === "Project_Project_sections_Items_Text") {
 		if (data.content !== "") {
 			return (

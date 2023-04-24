@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { motion, useAnimationControls } from "framer-motion";
+import { useCursorStore } from "./GlobalStore";
 
 function ProjectThumbnail(props) {
 	const { title, id, slug, project } = props.data;
+	const { cursorType, setCursorType } = useCursorStore();
 
 	const controls = useAnimationControls();
 
@@ -48,7 +50,11 @@ function ProjectThumbnail(props) {
 
 	return (
 		<Link as={`/projects/${slug}`} href="/projects/[slug]" scroll={false}>
-			<motion.div className="project-thumbnail">
+			<motion.div
+				onHoverStart={() => setCursorType("arrowBottomRight")}
+				onHoverEnd={() => setCursorType("default")}
+				className="project-thumbnail"
+			>
 				<div className="thumbnailRatio relative w-full rounded-lg">
 					<div className="thumbnail absolute w-full h-full">
 						<motion.img

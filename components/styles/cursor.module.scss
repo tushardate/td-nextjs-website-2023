@@ -1,0 +1,37 @@
+// .cursor {
+// 	width: 16px;
+// 	height: 16px;
+// 	background-color: red;
+// 	border-radius: 50%;
+// 	position: fixed;
+// 	top: 0;
+// 	left: 0;
+// 	pointer-events: none;
+// 	z-index: 9999;
+// }
+
+.cursorMainWrapper {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 999;
+	pointer-events: none;
+	background: red;
+	mix-blend-mode: difference;
+}
+
+.cursorWrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 64px;
+	height: 64px;
+}
+
+.cursorWrapper circle {
+	fill: white;
+}
+
+.cursorWrapper path {
+	fill: white;
+}

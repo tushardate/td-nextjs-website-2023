@@ -5,6 +5,7 @@ import ProjectThumbnail from "@components/ProjectThumbnail";
 import Layout from "@components/Layout";
 import { pageTransition } from "@components/animation/animations";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export default function Home({ projects }) {
 	return (

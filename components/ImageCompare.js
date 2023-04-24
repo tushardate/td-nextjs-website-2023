@@ -1,4 +1,5 @@
 import {
+	anticipate,
 	motion,
 	useMotionValue,
 	useMotionValueEvent,

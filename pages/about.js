@@ -3,8 +3,10 @@ import Layout from "@components/Layout";
 import { query } from "@components/queries/aboutPageQuery.js";
 import { pageTransition } from "@components/animation/animations";
 import { motion } from "framer-motion";
+import { useCursorStore } from "@components/GlobalStore";
 
 export default function About({ about }) {
+	const { setCursorType } = useCursorStore();
 	const {
 		title,
 		name,
@@ -43,33 +45,67 @@ export default function About({ about }) {
 					</div>
 					<div className="contact">
 						<div className="lg:flex">
-							<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">Contact</p>
-							<div className="lg:w-5/6 col-count-1 c-gap border-b lg:py-12 pb-12">
+							<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">
+								Contact
+							</p>
+							<div className="lg:w-5/6  border-b lg:py-12 pb-12">
 								<a
-									className="hover:text-tdblue"
+									className="hover:text-tdblue "
 									href={`tel:+1-${phone}`}
 								>
-									<p>{phone}</p>
+									<p
+										className="lg:pb-6"
+										onMouseOver={() =>
+											setCursorType("phone")
+										}
+										onMouseLeave={() =>
+											setCursorType("default")
+										}
+									>
+										{phone}
+									</p>
 								</a>
 								<a
 									className="hover:text-tdblue"
 									href={`mailto:${email}`}
 								>
-									<p>{email}</p>
+									<p
+										className="lg:pb-6"
+										onMouseOver={() =>
+											setCursorType("email")
+										}
+										onMouseLeave={() =>
+											setCursorType("default")
+										}
+									>
+										{email}
+									</p>
 								</a>
 								<a
 									className="hover:text-tdblue"
 									href="http://www.linkedin.com/pub/tushar-date/11/315/a25"
 									target="_blank"
 								>
-									<p>LinkedIn</p>
+									<p
+										className="lg:pb-6"
+										onMouseOver={() =>
+											setCursorType("arrowTopRight")
+										}
+										onMouseLeave={() =>
+											setCursorType("default")
+										}
+									>
+										LinkedIn
+									</p>
 								</a>
 							</div>
 						</div>
 					</div>
 					<div className="bio">
 						<div className="lg:flex pt-12 lg:pt-0">
-							<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">About</p>
+							<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">
+								About
+							</p>
 							<p
 								className="lg:w-5/6 lg:col-count-2 c-gap border-b lg:py-12 pb-12"
 								dangerouslySetInnerHTML={{ __html: bio }}
@@ -78,7 +114,9 @@ export default function About({ about }) {
 					</div>
 					<div className="experience">
 						<div className="lg:flex pt-12 lg:pt-0">
-							<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">Experience</p>
+							<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">
+								Experience
+							</p>
 							<div className="lg:w-5/6 lg:col-count-2 c-gap border-b lg:py-12 pb-12">
 								{workExperience.map((exp, i) => {
 									return (
@@ -101,7 +139,9 @@ export default function About({ about }) {
 					</div>
 					<div className="brands">
 						<div className="lg:flex pt-12 lg:pt-0">
-							<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">Brands</p>
+							<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">
+								Brands
+							</p>
 							<div className="lg:w-5/6 md:col-count-2 lg:col-count-3 c-gap border-b lg:py-12 pb-12">
 								{clients.map((client, j) => {
 									return (
@@ -115,7 +155,9 @@ export default function About({ about }) {
 					</div>
 					<div className="awards">
 						<div className="lg:flex pt-12 lg:pt-0">
-							<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">Recognition</p>
+							<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">
+								Recognition
+							</p>
 							<div className="lg:w-5/6 lg:col-count-3 c-gap border-b lg:py-12 pb-12">
 								{awardList.map((aw, k) => {
 									return (

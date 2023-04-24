@@ -53,5 +53,5 @@ export const singleItemAnim = {
 			ease: [0.33, 1, 0.68, 1],
 		},
 	},
-	viewport: { amount: 0.2, once: true },
+	viewport: { amount: 0.25, once: true },
 };

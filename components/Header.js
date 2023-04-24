@@ -1,13 +1,21 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Ticker from "./Ticker";
+import { useCursorStore } from "./GlobalStore";
 
 export default function Header() {
 	const router = useRouter();
+	const { cursorType, setCursorType } = useCursorStore();
+
 	return (
 		<>
 			<div className="nav flex text-white px-6 py-6 w-full justify-between items-baseline fixed top-0 z-50 mix-blend-difference font-ppmori">
-				<Link href="/" scroll={false}>
+				<Link
+					href="/"
+					scroll={false}
+					onMouseOver={() => setCursorType("hover")}
+					onMouseLeave={() => setCursorType("default")}
+				>
 					<div className="flex gap-6 items-baseline logo">
 						<svg
 							width="31"
@@ -30,23 +38,37 @@ export default function Header() {
 						{/* <Ticker /> */}
 					</div>
 				</Link>
-				<div className="flex gap-8 menu">
-					<Link
-						className={`${router.asPath === "/" ? "active" : ""}`}
-						href="/"
-						scroll={false}
+				<div className="flex menu">
+					<div
+						onMouseOver={() => setCursorType("hover")}
+						onMouseLeave={() => setCursorType("default")}
+						className="px-4"
 					>
-						Work
-					</Link>
-					<Link
-						className={`${
-							router.asPath === "/about" ? "active" : ""
-						}`}
-						href="/about"
-						scroll={false}
+						<Link
+							className={`${
+								router.asPath === "/" ? "active" : ""
+							}`}
+							href="/"
+							scroll={false}
+						>
+							Work
+						</Link>
+					</div>
+					<div
+						onMouseOver={() => setCursorType("hover")}
+						onMouseLeave={() => setCursorType("default")}
+						className="pl-4"
 					>
-						About
-					</Link>
+						<Link
+							className={`${
+								router.asPath === "/about" ? "active" : ""
+							} `}
+							href="/about"
+							scroll={false}
+						>
+							About
+						</Link>
+					</div>
 				</div>
 			</div>
 		</>
