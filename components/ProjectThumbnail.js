@@ -34,7 +34,7 @@ function ProjectThumbnail(props) {
 			transition: transition,
 		},
 		mobile: {
-			opacity: 0.2,
+			opacity: 0.25,
 			transition: transition,
 		},
 		hover: {
