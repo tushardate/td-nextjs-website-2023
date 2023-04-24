@@ -2,6 +2,7 @@ import Link from "next/link";
 import { motion, useAnimationControls } from "framer-motion";
 import { useCursorStore } from "./GlobalStore";
 import useMobileDetect from "use-mobile-detect-hook";
+import { deviceDetect, isMobile } from "react-device-detect";
 
 function ProjectThumbnail(props) {
 	const { title, id, slug, project } = props.data;
@@ -67,7 +68,9 @@ function ProjectThumbnail(props) {
 							variants={imageAnim}
 							initial="initial"
 							animate={controls}
-							onHoverStart={() => controls.start("hover")}
+							onHoverStart={() =>
+								controls.start(!isMobile ? "hover" : "initial")
+							}
 							onHoverEnd={() => controls.start("initial")}
 							className="object-cover w-full"
 							src={`${project.thumbnailImage}tr=w-1024`}
@@ -79,39 +82,27 @@ function ProjectThumbnail(props) {
 					<div className="w-full h-full">
 						<motion.div
 							variants={overlayAnim}
-							initial={`${
-								!detectMobile.isMobile() ? "initial" : "mobile"
-							}`}
+							initial={!isMobile ? "initial" : "mobile"}
 							animate={controls}
-							onHoverStart={() => controls.start("hover")}
+							onHoverStart={() =>
+								controls.start(!isMobile ? "initial" : "mobile")
+							}
 							onHoverEnd={() =>
-								controls.start(
-									`${
-										!detectMobile.isMobile()
-											? "initial"
-											: "mobile"
-									}`
-								)
+								controls.start(!isMobile ? "hover" : "mobile")
 							}
 							className="absolute top-0 left-0 w-full h-full bg"
 						/>
 						<motion.div
 							variants={titleAnim}
-							initial={`${
-								!detectMobile.isMobile() ? "initial" : "hover"
-							}`}
+							initial={!isMobile ? "initial" : "hover"}
 							animate={controls}
 							onHoverStart={() => controls.start("hover")}
 							onHoverEnd={() =>
-								controls.start(
-									`${
-										!detectMobile.isMobile()
-											? "initial"
-											: "hover"
-									}`
-								)
+								controls.start(!isMobile ? "initial" : "hover")
 							}
-							className="absolute top-0 left-0 w-full h-full p-3 lg:p-17 flex flex-col gap-0 lg:gap-2 justify-end items-start drop-shadow-lg"
+							className={`absolute top-0 left-0 w-full h-full p-3 lg:p-17 flex flex-col gap-0 lg:gap-2 justify-end items-start ${
+								isMobile && "dropShadow"
+							}`}
 						>
 							<p className="text-white text-sm">
 								{project.client}
