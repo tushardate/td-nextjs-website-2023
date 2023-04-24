@@ -5,7 +5,6 @@ import ProjectThumbnail from "@components/ProjectThumbnail";
 import Layout from "@components/Layout";
 import { pageTransition } from "@components/animation/animations";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 
 export default function Home({ projects }) {
 	return (
@@ -17,7 +16,7 @@ export default function Home({ projects }) {
 				exit="exit"
 				className="px-3 mt-24 lg:mt-40 font-ppmori"
 			>
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-3">
 					{projects.map((project, i) => {
 						return (
 							<ProjectThumbnail
