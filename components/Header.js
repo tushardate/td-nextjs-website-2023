@@ -26,7 +26,7 @@ export default function Header() {
 							<path d="M30.0391 0V9.13044H20.2434L17.6347 4.57827L15.026 0.0130562L12.4173 4.57827L9.80862 9.13044H0.0390625V0H30.0391ZM9.82167 9.13044V30H20.2565V9.13044H9.82167Z" />
 						</svg>
 
-						<div className="tickerWrapper">
+						<div className="tickerWrapper hidden md:block">
 							<div className="ticker leading-snug">
 								<p className="message">Tushar Date</p>
 								<p className="message">Creative Director</p>

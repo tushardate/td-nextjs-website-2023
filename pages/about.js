@@ -50,7 +50,7 @@ export default function About({ about }) {
 							</p>
 							<div className="lg:w-5/6  border-b lg:py-12 pb-12">
 								<a
-									className="hover:text-tdblue "
+									className="hover:text-tdblue"
 									href={`tel:+1-${phone}`}
 								>
 									<p

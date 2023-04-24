@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { motion, useAnimationControls } from "framer-motion";
 import { useCursorStore } from "./GlobalStore";
+import useMobileDetect from "use-mobile-detect-hook";
 
 function ProjectThumbnail(props) {
 	const { title, id, slug, project } = props.data;
 	const { cursorType, setCursorType } = useCursorStore();
+	const detectMobile = useMobileDetect();
 
 	const controls = useAnimationControls();
 
@@ -29,6 +31,10 @@ function ProjectThumbnail(props) {
 	const overlayAnim = {
 		initial: {
 			opacity: 0,
+			transition: transition,
+		},
+		mobile: {
+			opacity: 0.2,
 			transition: transition,
 		},
 		hover: {
@@ -73,24 +79,44 @@ function ProjectThumbnail(props) {
 					<div className="w-full h-full">
 						<motion.div
 							variants={overlayAnim}
-							initial="initial"
+							initial={`${
+								!detectMobile.isMobile() ? "initial" : "mobile"
+							}`}
 							animate={controls}
 							onHoverStart={() => controls.start("hover")}
-							onHoverEnd={() => controls.start("initial")}
+							onHoverEnd={() =>
+								controls.start(
+									`${
+										!detectMobile.isMobile()
+											? "initial"
+											: "mobile"
+									}`
+								)
+							}
 							className="absolute top-0 left-0 w-full h-full bg"
 						/>
 						<motion.div
 							variants={titleAnim}
-							initial="initial"
+							initial={`${
+								!detectMobile.isMobile() ? "initial" : "hover"
+							}`}
 							animate={controls}
 							onHoverStart={() => controls.start("hover")}
-							onHoverEnd={() => controls.start("initial")}
-							className="absolute top-0 left-0 w-full h-full p-17 flex flex-col gap-2 justify-end items-start"
+							onHoverEnd={() =>
+								controls.start(
+									`${
+										!detectMobile.isMobile()
+											? "initial"
+											: "hover"
+									}`
+								)
+							}
+							className="absolute top-0 left-0 w-full h-full p-3 lg:p-17 flex flex-col gap-0 lg:gap-2 justify-end items-start drop-shadow-lg"
 						>
 							<p className="text-white text-sm">
 								{project.client}
 							</p>
-							<p className="text-5xl text-white w-3/5 thumbnailTitle">
+							<p className="text-2xl lg:text-5xl text-white lg:w-3/5 thumbnailTitle">
 								{title}
 							</p>
 						</motion.div>

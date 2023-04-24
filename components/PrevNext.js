@@ -6,7 +6,7 @@ export default function PrevNext(props) {
 	const { setCursorType } = useCursorStore();
 
 	return (
-		<div className="z-50 px-3 pt-20 pb-12 flex justify-between text-5xl font-bold">
+		<div className="z-50 px-3 pt-12 pb-6 flex justify-between text-5xl font-bold">
 			<Link
 				as={`/projects/${prev.slug}`}
 				href="/projects/[slug]"

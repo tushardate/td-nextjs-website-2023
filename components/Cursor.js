@@ -6,8 +6,8 @@ export default function Cursor() {
 	const { cursorType, setCursorType } = useCursorStore();
 
 	const [mousePos, setMousePos] = useState({
-		x: 0,
-		y: 0,
+		x: -100,
+		y: -100,
 	});
 
 	const variants = {
@@ -97,7 +97,7 @@ export default function Cursor() {
 		<motion.div
 			variants={variants}
 			animate={cursorType}
-			transition={{ duration: 0.075 }}
+			transition={{ duration: 0.035 }}
 			className="cursorMainWrapper"
 		>
 			<div className="cursorWrapper">
