@@ -57,6 +57,7 @@ export default function Project({
 							<video
 								className="h-full w-full object-cover absolute inset-0"
 								autoPlay
+								playsInline
 								muted
 								loop
 								src={thumbnailVideo}
