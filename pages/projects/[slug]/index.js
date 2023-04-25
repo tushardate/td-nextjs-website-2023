@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { query } from "@components/queries/singleProjectQuery.js";
 import { allProjectSlugsQuery } from "@components/queries/allProjectSlugsQuery.js";
@@ -42,115 +43,123 @@ export default function Project({
 	}, [winW, winH]);
 
 	return (
-		<Layout>
-			<motion.div
-				initial="initial"
-				animate="animate"
-				exit="exit"
-				className="font-ppmori"
-			>
+		<>
+			<Head>
+				<title>{title}</title>
+				<meta name="description" content={headline} />
+			</Head>
+			<Layout>
 				<motion.div
-					variants={fadeIn}
-					style={{ height }}
-					className="w-full h-80 overflow-hidden relative rounded-b-2xl"
+					initial="initial"
+					animate="animate"
+					exit="exit"
+					className="font-ppmori"
 				>
-					<img
-						fetchpriority="high"
-						className="absolute top-0 left-0 right-0 bottom-0 object-cover w-full h-full blur-3xl scale-125"
-						src={`${thumbnailImage}tr=w-1920`}
-						alt=""
-					/>
-
 					<motion.div
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{ duration: 1, delay: 0.5 }}
-						className="overflow-hidden w-full h-full relative"
+						variants={fadeIn}
+						style={{ height }}
+						className="w-full h-80 overflow-hidden relative rounded-b-2xl"
 					>
-						{thumbnailVideo ? (
-							<video
-								className="h-full w-full object-cover absolute inset-0"
-								autoPlay
-								playsInline
-								muted
-								loop
-								src={thumbnailVideo}
-							/>
-						) : (
-							<>
-								<div className="absolute inset-0 bg-black opacity-40" />
-								<img
-									className="object-cover w-full h-full"
-									src={`${thumbnailImage}tr=w-1920`}
-									alt=""
+						<img
+							fetchpriority="high"
+							className="absolute top-0 left-0 right-0 bottom-0 object-cover w-full h-full blur-3xl scale-125"
+							src={`${thumbnailImage}tr=w-1920`}
+							alt=""
+						/>
+
+						<motion.div
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							transition={{ duration: 1, delay: 0.5 }}
+							className="overflow-hidden w-full h-full relative"
+						>
+							{thumbnailVideo ? (
+								<video
+									className="h-full w-full object-cover absolute inset-0"
+									autoPlay
+									playsInline
+									muted
+									loop
+									src={thumbnailVideo}
 								/>
-							</>
-						)}
+							) : (
+								<>
+									<div className="absolute inset-0 bg-black opacity-40" />
+									<img
+										className="object-cover w-full h-full"
+										src={`${thumbnailImage}tr=w-1920`}
+										alt=""
+									/>
+								</>
+							)}
+						</motion.div>
+
+						<motion.div
+							variants={pageTransition}
+							className="w-4/5 absolute left-0 bottom-0 p-6 lg:px-20 lg:py-16 text-white"
+						>
+							<p className="lg:text-2xl mb-2 lg:mb-4 lg:ml-1">{`${client}`}</p>
+							<p className="lg:w-4/5 text-8xl font-neuemachina title text-white">{`${title}`}</p>
+						</motion.div>
 					</motion.div>
 
 					<motion.div
 						variants={pageTransition}
-						className="w-4/5 absolute left-0 bottom-0 p-6 lg:px-20 lg:py-16 text-white"
+						className="w-full p-6 lg:px-20 lg:pt-18"
 					>
-						<p className="lg:text-2xl mb-2 lg:mb-4 lg:ml-1">{`${client}`}</p>
-						<p className="lg:w-4/5 text-8xl font-neuemachina title text-white">{`${title}`}</p>
-					</motion.div>
-				</motion.div>
-
-				<motion.div
-					variants={pageTransition}
-					className="w-full p-6 lg:px-20 lg:pt-18"
-				>
-					<div className="project-details-wrapper lg:flex justify-between">
-						<motion.div
-							variants={singleItemAnim}
-							initial="initial"
-							whileInView="whileInView"
-							viewport={singleItemAnim.viewport}
-							className="lg:w-6/12"
-						>
-							<p className="headline text-5xl leading-tighter py-6 lg:py-0">
-								{headline ? headline : title}
-							</p>
-						</motion.div>
-						<motion.div
-							variants={singleItemAnim}
-							initial="initial"
-							whileInView="whileInView"
-							viewport={singleItemAnim.viewport}
-							className="lg:w-4/12"
-						>
-							<p className="lg:text-xl pb-6">{summary}</p>
-							<p>{`Role: ${role}`}</p>
-						</motion.div>
-					</div>
-
-					<div className="project-details-wrapper mt-12 lg:mt-20 grid gap-4">
-						<div className="w-full grid gap-24 text-xl">
-							{sections.map((section, i) => {
-								return (
-									<div className={`grid`} key={i}>
-										<div
-											className={`${section.sectionClasses}`}
-										>
-											{section.items.map((item, j) => {
-												return (
-													<SingleItem
-														data={item}
-														key={j}
-													/>
-												);
-											})}
-										</div>
-									</div>
-								);
-							})}
+						<div className="project-details-wrapper lg:flex justify-between">
+							<motion.div
+								variants={singleItemAnim}
+								initial="initial"
+								whileInView="whileInView"
+								viewport={singleItemAnim.viewport}
+								className="lg:w-6/12"
+							>
+								<p className="headline text-5xl leading-tighter py-6 lg:py-0">
+									{headline ? headline : title}
+								</p>
+							</motion.div>
+							<motion.div
+								variants={singleItemAnim}
+								initial="initial"
+								whileInView="whileInView"
+								viewport={singleItemAnim.viewport}
+								className="lg:w-4/12"
+							>
+								<p className="lg:text-xl pb-6">{summary}</p>
+								<p>{`Role: ${role}`}</p>
+							</motion.div>
 						</div>
-					</div>
+
+						<div className="project-details-wrapper mt-12 lg:mt-20 grid gap-4">
+							<div className="w-full grid gap-24 text-xl">
+								{sections.map((section, i) => {
+									return (
+										<div className={`grid`} key={i}>
+											<div
+												className={`${section.sectionClasses}`}
+											>
+												{section.items.map(
+													(item, j) => {
+														return (
+															<SingleItem
+																data={item}
+																key={j}
+															/>
+														);
+													}
+												)}
+											</div>
+										</div>
+									);
+								})}
+							</div>
+						</div>
+					</motion.div>
+					<PrevNext prev={prev} next={next} />
 				</motion.div>
-				<PrevNext prev={prev} next={next} />
-			</motion.div>
-		</Layout>
+			</Layout>
+		</>
 	);
 }
 export async function getStaticProps({ params }) {

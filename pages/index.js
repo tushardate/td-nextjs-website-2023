@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Head from "next/head";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { query } from "@components/queries/homepageQuery.js";
 import ProjectThumbnail from "@components/ProjectThumbnail";
@@ -8,26 +9,35 @@ import { motion } from "framer-motion";
 
 export default function Home({ projects }) {
 	return (
-		<Layout>
-			<motion.div
-				variants={pageTransition}
-				initial="initial"
-				animate="animate"
-				exit="exit"
-				className="px-3 mt-24 lg:mt-40 font-ppmori"
-			>
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-3">
-					{projects.map((project, i) => {
-						return (
-							<ProjectThumbnail
-								key={project.id}
-								data={{ ...project }}
-							/>
-						);
-					})}
-				</div>
-			</motion.div>
-		</Layout>
+		<>
+			<Head>
+				<title>Tushar Date | Creative Director</title>
+				<meta
+					name="description"
+					content="The portfolio of Tushar Date, an advertising creative director."
+				/>
+			</Head>
+			<Layout>
+				<motion.div
+					variants={pageTransition}
+					initial="initial"
+					animate="animate"
+					exit="exit"
+					className="px-3 mt-24 lg:mt-40 font-ppmori"
+				>
+					<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-3">
+						{projects.map((project, i) => {
+							return (
+								<ProjectThumbnail
+									key={project.id}
+									data={{ ...project }}
+								/>
+							);
+						})}
+					</div>
+				</motion.div>
+			</Layout>
+		</>
 	);
 }
 
