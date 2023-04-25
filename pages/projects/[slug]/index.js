@@ -10,6 +10,8 @@ import {
 	singleItemAnim,
 } from "@components/animation/animations";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useWindowSize } from "@react-hook/window-size";
 
 export default function Project({
 	singleProjectData,
@@ -28,6 +30,17 @@ export default function Project({
 		sections,
 	} = project;
 
+	const [winW, winH] = useWindowSize();
+	const [height, setHeight] = useState("100vw");
+
+	useEffect(() => {
+		if (winW / winH < 1) {
+			setHeight(`max(100vw, 80vh)`);
+		} else {
+			setHeight("100vh");
+		}
+	}, [winW, winH]);
+
 	return (
 		<Layout>
 			<motion.div
@@ -38,6 +51,7 @@ export default function Project({
 			>
 				<motion.div
 					variants={fadeIn}
+					style={{ height }}
 					className="w-full h-80 overflow-hidden relative rounded-b-2xl"
 				>
 					<img
