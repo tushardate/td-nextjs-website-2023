@@ -13,13 +13,20 @@ module.exports = {
 			fontFamily: {
 				ppmori: ["PP Mori"],
 				neuemachina: ["Neue Machina"],
+				migra: ["Migra"],
+				polysans: ["PolySans"],
+				moret: ["Moret"],
 			},
 			fontSize: {
+				2.25: "1.625rem",
 				"5.5xl": "5.5rem",
 			},
 			lineHeight: {
+				11: "3rem",
 				tighter: "1.125",
 				tightest: "1.0625",
+				looser: "2.5",
+				loosest: "3",
 				5.5: "5.5rem",
 			},
 			letterSpacing: {

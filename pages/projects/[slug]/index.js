@@ -13,6 +13,8 @@ import {
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useWindowSize } from "@react-hook/window-size";
+import Footer from "@components/Footer";
+import Header from "@components/Header";
 
 export default function Project({
 	singleProjectData,
@@ -45,7 +47,7 @@ export default function Project({
 	return (
 		<>
 			<Head>
-				<title>{title}</title>
+				<title>{`Tushar Date | ${title}`}</title>
 				<meta name="description" content={headline} />
 			</Head>
 			<Layout>
@@ -60,12 +62,12 @@ export default function Project({
 						style={{ height }}
 						className="w-full h-80 overflow-hidden relative rounded-b-2xl"
 					>
-						<img
+						{/* <img
 							fetchpriority="high"
 							className="absolute top-0 left-0 right-0 bottom-0 object-cover w-full h-full blur-3xl scale-125"
 							src={`${thumbnailImage}tr=w-1920`}
 							alt=""
-						/>
+						/> */}
 
 						<motion.div
 							initial={{ opacity: 0 }}
@@ -96,16 +98,16 @@ export default function Project({
 
 						<motion.div
 							variants={pageTransition}
-							className="w-4/5 absolute left-0 bottom-0 p-6 lg:px-20 lg:py-16 text-white"
+							className="w-4/5 absolute left-0 bottom-0 p-6 lg:px-16 lg:py-16 text-white"
 						>
-							<p className="lg:text-2xl mb-2 lg:mb-4 lg:ml-1">{`${client}`}</p>
-							<p className="lg:w-4/5 text-8xl font-neuemachina title text-white">{`${title}`}</p>
+							<p className="lg:text-2xl mb-2 lg:mb-4">{`${client}`}</p>
+							<p className="lg:w-4/5 text-8xl -ml-1 font-migra title text-white">{`${title}`}</p>
 						</motion.div>
 					</motion.div>
 
 					<motion.div
 						variants={pageTransition}
-						className="w-full p-6 lg:px-20 lg:pt-18"
+						className="w-full lg:px-16 lg:pt-18"
 					>
 						<div className="project-details-wrapper lg:flex justify-between">
 							<motion.div
@@ -126,7 +128,7 @@ export default function Project({
 								viewport={singleItemAnim.viewport}
 								className="lg:w-4/12"
 							>
-								<p className="lg:text-xl pb-6">{summary}</p>
+								<p className="lg:text-xl pb-8">{summary}</p>
 								<p>{`Role: ${role}`}</p>
 							</motion.div>
 						</div>
@@ -137,7 +139,7 @@ export default function Project({
 									return (
 										<div className={`grid`} key={i}>
 											<div
-												className={`${section.sectionClasses}`}
+												className={`w-full ${section.sectionClasses}`}
 											>
 												{section.items.map(
 													(item, j) => {

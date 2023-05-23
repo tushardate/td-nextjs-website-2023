@@ -6,8 +6,15 @@ import ProjectThumbnail from "@components/ProjectThumbnail";
 import Layout from "@components/Layout";
 import { pageTransition } from "@components/animation/animations";
 import { motion } from "framer-motion";
+import useIsTouchDevice from "@components/hooks/useIsTouchDevice";
+import ProjectThumbnailMobile from "@components/ProjectThumbnailMobile";
+import { isMobile } from "react-device-detect";
+import Header from "@components/Header-StaggerHover";
+import Footer from "@components/Footer";
 
 export default function Home({ projects }) {
+	const isTouchDevice = useIsTouchDevice();
+
 	return (
 		<>
 			<Head>
@@ -23,10 +30,22 @@ export default function Home({ projects }) {
 					initial="initial"
 					animate="animate"
 					exit="exit"
-					className="px-3 mt-24 lg:mt-40 font-ppmori"
+					className="px-16 mt-24 lg:mt-32 font-ppmori"
 				>
-					<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-3">
+					{/* <div className="font-migra text-8xl leading-11 pb-4 pt-8">Work</div> */}
+					<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4">
 						{projects.map((project, i) => {
+							// return isMobile ? (
+							// 	<ProjectThumbnailMobile
+							// 		key={project.id}
+							// 		data={{ ...project }}
+							// 	/>
+							// ) : (
+							// 	<ProjectThumbnail
+							// 		key={project.id}
+							// 		data={{ ...project }}
+							// 	/>
+							// );
 							return (
 								<ProjectThumbnail
 									key={project.id}

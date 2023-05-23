@@ -7,7 +7,7 @@
 }
 
 .title {
-	letter-spacing: -0.035em;
+	// letter-spacing: -0.035em;
 	font-size: max(60px, 7.5vw);
 	line-height: 0.9em;
 }
@@ -48,4 +48,8 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+}
+
+.safari-fix {
+	-webkit-mask-image: -webkit-radial-gradient(white, black);
 }

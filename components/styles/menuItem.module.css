@@ -1,0 +1,48 @@
+.menu-item {
+	position: relative;
+	/* text-transform: uppercase; */
+	cursor: pointer;
+}
+
+.menu-item-text {
+	pointer-events: none;
+	display: block;
+	line-height: 0.9;
+	position: relative;
+}
+
+.menu-item .bottom {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.menu-item .top span {
+	transform-style: preserve-3d;
+	transition: 0.25s;
+	transition-delay: calc(0.025s * var(--index));
+	transform-origin: bottom;
+	display: inline-block;
+}
+
+.menu-item .menu-item-text {
+    perspective: 1500px;
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+.menu-item .bottom span {
+	transform-style: preserve-3d;
+	transition: 0.25s;
+	transition-delay: calc(0.025s * var(--index));
+	transform-origin: top;
+	display: inline-block;
+	transform: translate3d(0, 100%, 0) rotateX(-90deg);
+}
+
+.menu-item:hover .top span {
+	transform: translate3d(0, -100%, 0) rotateX(-90deg);
+}
+.menu-item:hover .bottom span {
+	transform: translate3d(0, 0%, 0) rotateX(0deg);
+}

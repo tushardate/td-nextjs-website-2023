@@ -5,6 +5,7 @@
 @import "./header.scss";
 @import "./singlePage.scss";
 @import "./about.scss";
+@import "./menuItem.module.css";
 
 @layer base {
 	@font-face {
@@ -51,11 +52,215 @@
 		font-style: normal;
 		font-display: swap;
 	}
+
+	@font-face {
+		font-family: "Migra";
+		src: url("/fonts/Migra/MigraItalic-ExtralightItalic.woff2")
+				format("woff2"),
+			url("/fonts/Migra/MigraItalic-ExtralightItalic.woff") format("woff");
+		font-weight: normal;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Migra";
+		src: url("/fonts/Migra/Migra-Extralight.woff2") format("woff2"),
+			url("/fonts/Migra/Migra-Extralight.woff") format("woff");
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Migra";
+		src: url("/fonts/Migra/Migra-Extrabold.woff2") format("woff2"),
+			url("/fonts/Migra/Migra-Extrabold.woff") format("woff");
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Migra";
+		src: url("/fonts/Migra/MigraItalic-ExtraboldItalic.woff2")
+				format("woff2"),
+			url("/fonts/Migra/MigraItalic-ExtraboldItalic.woff") format("woff");
+		font-weight: bold;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "PolySans";
+		src: url("/fonts/PolySans/PolySansTrial-BulkyItalic.woff2")
+				format("woff2"),
+			url("/fonts/PolySans/PolySansTrial-BulkyItalic.woff") format("woff");
+		font-weight: bold;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "PolySans";
+		src: url("/fonts/PolySans/PolySansTrial-Bulky.woff2") format("woff2"),
+			url("/fonts/PolySans/PolySansTrial-Bulky.woff") format("woff");
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "PolySans";
+		src: url("/fonts/PolySans/PolySansTrial-Bulky.woff2") format("woff2"),
+			url("/fonts/PolySans/PolySansTrial-Bulky.woff") format("woff");
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "PolySans";
+		src: url("/fonts/PolySans/PolySansTrial-Neutral.woff2") format("woff2"),
+			url("/fonts/PolySans/PolySansTrial-Neutral.woff") format("woff");
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "PolySans";
+		src: url("/fonts/PolySans/PolySansTrial-BulkyItalic.woff2")
+				format("woff2"),
+			url("/fonts/PolySans/PolySansTrial-BulkyItalic.woff") format("woff");
+		font-weight: bold;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "PolySans";
+		src: url("/fonts/PolySans/PolySansTrial-SlimItalic.woff2")
+				format("woff2"),
+			url("/fonts/PolySans/PolySansTrial-SlimItalic.woff") format("woff");
+		font-weight: 300;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "PolySans";
+		src: url("/fonts/PolySans/PolySansTrial-Slim.woff2") format("woff2"),
+			url("/fonts/PolySans/PolySansTrial-Slim.woff") format("woff");
+		font-weight: 300;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "PolySans";
+		src: url("/fonts/PolySans/PolySansTrial-NeutralItalic.woff2")
+				format("woff2"),
+			url("/fonts/PolySans/PolySansTrial-NeutralItalic.woff")
+				format("woff");
+		font-weight: normal;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "PolySans";
+		src: url("/fonts/PolySans/PolySansTrial-NeutralItalic.woff2")
+				format("woff2"),
+			url("/fonts/PolySans/PolySansTrial-NeutralItalic.woff")
+				format("woff");
+		font-weight: normal;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "PolySans";
+		src: url("/fonts/PolySans/PolySansTrial-Neutral.woff2") format("woff2"),
+			url("/fonts/PolySans/PolySansTrial-Neutral.woff") format("woff");
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "PolySans";
+		src: url("/fonts/PolySans/PolySansTrial-Slim.woff2") format("woff2"),
+			url("/fonts/PolySans/PolySansTrial-Slim.woff") format("woff");
+		font-weight: 300;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "PolySans";
+		src: url("/fonts/PolySans/PolySansTrial-SlimItalic.woff2")
+				format("woff2"),
+			url("/fonts/PolySans/PolySansTrial-SlimItalic.woff") format("woff");
+		font-weight: 300;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Moret";
+		src: url("/fonts/Moret/Moret-Bold.woff2") format("woff2"),
+			url("/fonts/Moret/Moret-Bold.woff") format("woff");
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Moret";
+		src: url("/fonts/Moret/Moret-Regular.woff2") format("woff2"),
+			url("/fonts/Moret/Moret-Regular.woff") format("woff");
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Moret";
+		src: url("/fonts/Moret/Moret-ExtraBold.woff2") format("woff2"),
+			url("/fonts/Moret/Moret-ExtraBold.woff") format("woff");
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
 }
 
 body {
 	background-color: #14171a;
 	color: white;
-	// background-color: #e5e5e5;
-	// color: #171717;
+	// background-color: #edece8;
+	// color: #131313;
+}
+
+* {
+	cursor: none !important;
+}
+
+.cursorDot {
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	background-color: white;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 999999;
+	pointer-events: none;
+	mix-blend-mode: difference;
+}
+
+.cursorText {
+	font-size: 14px;
+	text-transform: uppercase;
+	color: white;
 }

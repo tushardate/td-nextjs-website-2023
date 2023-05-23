@@ -37,6 +37,39 @@
 	}
 }
 
+.menu-strikethrough a {
+	position: relative;
+	line-height: 1rem;
+	padding: 4px;
+
+	&:hover {
+		&::after,
+		&::before {
+			width: 100%;
+			left: 0;
+		}
+	}
+
+	&::after,
+	&::before {
+		content: "";
+		position: absolute;
+		top: calc(50% - 2px);
+		width: 0;
+		right: 0;
+		height: 2px;
+		background-color: white;
+	}
+
+	&::before {
+		transition: width 0.25s cubic-bezier(0.51, 0.18, 0, 0.88);
+	}
+
+	&::after {
+		transition: width 0.25s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+	}
+}
+
 .logo svg path {
 	fill: white;
 }
@@ -48,7 +81,6 @@
 
 .tickerWrapper2 {
 	height: 1rem;
-	background-color: red;
 	white-space: nowrap;
 	// overflow: hidden;
 }
@@ -63,6 +95,18 @@
 	position: relative;
 	/* top: 1rem; */
 }
+
+.navParent {
+	position: relative;
+	color: white;
+}
+.underline {
+	height: 2px;
+	width: 100%;
+	position: absolute;
+	background-color: white;
+}
+
 @keyframes move {
 	0% {
 		transform: translatey(0);
@@ -89,5 +133,3 @@
 		transform: translatey(0rem);
 	}
 }
-
-

@@ -1,15 +1,16 @@
 import Link from "next/link";
 import { motion, useAnimationControls } from "framer-motion";
 import { useCursorStore } from "./GlobalStore";
-import useMobileDetect from "use-mobile-detect-hook";
-import { deviceDetect, isMobile } from "react-device-detect";
+import { useEffect, useLayoutEffect } from "react";
 
 function ProjectThumbnail(props) {
 	const { title, id, slug, project } = props.data;
 	const { cursorType, setCursorType } = useCursorStore();
-	const detectMobile = useMobileDetect();
-
 	const controls = useAnimationControls();
+
+	useEffect(() => {
+		controls.set("initial");
+	}, []);
 
 	const transition = {
 		duration: 0.5,
@@ -32,10 +33,6 @@ function ProjectThumbnail(props) {
 	const overlayAnim = {
 		initial: {
 			opacity: 0,
-			transition: transition,
-		},
-		mobile: {
-			opacity: 0.25,
 			transition: transition,
 		},
 		hover: {
@@ -62,15 +59,12 @@ function ProjectThumbnail(props) {
 				onHoverEnd={() => setCursorType("default")}
 				className="project-thumbnail"
 			>
-				<div className="thumbnailRatio relative w-full rounded-lg">
+				<div className="thumbnailRatio relative w-full rounded-lg overflow-hidden safari-fix">
 					<div className="thumbnail absolute w-full h-full">
 						<motion.img
 							variants={imageAnim}
-							initial="initial"
 							animate={controls}
-							onHoverStart={() =>
-								controls.start(!isMobile ? "hover" : "initial")
-							}
+							onHoverStart={() => controls.start("hover")}
 							onHoverEnd={() => controls.start("initial")}
 							className="object-cover w-full"
 							src={`${project.thumbnailImage}tr=w-1024`}
@@ -82,32 +76,22 @@ function ProjectThumbnail(props) {
 					<div className="w-full h-full">
 						<motion.div
 							variants={overlayAnim}
-							initial={!isMobile ? "initial" : "mobile"}
 							animate={controls}
-							onHoverStart={() =>
-								controls.start(!isMobile ? "initial" : "mobile")
-							}
-							onHoverEnd={() =>
-								controls.start(!isMobile ? "hover" : "mobile")
-							}
+							onHoverStart={() => controls.start("hover")}
+							onHoverEnd={() => controls.start("initial")}
 							className="absolute top-0 left-0 w-full h-full bg"
 						/>
 						<motion.div
 							variants={titleAnim}
-							initial={!isMobile ? "initial" : "hover"}
 							animate={controls}
 							onHoverStart={() => controls.start("hover")}
-							onHoverEnd={() =>
-								controls.start(!isMobile ? "initial" : "hover")
-							}
-							className={`absolute top-0 left-0 w-full h-full p-3 lg:p-17 flex flex-col gap-0 lg:gap-2 justify-end items-start ${
-								isMobile && "dropShadow"
-							}`}
+							onHoverEnd={() => controls.start("initial")}
+							className={`absolute top-0 left-0 w-full h-full p-9 sm:p-12 lg:p-16 flex flex-col gap-0 lg:gap-0.5 justify-end items-start`}
 						>
-							<p className="text-white text-sm">
+							<p className="text-white text-base">
 								{project.client}
 							</p>
-							<p className="text-2xl lg:text-5xl text-white lg:w-3/5 thumbnailTitle">
+							<p className="text-2xl sm:text-5xl text-white sm:w-4/6 thumbnailTitle font-migra">
 								{title}
 							</p>
 						</motion.div>

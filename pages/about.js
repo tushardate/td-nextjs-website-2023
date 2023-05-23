@@ -45,26 +45,26 @@ export default function About({ about }) {
 					initial="initial"
 					animate="animate"
 					exit="exit"
-					className="px-3 my-32 lg:my-40 font-ppmori"
+					className="my-32 lg:mt-48 mb-16 font-ppmori"
 				>
-					<div className="px-3 lg:px-16 text-lg">
-						<div className="headline lg:-ml-2 pb-12">
-							<p className="ml-auto lg:w-5/6 text-8xl font-neuemachina aboutHeadline">
+					<div className="px-6 lg:px-16 text-xl">
+						<div className="headline lg:-ml-2 pb-8">
+							<p className="ml-auto lg:w-3/4 text-8xl font-migra aboutHeadline">
 								{headline}
 							</p>
 						</div>
 						<div className="contact">
 							<div className="lg:flex">
-								<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">
+								<p className="text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-8 pb-3">
 									Contact
 								</p>
-								<div className="lg:w-5/6  border-b lg:py-12 pb-12">
+								<div className="lg:w-3/4 border-b lg:py-8 pb-8">
 									<a
 										className="hover:text-tdblue"
 										href={`tel:+1-${phone}`}
 									>
 										<p
-											className="lg:pb-6"
+											className="lg:pb-4"
 											onMouseOver={() =>
 												setCursorType("phone")
 											}
@@ -80,7 +80,7 @@ export default function About({ about }) {
 										href={`mailto:${email}`}
 									>
 										<p
-											className="lg:pb-6"
+											className="lg:pb-4"
 											onMouseOver={() =>
 												setCursorType("email")
 											}
@@ -97,7 +97,7 @@ export default function About({ about }) {
 										target="_blank"
 									>
 										<p
-											className="lg:pb-6"
+											className="lg:pb-8"
 											onMouseOver={() =>
 												setCursorType("arrowTopRight")
 											}
@@ -113,21 +113,21 @@ export default function About({ about }) {
 						</div>
 						<div className="bio">
 							<div className="lg:flex pt-12 lg:pt-0">
-								<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">
+								<p className="text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-16 pb-3">
 									About
 								</p>
 								<p
-									className="lg:w-5/6 lg:col-count-2 c-gap border-b lg:py-12 pb-12"
+									className="lg:w-3/4 lg:col-count-2 c-gap border-b lg:py-16 pb-12"
 									dangerouslySetInnerHTML={{ __html: bio }}
 								></p>
 							</div>
 						</div>
 						<div className="experience">
 							<div className="lg:flex pt-12 lg:pt-0">
-								<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">
+								<p className="text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-16 pb-3">
 									Experience
 								</p>
-								<div className="lg:w-5/6 lg:col-count-2 c-gap border-b lg:py-12 pb-12">
+								<div className="lg:w-3/4 lg:col-count-2 c-gap border-b lg:py-16 pb-12">
 									{workExperience.map((exp, i) => {
 										return (
 											<div
@@ -149,10 +149,10 @@ export default function About({ about }) {
 						</div>
 						<div className="brands">
 							<div className="lg:flex pt-12 lg:pt-0">
-								<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">
+								<p className="text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-16 pb-3">
 									Brands
 								</p>
-								<div className="lg:w-5/6 md:col-count-2 lg:col-count-3 c-gap border-b lg:py-12 pb-12">
+								<div className="lg:w-3/4 md:col-count-2 lg:col-count-3 c-gap border-b lg:py-16 pb-12">
 									{clients.map((client, j) => {
 										return (
 											<div className="" key={j}>
@@ -165,10 +165,10 @@ export default function About({ about }) {
 						</div>
 						<div className="awards">
 							<div className="lg:flex pt-12 lg:pt-0">
-								<p className="text-2xl lg:text-lg lg:w-1/6 lg:py-12 pb-3">
+								<p className="text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-16 pb-3">
 									Recognition
 								</p>
-								<div className="lg:w-5/6 lg:col-count-3 c-gap border-b lg:py-12 pb-12">
+								<div className="lg:w-3/4 lg:col-count-3 c-gap  lg:py-16 pb-12">
 									{awardList.map((aw, k) => {
 										return (
 											<div className="" key={k}>

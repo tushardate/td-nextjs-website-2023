@@ -33,7 +33,7 @@ export default function ImageCompare({ before, after }) {
 		<motion.div
 			initial="initial"
 			animate="animate"
-			className="imageCompareWrapper"
+			className="imageCompareWrapper overflow-hidden rounded-lg"
 		>
 			<img className="image image-before" src={`${before}tr=w-1920`} />
 			<div className="image-after-wrapper">

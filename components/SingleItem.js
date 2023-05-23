@@ -2,14 +2,13 @@ import ImageCompare from "./ImageCompare";
 import Player from "./Player";
 import { motion } from "framer-motion";
 import { singleItemAnim } from "./animation/animations";
+import ImageLoader from "./ImageLoader";
 
 export default function SingleItem({ data }) {
 	return <RenderSingle data={data}></RenderSingle>;
 }
 
 function RenderSingle({ data }) {
-	
-
 	if (data.fieldGroupName === "Project_Project_sections_Items_Text") {
 		if (data.content !== "") {
 			return (
@@ -33,7 +32,8 @@ function RenderSingle({ data }) {
 				viewport={singleItemAnim.viewport}
 				className={`single-item ${data.imageClasses}`}
 			>
-				<img src={data.url} alt="" />
+				<ImageLoader src={data.url} />
+				{/* <img src={data.url} alt="" /> */}
 			</motion.div>
 		);
 	} else if (data.fieldGroupName === "Project_Project_sections_Items_Video") {
@@ -43,7 +43,7 @@ function RenderSingle({ data }) {
 				initial="initial"
 				whileInView="whileInView"
 				viewport={singleItemAnim.viewport}
-				className={`single-item ${data.videoClasses}`}
+				className={`single-item ${data.videoClasses} overflow-hidden rounded-xl`}
 			>
 				<Player url={data.url} poster={data.poster} type={data.type} />
 			</motion.div>
