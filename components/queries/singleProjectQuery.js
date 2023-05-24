@@ -24,6 +24,7 @@ export const query = `query getProjectBySlug($slug: ID!) {
               poster
               videoClasses
               type
+              ratio
             }
             ...on Project_Project_sections_Items_Embed {
               content

@@ -11,10 +11,10 @@ export default function App({ Component, pageProps, router }) {
 			<Cursor />
 			<AnimatePresence
 				mode="wait"
-				initial={false}
+				// initial={false}
 				onExitComplete={() => {
 					window.scrollTo(0, 0);
-					// setCursorType("default");
+					setCursorType("default");
 				}}
 			>
 				<Component {...pageProps} key={router.asPath} />

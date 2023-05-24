@@ -9,11 +9,11 @@ export default function Footer() {
 				initial="initial"
 				animate="animate"
 				exit="exit"
-				className="px-16 pt-16 pb-8 w-full flex justify-between text-sm uppercase opacity-30"
+				className="px-16 pt-16 pb-8 w-full flex justify-between text-sm uppercase text-white-50"
 			>
-				<p>tushardate@gmail.com</p>
-				<p>720-292-0384</p>
-				<p>© 2023 Tushar Date</p>
+				<p className="opacity-50">tushardate@gmail.com</p>
+				<p className="opacity-50">720-292-0384</p>
+				<p className="opacity-50">© 2023 Tushar Date</p>
 			</motion.div>
 		</>
 	);
