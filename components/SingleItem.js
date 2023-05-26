@@ -3,6 +3,7 @@ import Player from "./Player";
 import { motion } from "framer-motion";
 import { singleItemAnim } from "./animation/animations";
 import ImageLoader from "./ImageLoader";
+import TDCarousel from "./TDCarousel";
 
 export default function SingleItem({ data }) {
 	return <RenderSingle data={data}></RenderSingle>;
@@ -103,6 +104,14 @@ function RenderSingle({ data }) {
 			>
 				<ImageCompare before={data.urlLeft} after={data.urlRight} />
 			</motion.div>
+		);
+	} else if (
+		data.fieldGroupName === "Project_Project_sections_Items_Carousel"
+	) {
+		return (
+			<div className={`single-item`}>
+				<TDCarousel images={data.images} />
+			</div>
 		);
 	} else {
 		return null;

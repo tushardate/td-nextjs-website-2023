@@ -16,7 +16,8 @@ function Cursor() {
 	const [cSize, setCSize] = useState(64);
 	const mouseX = useMotionValue(-100);
 	const mouseY = useMotionValue(-100);
-	const springOptions = { damping: 150, stiffness: 2500 };
+	// const springOptions = { damping: 150, stiffness: 2500 };
+	const springOptions = { damping: 110, stiffness: 2500 };
 	const springX = useSpring(mouseX, springOptions);
 	const springY = useSpring(mouseY, springOptions);
 	const scale = useSpring(1, springOptions);
@@ -54,14 +55,14 @@ function Cursor() {
 
 	useEffect(() => {
 		if (cursorType === "default") {
-			scale.set(0.25);
+			scale.set(0.1875);
 		} else {
 			scale.set(1);
 		}
 
 		const handleMouseDown = () => {
 			if (cursorType === "default") {
-				scale.set(0.25);
+				scale.set(0.1875);
 			} else {
 				scale.set(0.9);
 			}
@@ -69,7 +70,7 @@ function Cursor() {
 
 		const handleMouseUp = () => {
 			if (cursorType === "default") {
-				scale.set(0.25);
+				scale.set(0.1875);
 			} else {
 				scale.set(1);
 			}

@@ -11,9 +11,9 @@ export default function Footer() {
 				exit="exit"
 				className="px-16 pt-16 pb-8 w-full flex justify-between text-sm uppercase text-white-50"
 			>
-				<p className="opacity-50">tushardate@gmail.com</p>
-				<p className="opacity-50">720-292-0384</p>
-				<p className="opacity-50">© 2023 Tushar Date</p>
+				<p className="opacity-30">tushardate@gmail.com</p>
+				<p className="opacity-30">720-292-0384</p>
+				<p className="opacity-30">© 2023 Tushar Date</p>
 			</motion.div>
 		</>
 	);
