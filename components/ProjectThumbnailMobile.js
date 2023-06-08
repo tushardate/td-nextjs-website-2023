@@ -22,12 +22,12 @@ function ProjectThumbnailMobile(props) {
 					<div className="w-full h-full">
 						<div className="absolute top-0 left-0 w-full h-full bg" />
 						<div
-							className={`absolute top-0 left-0 w-full h-full p-4 sm:p-12 lg:p-17 flex flex-col gap-0 lg:gap-2 justify-end items-start`}
+							className={`absolute top-0 left-0 w-full h-full p-6 lg:p-12 flex flex-col gap-0 lg:gap-2 justify-end items-start`}
 						>
-							<p className="text-white text-sm ml-0.5">
+							<p className="text-white text-base">
 								{project.client}
 							</p>
-							<p className="text-2xl sm:text-5xl text-white sm:w-4/6 thumbnailTitle">
+							<p className="text-3xl sm:text-5xl text-white sm:w-4/6 thumbnailTitle font-migra">
 								{title}
 							</p>
 						</div>
