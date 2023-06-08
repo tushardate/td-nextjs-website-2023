@@ -133,3 +133,11 @@
 		transform: translatey(0rem);
 	}
 }
+
+.line-above {
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	background-color: #fff;
+	top: 0;
+}

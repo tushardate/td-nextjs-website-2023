@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { query } from "@components/queries/singleProjectQuery.js";
@@ -15,6 +16,7 @@ import { useEffect, useState } from "react";
 import { useWindowSize } from "@react-hook/window-size";
 import Footer from "@components/Footer";
 import Header from "@components/Header";
+import TDSplitText from "@components/TDSplitText";
 
 export default function Project({
 	singleProjectData,
@@ -117,16 +119,18 @@ export default function Project({
 								viewport={singleItemAnim.viewport}
 								className="lg:w-6/12"
 							>
-								<p className="headline text-5xl leading-tighter py-6 lg:py-0">
-									{headline ? headline : title}
-								</p>
+								<div className="headline text-5xl leading-tighter py-6 lg:py-0">
+									<TDSplitText>
+										{headline ? headline : title}
+									</TDSplitText>
+								</div>
 							</motion.div>
 							<motion.div
 								variants={singleItemAnim}
 								initial="initial"
 								whileInView="whileInView"
 								viewport={singleItemAnim.viewport}
-								className="lg:w-4/12"
+								className="lg:w-4/12 summary"
 							>
 								<p className="lg:text-xl pb-8">{summary}</p>
 								<p>{`Role: ${role}`}</p>
