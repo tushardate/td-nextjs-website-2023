@@ -14,13 +14,13 @@ export default function PrevNext(props) {
 	return (
 		<motion.div
 			variants={fadeIn}
-			className="z-50 px-16 pt-16 flex justify-between font-migra text-8xl"
+			className="z-50 px-4 md:px-16 pt-4 md:pt-16 flex justify-between font-migra text-5xl md:text-8xl"
 		>
 			<Link
 				as={`/projects/${prev.slug}`}
 				href="/projects/[slug]"
 				scroll={false}
-				className="pt-8 pr-8 pb-8"
+				className="pt-4 pr-4 pb-4 md:pt-8 md:pr-8 md:pb-8"
 				onMouseEnter={() => setCursorType("arrowLeft")}
 				onMouseLeave={() => setCursorType("default")}
 			>
@@ -37,7 +37,7 @@ export default function PrevNext(props) {
 				as={`/projects/${next.slug}`}
 				href="/projects/[slug]"
 				scroll={false}
-				className="pl-8 pt-8 pb-8"
+				className="pl-4 pt-4 pb-4 md:pl-8 md:pt-8 md:pb-8"
 				onMouseEnter={() => setCursorType("arrowRight")}
 				onMouseLeave={() => setCursorType("default")}
 			>
