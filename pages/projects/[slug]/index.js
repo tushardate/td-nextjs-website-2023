@@ -133,13 +133,13 @@ export default function Project({
 							</motion.div>
 						</div>
 
-						<div className="project-details-wrapper mt-12 lg:mt-20 grid gap-4">
-							<div className="w-full grid gap-24 text-xl">
+						<div className="project-details-wrapper">
+							<div className="w-full text-xl relative">
 								{sections.map((section, i) => {
 									return (
-										<div className={`grid`} key={i}>
+										<div className={``} key={i}>
 											<div
-												className={`w-full ${section.sectionClasses}`}
+												className={`w-full mt-28 ${section.sectionClasses}`}
 											>
 												{section.items.map(
 													(item, j) => {

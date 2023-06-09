@@ -55,7 +55,7 @@ export default function About({ about }) {
 						</div>
 						<div className="contact">
 							<div className="lg:flex">
-								<p className="text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-8 pb-3">
+								<p className="opacity-30 text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-8 pb-3">
 									Contact
 								</p>
 								<div className="lg:w-3/4 border-b lg:py-8 pb-8">
@@ -113,7 +113,7 @@ export default function About({ about }) {
 						</div>
 						<div className="bio">
 							<div className="lg:flex pt-12 lg:pt-0">
-								<p className="text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-16 pb-3">
+								<p className="opacity-30 text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-16 pb-3">
 									About
 								</p>
 								<p
@@ -124,7 +124,7 @@ export default function About({ about }) {
 						</div>
 						<div className="experience">
 							<div className="lg:flex pt-12 lg:pt-0">
-								<p className="text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-16 pb-3">
+								<p className="opacity-30 text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-16 pb-3">
 									Experience
 								</p>
 								<div className="lg:w-3/4 lg:col-count-2 c-gap border-b lg:py-16 pb-12">
@@ -149,7 +149,7 @@ export default function About({ about }) {
 						</div>
 						<div className="brands">
 							<div className="lg:flex pt-12 lg:pt-0">
-								<p className="text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-16 pb-3">
+								<p className="opacity-30 text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-16 pb-3">
 									Brands
 								</p>
 								<div className="lg:w-3/4 md:col-count-2 lg:col-count-3 c-gap border-b lg:py-16 pb-12">
@@ -165,7 +165,7 @@ export default function About({ about }) {
 						</div>
 						<div className="awards">
 							<div className="lg:flex pt-12 lg:pt-0">
-								<p className="text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-16 pb-3">
+								<p className="opacity-30 text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-16 pb-3">
 									Recognition
 								</p>
 								<div className="lg:w-3/4 lg:col-count-3 c-gap  lg:py-16 pb-12">

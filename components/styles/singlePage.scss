@@ -53,3 +53,18 @@
 .safari-fix {
 	-webkit-mask-image: -webkit-radial-gradient(white, black);
 }
+
+
+//****** CAROUSEL *********//
+
+:root {
+	--swiper-theme-color: white !important;
+}
+
+.swiper-button-next, .swiper-button-prev {
+	mix-blend-mode: difference;
+}
+
+.swiper-pagination-bullet-active {
+	mix-blend-mode: difference;
+}

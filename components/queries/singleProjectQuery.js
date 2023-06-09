@@ -37,6 +37,12 @@ export const query = `query getProjectBySlug($slug: ID!) {
               imageCompareClasses
               fieldGroupName
             }
+            ... on Project_Project_sections_Items_Carousel {
+              fieldGroupName
+              images {
+                image
+              }
+            }
           }
         }
         password {
