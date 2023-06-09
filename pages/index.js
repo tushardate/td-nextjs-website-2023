@@ -30,7 +30,7 @@ export default function Home({ projects }) {
 					initial="initial"
 					animate="animate"
 					exit="exit"
-					className="px-16 mt-24 lg:mt-40 font-ppmori"
+					className="px-16 mt-24 lg:mt-32 font-ppmori"
 				>
 					{/* <div className="font-migra text-8xl leading-11 pb-4 pt-8">Work</div> */}
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4">

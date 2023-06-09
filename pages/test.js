@@ -1,26 +1,19 @@
 import Layout from "@components/Layout";
-import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
-import { useEffect, useRef, useState } from "react";
-import { motion, stagger, useAnimate } from "framer-motion";
-import TDCustomSplitText from "@components/TDCustomSplitText";
+import TDSplitText from "@components/TDSplitText";
 
 export default function Test() {
-	const [scope, animate] = useAnimate();
-	const ref = useRef(null);
-	const [isSplit, setIsSplit] = useState(false);
-
-	useEffect(() => {}, []);
-
-	useEffect(() => {
-		if (isSplit) {
-			scope.current = ref.current;
-			animate('.td__word', {y: 100}, {delay: stagger(0.04)})
-		}
-	}, [isSplit]);
-
 	return (
-		<div ref={ref} className="relative">
-			<TDCustomSplitText text={"There are"} onComplete={setIsSplit} />
-		</div>
+		<Layout>
+			<div className="min-h-screen">
+				<div className="min-w-screen bg-red-600 h-48"></div>
+				<TDSplitText>
+					The SplitType class splits the text content of the target
+					elements using the provided options. It returns a SplitType
+					instance which provides access to the split text nodes. By
+					default, text will be split into lines, words, and
+					characters, using relative position.
+				</TDSplitText>
+			</div>
+		</Layout>
 	);
 }
