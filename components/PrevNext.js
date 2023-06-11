@@ -2,9 +2,7 @@ import Link from "next/link";
 import { useCursorStore } from "./GlobalStore";
 import { motion } from "framer-motion";
 import {
-	pageTransition,
-	fadeIn,
-	singleItemAnim,
+	prevNextAnim,
 } from "@components/animation/animations";
 
 export default function PrevNext(props) {
@@ -12,10 +10,7 @@ export default function PrevNext(props) {
 	const { setCursorType } = useCursorStore();
 
 	return (
-		<motion.div
-			variants={fadeIn}
-			className="z-50 px-4 md:px-16 pt-4 md:pt-16 flex justify-between font-migra text-5xl md:text-8xl"
-		>
+		<motion.div className="z-50 px-4 md:px-16 pt-4 md:pt-8 flex justify-between font-migra text-5xl md:text-8xl">
 			<Link
 				as={`/projects/${prev.slug}`}
 				href="/projects/[slug]"
@@ -25,8 +20,10 @@ export default function PrevNext(props) {
 				onMouseLeave={() => setCursorType("default")}
 			>
 				<motion.span
+					variants={prevNextAnim}
 					initial="initial"
-					animate="animate"
+					whileInView="whileInView"
+					viewport={prevNextAnim.viewport}
 					exit="exit"
 					className="inline-block"
 				>
@@ -42,8 +39,10 @@ export default function PrevNext(props) {
 				onMouseLeave={() => setCursorType("default")}
 			>
 				<motion.span
+					variants={prevNextAnim}
 					initial="initial"
-					animate="animate"
+					whileInView="whileInView"
+					viewport={prevNextAnim.viewport}
 					exit="exit"
 					className="inline-block"
 				>

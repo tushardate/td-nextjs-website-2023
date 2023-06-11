@@ -36,6 +36,8 @@ export default function Project({
 	const [winW, winH] = useWindowSize();
 	const [height, setHeight] = useState("100vw");
 
+	console.log(thumbnailVideo)
+
 	useEffect(() => {
 		if (winW / winH < 1) {
 			setHeight(`max(100vw, 80vh)`);
@@ -88,6 +90,7 @@ export default function Project({
 								<>
 									<div className="absolute inset-0 bg-black opacity-40" />
 									<img
+										fetchpriority="high"
 										className="object-cover w-full h-full"
 										src={`${thumbnailImage}tr=w-1920`}
 										alt=""
@@ -109,7 +112,7 @@ export default function Project({
 						variants={pageTransition}
 						className="w-full p-4 md:px-16 md:pt-18"
 					>
-						<div className="project-details-wrapper md:flex justify-between">
+						<div className="project-details-wrapper md:flex justify-between mb-16">
 							<motion.div
 								variants={singleItemAnim}
 								initial="initial"
@@ -128,7 +131,9 @@ export default function Project({
 								viewport={singleItemAnim.viewport}
 								className="md:w-4/12"
 							>
-								<p className="text-xl pb-6 md:pb-8">{summary}</p>
+								<p className="text-xl pb-6 md:pb-8">
+									{summary}
+								</p>
 								<p>{`Role: ${role}`}</p>
 							</motion.div>
 						</div>
@@ -139,7 +144,7 @@ export default function Project({
 									return (
 										<div className={``} key={i}>
 											<div
-												className={`w-full mt-10 md:mt-28 ${section.sectionClasses}`}
+												className={`w-full mt-16 ${section.sectionClasses}`}
 											>
 												{section.items.map(
 													(item, j) => {

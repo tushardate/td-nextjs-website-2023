@@ -65,19 +65,17 @@ module.exports = {
 	},
 	plugins: [require("tailwindcss-multi-column")()],
 	safelist: [
-		{ pattern: /^w-.*/ },
-		{ pattern: /^justify-.*/ },
-		{ pattern: /^items-.*/ },
-		{ pattern: /^self-.*/ },
-		{ pattern: /^gap-.*/ },
-		{ pattern: /^place-.*/ },
-		{ pattern: /^grid-.*/ },
-		{ pattern: /^max-.*/ },
-		{ pattern: /^p[tmrb]-.*/ },
-		{ pattern: /^m[tmrb]-.*/ },
+		{
+			pattern:
+				/^(w|justify|items|self|gap|place|grid|flex|max|row|col|text|order)-.*/,
+			variants: ["md", "lg"],
+		},
+		{ pattern: /^p[tmrbxy]-.*/, variants: ["md", "lg"] },
+		{ pattern: /^m[tmrbxy]-.*/, variants: ["md", "lg"] },
 		"text-center",
 		"text-left",
 		"text-justify",
 		"text-right",
+		"bg-red-500"
 	],
 };

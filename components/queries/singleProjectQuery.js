@@ -42,6 +42,7 @@ export const query = `query getProjectBySlug($slug: ID!) {
               images {
                 image
               }
+              slidesPerView
             }
           }
         }
