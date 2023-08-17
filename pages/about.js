@@ -202,5 +202,6 @@ export async function getStaticProps() {
 		props: {
 			about: data.pageBy.about,
 		},
+		revalidate: 1,
 	};
 }
