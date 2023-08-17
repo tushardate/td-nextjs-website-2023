@@ -68,7 +68,7 @@ function ProjectThumbnail(props) {
 							<p className="text-white text-base">
 								{project.client}
 							</p>
-							<p className="text-3xl sm:text-5xl text-white sm:w-4/6 thumbnailTitle font-migra">
+							<p className="text-3xl sm:text-5xl text-white sm:w-5/6 thumbnailTitle font-migra">
 								{title}
 							</p>
 						</motion.div>

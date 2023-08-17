@@ -36,7 +36,7 @@ export default function Project({
 	const [winW, winH] = useWindowSize();
 	const [height, setHeight] = useState("100vw");
 
-	console.log(thumbnailVideo)
+	console.log(thumbnailVideo);
 
 	useEffect(() => {
 		if (winW / winH < 1) {
@@ -101,10 +101,14 @@ export default function Project({
 
 						<motion.div
 							variants={pageTransition}
-							className="md:w-4/5 absolute left-0 bottom-0 px-4 py-10 md:p-16 text-white"
+							className="md:w-5/6 absolute left-0 bottom-0 px-4 py-10 md:p-16 text-white"
 						>
 							<p className="md:text-2xl mb-2 lg:mb-4">{`${client}`}</p>
-							<p className="md:w-4/5 text-8xl font-migra title text-white">{`${title}`}</p>
+							{/* <p
+								dangerouslySetInnerHTML={{ __html: title }}
+								className="md:w-4/5 text-8xl font-migra title text-white"
+							></p> */}
+							<p className="text-8xl font-migra title text-white">{`${title}`}</p>
 						</motion.div>
 					</motion.div>
 

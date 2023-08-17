@@ -44,7 +44,7 @@ export const fadeIn = {
 };
 
 export const singleItemAnim = {
-	initial: { opacity: 0, y: 48 },
+	initial: { opacity: 0, y: 32 },
 	whileInView: {
 		opacity: 1,
 		y: 0,
