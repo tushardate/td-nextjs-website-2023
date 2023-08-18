@@ -202,7 +202,7 @@ export async function getStaticProps({ params }) {
 			next: allProjects[nextIdx],
 			prev: allProjects[prevIdx],
 		},
-		revalidate: 1,
+		revalidate: 2,
 	};
 }
 
