@@ -57,7 +57,7 @@ export default function Project({
 					initial="initial"
 					animate="animate"
 					exit="exit"
-					className="font-ppmori"
+					className="font-ppmori font-thin"
 				>
 					<motion.div
 						variants={fadeIn}
