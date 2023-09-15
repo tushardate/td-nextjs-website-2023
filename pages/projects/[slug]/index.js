@@ -36,8 +36,6 @@ export default function Project({
 	const [winW, winH] = useWindowSize();
 	const [height, setHeight] = useState("100vw");
 
-	console.log(thumbnailVideo);
-
 	useEffect(() => {
 		if (winW / winH < 1) {
 			setHeight(`max(100vw, 80vh)`);
@@ -57,7 +55,7 @@ export default function Project({
 					initial="initial"
 					animate="animate"
 					exit="exit"
-					className="font-ppmori font-thin"
+					className="font-ppmori"
 				>
 					<motion.div
 						variants={fadeIn}

@@ -9,33 +9,25 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-export default function TDCarousel({ images, slidesPerView }) {
-	const init = {
-		sm: 1,
-		md: 2,
-		lg: 3,
-	};
-	const sm = 640;
-	const md = 768;
-	const lg = 1024;
-	const spv = { ...init, ...JSON.parse(slidesPerView) };
-	const win = useWindowWidth();
-	const [numberOfSlides, setNumberOfSlides] = useState(1);
+export default function TDCarousel({ images, slidesPerBreakpoint }) {
+	const winWidth = useWindowWidth();
+	const [numberOfSlides, setNumberOfSlides] = useState(3);
 	const [showNavigation, setShowNavigation] = useState(true);
 
 	useEffect(() => {
-		if (win > sm && win < md) {
-			setNumberOfSlides(Number(spv.sm));
-		} else if (win > md && win < lg) {
-			setNumberOfSlides(Number(spv.md));
-		} else if (win > lg) {
-			setNumberOfSlides(Number(spv.lg));
+		console.log(winWidth)
+		if (winWidth < 768) {
+			setNumberOfSlides(slidesPerBreakpoint.small);
+		} else if (winWidth >= 768 && winWidth < 1024) {
+			setNumberOfSlides(slidesPerBreakpoint.medium);
+		} else if (winWidth >= 1024 && winWidth < 1536) {
+			setNumberOfSlides(slidesPerBreakpoint.large);
+		}  else if (winWidth >= 1536) {
+			setNumberOfSlides(slidesPerBreakpoint.large + 1);
 		} else {
-			setNumberOfSlides(Number(1));
+			setNumberOfSlides(3);
 		}
-
-		console.log(numberOfSlides, win, spv, slidesPerView);
-	}, [win]);
+	}, [winWidth]);
 
 	useEffect(() => {
 		numberOfSlides < 2 ? setShowNavigation(false) : setShowNavigation(true);

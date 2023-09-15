@@ -117,7 +117,7 @@ export default function About({ about }) {
 									About
 								</p>
 								<p
-									className="lg:w-3/4 lg:col-count-2 c-gap border-b lg:py-16 pb-12"
+									className="lg:w-3/4 border-b lg:py-16 pb-12"
 									dangerouslySetInnerHTML={{ __html: bio }}
 								></p>
 							</div>

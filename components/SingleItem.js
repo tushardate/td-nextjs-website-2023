@@ -114,11 +114,11 @@ function RenderSingle({ data }) {
 				initial="initial"
 				whileInView="whileInView"
 				viewport={singleItemAnim.viewport}
-				className={`single-item`}
+				className={`single-item ${data.carouselClasses}`}
 			>
 				<TDCarousel
 					images={data.images}
-					slidesPerView={data.slidesPerView}
+                    slidesPerBreakpoint={data.slidesPerBreakpoint}
 				/>
 			</motion.div>
 		);
