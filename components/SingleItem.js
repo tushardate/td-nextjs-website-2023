@@ -4,12 +4,16 @@ import { motion } from "framer-motion";
 import { singleItemAnim } from "./animation/animations";
 import ImageLoader from "./ImageLoader";
 import TDCarousel from "./TDCarousel";
+import { useWindowWidth } from "@react-hook/window-size";
 
 export default function SingleItem({ data }) {
-	return <RenderSingle data={data}></RenderSingle>;
+	// Using window size here for the TDCarousel. It won't read the window size inside the TDCarousel component. Wierd.
+	const width = useWindowWidth();
+
+	return <RenderSingle data={data} winWidth={width}></RenderSingle>;
 }
 
-function RenderSingle({ data }) {
+function RenderSingle({ data, winWidth }) {
 	if (data.fieldGroupName === "Project_Project_sections_Items_Text") {
 		if (data.content !== "") {
 			return (
@@ -109,8 +113,12 @@ function RenderSingle({ data }) {
 		data.fieldGroupName === "Project_Project_sections_Items_Carousel"
 	) {
 		return (
-			<div className={`single-item`}>
-				<TDCarousel images={data.images} />
+			<div className={`single-item ${data.carouselClasses}`}>
+				<TDCarousel
+					images={data.images}
+					slidesPerBreakpoint={data.slidesPerBreakpoint}
+					winWidth={winWidth}
+				/>
 			</div>
 		);
 	} else {
