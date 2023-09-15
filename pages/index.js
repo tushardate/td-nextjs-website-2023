@@ -30,23 +30,16 @@ export default function Home({ projects }) {
 					initial="initial"
 					animate="animate"
 					exit="exit"
-					className="px-16 mt-24 lg:mt-32 font-ppmori"
+					className="px-4 md:px-16 mt-18 md:mt-32 font-ppmori"
 				>
-					{/* <div className="font-migra text-8xl leading-11 pb-4 pt-8">Work</div> */}
-					<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4">
+					<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-16 lg:gap-4">
 						{projects.map((project, i) => {
-							// return isMobile ? (
-							// 	<ProjectThumbnailMobile
-							// 		key={project.id}
-							// 		data={{ ...project }}
-							// 	/>
-							// ) : (
-							// 	<ProjectThumbnail
-							// 		key={project.id}
-							// 		data={{ ...project }}
-							// 	/>
-							// );
-							return (
+							return isMobile ? (
+								<ProjectThumbnailMobile
+									key={project.id}
+									data={{ ...project }}
+								/>
+							) : (
 								<ProjectThumbnail
 									key={project.id}
 									data={{ ...project }}
@@ -76,5 +69,6 @@ export async function getStaticProps() {
 		props: {
 			projects: data.projects.nodes,
 		},
+		revalidate: 1,
 	};
 }

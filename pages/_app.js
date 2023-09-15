@@ -8,7 +8,7 @@ export default function App({ Component, pageProps, router }) {
 
 	return (
 		<>
-			<Cursor />
+			{/* <Cursor /> */}
 			<AnimatePresence
 				mode="wait"
 				// initial={false}

@@ -88,6 +88,7 @@ export default function Project({
 								<>
 									<div className="absolute inset-0 bg-black opacity-40" />
 									<img
+										fetchpriority="high"
 										className="object-cover w-full h-full"
 										src={`${thumbnailImage}tr=w-1920`}
 										alt=""
@@ -98,26 +99,30 @@ export default function Project({
 
 						<motion.div
 							variants={pageTransition}
-							className="w-4/5 absolute left-0 bottom-0 p-6 lg:px-16 lg:py-16 text-white"
+							className="md:w-5/6 absolute left-0 bottom-0 px-4 py-10 md:p-16 text-white"
 						>
-							<p className="lg:text-2xl mb-2 lg:mb-4">{`${client}`}</p>
-							<p className="lg:w-4/5 text-8xl -ml-1 font-migra title text-white">{`${title}`}</p>
+							<p className="md:text-2xl mb-2 lg:mb-4">{`${client}`}</p>
+							{/* <p
+								dangerouslySetInnerHTML={{ __html: title }}
+								className="md:w-4/5 text-8xl font-migra title text-white"
+							></p> */}
+							<p className="text-8xl font-migra title text-white">{`${title}`}</p>
 						</motion.div>
 					</motion.div>
 
 					<motion.div
 						variants={pageTransition}
-						className="w-full lg:px-16 lg:pt-18"
+						className="w-full p-4 md:px-16 md:pt-18"
 					>
-						<div className="project-details-wrapper lg:flex justify-between">
+						<div className="project-details-wrapper md:flex justify-between mb-16">
 							<motion.div
 								variants={singleItemAnim}
 								initial="initial"
 								whileInView="whileInView"
 								viewport={singleItemAnim.viewport}
-								className="lg:w-6/12"
+								className="md:w-6/12"
 							>
-								<p className="headline text-5xl leading-tighter py-6 lg:py-0">
+								<p className="headline text-5xl leading-tighter py-6 md:py-0">
 									{headline ? headline : title}
 								</p>
 							</motion.div>
@@ -126,9 +131,11 @@ export default function Project({
 								initial="initial"
 								whileInView="whileInView"
 								viewport={singleItemAnim.viewport}
-								className="lg:w-4/12"
+								className="md:w-4/12"
 							>
-								<p className="lg:text-xl pb-8">{summary}</p>
+								<p className="text-xl pb-6 md:pb-8">
+									{summary}
+								</p>
 								<p>{`Role: ${role}`}</p>
 							</motion.div>
 						</div>
@@ -139,7 +146,7 @@ export default function Project({
 									return (
 										<div className={``} key={i}>
 											<div
-												className={`w-full mt-28 ${section.sectionClasses}`}
+												className={`w-full mt-16 ${section.sectionClasses}`}
 											>
 												{section.items.map(
 													(item, j) => {
@@ -193,7 +200,7 @@ export async function getStaticProps({ params }) {
 			next: allProjects[nextIdx],
 			prev: allProjects[prevIdx],
 		},
-		revalidate: 1,
+		revalidate: 2,
 	};
 }
 
@@ -217,5 +224,5 @@ export async function getStaticPaths(params) {
 
 	// We'll pre-render only these paths at build time.
 	// { fallback: false } means other routes should 404.
-	return { paths, fallback: false };
+	return { paths, fallback: 'blocking' };
 }

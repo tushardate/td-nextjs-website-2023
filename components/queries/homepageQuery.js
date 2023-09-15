@@ -1,6 +1,6 @@
 export const query = `
 	query getProjects {
-		projects (first: 50) {
+		projects (first: 100) {
 			nodes {
 				project {
 					thumbnailImage

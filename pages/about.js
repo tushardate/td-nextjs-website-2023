@@ -47,7 +47,7 @@ export default function About({ about }) {
 					exit="exit"
 					className="my-32 lg:mt-48 mb-16 font-ppmori"
 				>
-					<div className="px-6 lg:px-16 text-xl">
+					<div className="px-4 md:px-16 text-xl">
 						<div className="headline lg:-ml-2 pb-8">
 							<p className="ml-auto lg:w-3/4 text-8xl font-migra aboutHeadline">
 								{headline}
@@ -117,7 +117,7 @@ export default function About({ about }) {
 									About
 								</p>
 								<p
-									className="lg:w-3/4 lg:col-count-2 c-gap border-b lg:py-16 pb-12"
+									className="lg:w-3/4 border-b lg:py-16 pb-12"
 									dangerouslySetInnerHTML={{ __html: bio }}
 								></p>
 							</div>
@@ -202,5 +202,6 @@ export async function getStaticProps() {
 		props: {
 			about: data.pageBy.about,
 		},
+		revalidate: 1,
 	};
 }

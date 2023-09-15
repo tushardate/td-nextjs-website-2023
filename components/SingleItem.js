@@ -109,9 +109,18 @@ function RenderSingle({ data }) {
 		data.fieldGroupName === "Project_Project_sections_Items_Carousel"
 	) {
 		return (
-			<div className={`single-item`}>
-				<TDCarousel images={data.images} />
-			</div>
+			<motion.div
+				variants={singleItemAnim}
+				initial="initial"
+				whileInView="whileInView"
+				viewport={singleItemAnim.viewport}
+				className={`single-item ${data.carouselClasses}`}
+			>
+				<TDCarousel
+					images={data.images}
+                    slidesPerBreakpoint={data.slidesPerBreakpoint}
+				/>
+			</motion.div>
 		);
 	} else {
 		return null;

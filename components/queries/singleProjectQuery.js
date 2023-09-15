@@ -42,6 +42,12 @@ export const query = `query getProjectBySlug($slug: ID!) {
               images {
                 image
               }
+              slidesPerBreakpoint {
+                small
+                medium
+                large
+              }
+              carouselClasses
             }
           }
         }

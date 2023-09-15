@@ -44,18 +44,43 @@ export const fadeIn = {
 };
 
 export const singleItemAnim = {
-	initial: { opacity: 0, y: 48, scale: 0.98},
+	initial: { opacity: 0, y: 32 },
 	whileInView: {
 		opacity: 1,
 		y: 0,
-		scale: 1,
 		transition: {
-			duration: 0.75,
-			ease: [0.33, 1, 0.68, 1],
+			// duration: 1,
+			// ease: "circInOut",
+			type: "spring",
+			stiffness: 20,
+			// ease: [0.33, 1, 0.68, 1],
 		},
 	},
 	viewport: {
-		amount: 0.2,
+		amount: 0.165,
 		once: true,
+	},
+};
+
+export const prevNextAnim = {
+	initial: { opacity: 0, y: 16 },
+	whileInView: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			type: "spring",
+			stiffness: 20,
+		},
+	},
+	viewport: {
+		amount: 0.05,
+		once: true,
+	},
+	exit: {
+		opacity: 0,
+		transition: {
+			duration: 0.5,
+			ease: [0.11, 0, 0.5, 0],
+		},
 	},
 };
