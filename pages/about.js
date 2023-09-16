@@ -52,7 +52,7 @@ export default function About({ about }) {
 					initial="initial"
 					animate="animate"
 					exit="exit"
-					className="mt-16 mb-16 font-satoshi"
+					className="pt-20 mb-16 font-satoshi font-medium"
 				>
 					<div className="px-4 md:px-6 text-xl">
 						<div className="pb-16 lg:flex">
@@ -66,7 +66,7 @@ export default function About({ about }) {
 									</div>
 								</div>
 							</div>
-							<p className="lg:w-2/3 md:w-11/12 lg:-ml-1 text-8xl aboutHeadline self-end lg:-mb-2 mt-6 lg:mt-0 lg:pr-16">
+							<p className="font-normal lg:w-2/3 md:w-11/12 lg:-ml-1 text-8xl aboutHeadline self-end lg:-mb-2 mt-6 lg:mt-0 lg:pr-16">
 								{headline}
 							</p>
 						</div>
@@ -164,22 +164,6 @@ export default function About({ about }) {
 								</div>
 							</div>
 						</div>
-						<div className="brands">
-							<div className="lg:flex pt-12 lg:pt-0">
-								<p className="text-2xl lg:text-xl uppercase lg:w-1/3 lg:py-12 pb-3 lg:text-right lg:pr-16">
-									Brands
-								</p>
-								<div className="lg:w-2/3 md:col-count-2 lg:col-count-3 c-gap lg:py-12 pb-8">
-									{clients.map((client, j) => {
-										return (
-											<div className="" key={j}>
-												<p>{client}</p>
-											</div>
-										);
-									})}
-								</div>
-							</div>
-						</div>
 						<div className="awards">
 							<div className="lg:flex pt-12 lg:pt-0">
 								<p className="text-2xl lg:text-xl uppercase lg:w-1/3 lg:py-12 pb-3 lg:text-right lg:pr-16">
@@ -190,6 +174,22 @@ export default function About({ about }) {
 										return (
 											<div className="" key={k}>
 												<p>{aw}</p>
+											</div>
+										);
+									})}
+								</div>
+							</div>
+						</div>
+						<div className="brands">
+							<div className="lg:flex pt-12 lg:pt-0">
+								<p className="text-2xl lg:text-xl uppercase lg:w-1/3 lg:py-12 pb-3 lg:text-right lg:pr-16">
+									Brands
+								</p>
+								<div className="lg:w-2/3 md:col-count-2 lg:col-count-3 c-gap lg:py-12 pb-8">
+									{clients.map((client, j) => {
+										return (
+											<div className="" key={j}>
+												<p>{client}</p>
 											</div>
 										);
 									})}

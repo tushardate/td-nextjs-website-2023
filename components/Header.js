@@ -34,7 +34,7 @@ export default function Header() {
 				variants={anim}
 				animate={hidden ? "hidden" : "visible"}
 				onMouseOver={() => setHidden(false)}
-				className="nav uppercase flex align-baseline text-white py-4 px-4 md:px-6 w-full justify-between fixed top-0 z-50 mix-blend-difference font-satoshi font-medium text-base md:text-xl"
+				className="nav flex align-baseline text-white py-4 px-4 md:px-6 w-full justify-between fixed top-0 z-50 mix-blend-difference font-satoshi font-medium text-base md:text-2xl"
 			>
 				<Link
 					href="/"
@@ -45,7 +45,7 @@ export default function Header() {
 					<div className="relative">
 						<div className="flex text-2.25xl">
 							<div className="">Tushar Date</div>
-							<span className="text-base ml-0.5">®</span>
+							{/* <span className="text-base">®</span> */}
 							{/* <div className="hidden md:block opacity-30 ml-2">
 								Creative Director
 							</div> */}
