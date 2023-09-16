@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useCursorStore } from "./GlobalStore";
 import { useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import Ticker from "./Ticker";
 
 export default function Header() {
 	const router = useRouter();
@@ -43,13 +44,17 @@ export default function Header() {
 					onMouseLeave={() => setCursorType("default")}
 				>
 					<div className="relative">
-						<div className="flex text-2.25xl">
+						<motion.div className="flex text-2.25xl">
 							<div className="">Tushar Date</div>
 							{/* <span className="text-base">®</span> */}
 							{/* <div className="hidden md:block opacity-30 ml-2">
 								Creative Director
 							</div> */}
-						</div>
+							<span className="px-2"> &middot; </span>
+							<div className="">
+								<Ticker />
+							</div>
+						</motion.div>
 					</div>
 				</Link>
 				<div className="flex menu-strikethrough">
