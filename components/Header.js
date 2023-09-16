@@ -1,14 +1,41 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useCursorStore } from "./GlobalStore";
+import { useState } from "react";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 
 export default function Header() {
 	const router = useRouter();
 	const { cursorType, setCursorType } = useCursorStore();
+	const { scrollY } = useScroll();
+	const [hidden, setHidden] = useState(false);
+
+	useMotionValueEvent(scrollY, "change", (latest) => {
+		const previous = scrollY.getPrevious();
+		if (latest > previous && latest > 24) {
+			setHidden(true);
+		} else {
+			setHidden(false);
+		}
+	});
+
+	const anim = {
+		visible: {
+			opacity: 1,
+		},
+		hidden: {
+			opacity: 0,
+		},
+	};
 
 	return (
 		<>
-			<div className="nav uppercase flex align-baseline text-white px-4 md:px-16 pt-6 md:pt-12 pb-6 w-full justify-between fixed top-0 z-50 mix-blend-difference font-ppmori text-base md:text-xl">
+			<motion.div
+				variants={anim}
+				animate={hidden ? "hidden" : "visible"}
+				onMouseOver={() => setHidden(false)}
+				className="nav uppercase flex align-baseline text-white py-4 px-4 md:px-6 w-full justify-between fixed top-0 z-50 mix-blend-difference font-satoshi font-medium text-base md:text-xl"
+			>
 				<Link
 					href="/"
 					scroll={false}
@@ -19,9 +46,9 @@ export default function Header() {
 						<div className="flex text-2.25xl">
 							<div className="">Tushar Date</div>
 							<span className="text-base ml-0.5">®</span>
-							<div className="hidden md:block opacity-30 ml-2">
+							{/* <div className="hidden md:block opacity-30 ml-2">
 								Creative Director
-							</div>
+							</div> */}
 						</div>
 					</div>
 				</Link>
@@ -57,7 +84,7 @@ export default function Header() {
 						</Link>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</>
 	);
 }

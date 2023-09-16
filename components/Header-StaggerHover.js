@@ -19,7 +19,7 @@ export default function Header() {
 
 	return (
 		<>
-			<div className="nav flex text-white px-6 py-6 w-full justify-between items-baseline fixed top-0 z-50 mix-blend-difference font-ppmori">
+			<div className="nav flex text-white px-6 py-6 w-full justify-between items-baseline fixed top-0 z-50 mix-blend-difference font-satoshi">
 				<Link
 					href="/"
 					scroll={false}
@@ -49,7 +49,7 @@ export default function Header() {
 					</div>
 				</Link>
 			</div>
-			<div className="flex gap-24 fixed top-6 right-6 z-50 font-ppmori mix-blend-difference text-black">
+			<div className="flex gap-24 fixed top-6 right-6 z-50 font-satoshi mix-blend-difference text-black">
 				{menuItems.map((el, i) => (
 					<div key={i} className="navParent">
 						<LayoutGroup>

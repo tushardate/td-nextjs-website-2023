@@ -13,8 +13,6 @@ import {
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useWindowSize } from "@react-hook/window-size";
-import Footer from "@components/Footer";
-import Header from "@components/Header";
 
 export default function Project({
 	singleProjectData,
@@ -44,6 +42,16 @@ export default function Project({
 		}
 	}, [winW, winH]);
 
+	useEffect(() => {
+		function getRandomMultiple() {
+			const randomNumber = Math.floor(Math.random() * 21);
+			const multipleOf18 = randomNumber * 18;
+			const result = Math.min(multipleOf18, 360);
+			return result;
+		}
+		document.body.style.backgroundColor = `hsl(${getRandomMultiple()}deg, 100%, 95%)`; // Set the new background color
+	}, []);
+
 	return (
 		<>
 			<Head>
@@ -55,7 +63,7 @@ export default function Project({
 					initial="initial"
 					animate="animate"
 					exit="exit"
-					className="font-ppmori"
+					className="font-satoshi"
 				>
 					<motion.div
 						variants={fadeIn}
@@ -99,20 +107,20 @@ export default function Project({
 
 						<motion.div
 							variants={pageTransition}
-							className="md:w-5/6 absolute left-0 bottom-0 px-4 py-10 md:p-16 text-white"
+							className="md:w-11/12 absolute left-0 bottom-0 p-4 md:px-6 py-6 text-white"
 						>
-							<p className="md:text-2xl mb-2 lg:mb-4">{`${client}`}</p>
+							<p className="md:text-2xl mb-1">{`${client}`}</p>
 							{/* <p
 								dangerouslySetInnerHTML={{ __html: title }}
 								className="md:w-4/5 text-8xl font-migra title text-white"
 							></p> */}
-							<p className="text-8xl font-migra title text-white">{`${title}`}</p>
+							<p className="text-8xl font-satoshi tracking-tight title text-white lg:-ml-2 -ml-1">{`${title}`}</p>
 						</motion.div>
 					</motion.div>
 
 					<motion.div
 						variants={pageTransition}
-						className="w-full p-4 md:px-16 md:pt-18"
+						className="w-full p-4 md:p-6 md:pt-18"
 					>
 						<div className="project-details-wrapper md:flex justify-between mb-16">
 							<motion.div
@@ -136,7 +144,7 @@ export default function Project({
 								<p className="text-xl pb-6 md:pb-8">
 									{summary}
 								</p>
-								<p>{`Role: ${role}`}</p>
+								<p className="text-xl">{`Role: ${role}`}</p>
 							</motion.div>
 						</div>
 
@@ -146,7 +154,7 @@ export default function Project({
 									return (
 										<div className={``} key={i}>
 											<div
-												className={`w-full mt-16 ${section.sectionClasses}`}
+												className={`w-full mt-4 md:mt-6 ${section.sectionClasses}`}
 											>
 												{section.items.map(
 													(item, j) => {
@@ -224,5 +232,5 @@ export async function getStaticPaths(params) {
 
 	// We'll pre-render only these paths at build time.
 	// { fallback: false } means other routes should 404.
-	return { paths, fallback: 'blocking' };
+	return { paths, fallback: "blocking" };
 }

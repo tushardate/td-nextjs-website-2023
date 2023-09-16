@@ -10,7 +10,7 @@ export default function PrevNext(props) {
 	const { setCursorType } = useCursorStore();
 
 	return (
-		<motion.div className="z-50 px-4 md:px-16 pt-4 md:pt-8 flex justify-between font-migra text-5xl md:text-8xl">
+		<motion.div className="z-50 px-4 pt-4 md:pt-8 flex justify-between font-satoshi tracking-ultra text-5xl md:text-8xl">
 			<Link
 				as={`/projects/${prev.slug}`}
 				href="/projects/[slug]"

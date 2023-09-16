@@ -269,6 +269,100 @@
 		font-style: normal;
 		font-display: swap;
 	}
+
+
+	@font-face {
+		font-family: 'Resist Sans Display';
+		src: url('/fonts/Resist/.woff2') format('woff2'),
+			url('/fonts/Resist/.woff') format('woff');
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+	
+	@font-face {
+		font-family: 'Resist Sans Display';
+		src: url('/fonts/Resist/ResistSansDisplay-Medium.woff2') format('woff2'),
+			url('/fonts/Resist/ResistSansDisplay-Medium.woff') format('woff');
+		font-weight: 500;
+		font-style: normal;
+		font-display: swap;
+	}
+	
+	@font-face {
+		font-family: 'Resist Sans Display';
+		src: url('/fonts/Resist/ResistSansDisplay-Regular.woff2') format('woff2'),
+			url('/fonts/Resist/ResistSansDisplay-Regular.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+	
+	@font-face {
+		font-family: 'Resist Sans Text';
+		src: url('/fonts/Resist/ResistSansText-Regular.woff2') format('woff2'),
+			url('/fonts/Resist/ResistSansText-Regular.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+	
+	@font-face {
+		font-family: 'Resist Sans Text';
+		src: url('/fonts/Resist/ResistSansText-Bold.woff2') format('woff2'),
+			url('/fonts/Resist/ResistSansText-Bold.woff') format('woff');
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+	
+	@font-face {
+		font-family: 'Resist Sans Text';
+		src: url('/fonts/Resist/ResistSansText-Medium.woff2') format('woff2'),
+			url('/fonts/Resist/ResistSansText-Medium.woff') format('woff');
+		font-weight: 500;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Satoshi';
+		src: url('/fonts/Satoshi/Satoshi-Bold.woff2') format('woff2'),
+			url('/fonts/Satoshi/Satoshi-Bold.woff') format('woff');
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+	
+	@font-face {
+		font-family: 'Satoshi';
+		src: url('/fonts/Satoshi/Satoshi-Black.woff2') format('woff2'),
+			url('/fonts/Satoshi/Satoshi-Black.woff') format('woff');
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+	
+	@font-face {
+		font-family: 'Satoshi';
+		src: url('/fonts/Satoshi/Satoshi-Regular.woff2') format('woff2'),
+			url('/fonts/Satoshi/Satoshi-Regular.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+	
+	@font-face {
+		font-family: 'Satoshi';
+		src: url('/fonts/Satoshi/Satoshi-Medium.woff2') format('woff2'),
+			url('/fonts/Satoshi/Satoshi-Medium.woff') format('woff');
+		font-weight: 500;
+		font-style: normal;
+		font-display: swap;
+	}
+	
+	
+	
 }
 
 body {
@@ -276,6 +370,7 @@ body {
 	// color: white;
 	background-color: #edece8;
 	color: #131313;
+	transition: background-color 1s ease-in-out;
 }
 
 // * {

@@ -9,11 +9,14 @@ import { motion } from "framer-motion";
 import useIsTouchDevice from "@components/hooks/useIsTouchDevice";
 import ProjectThumbnailMobile from "@components/ProjectThumbnailMobile";
 import { isMobile } from "react-device-detect";
-import Header from "@components/Header-StaggerHover";
-import Footer from "@components/Footer";
+import { useEffect } from "react";
 
 export default function Home({ projects }) {
 	const isTouchDevice = useIsTouchDevice();
+
+	useEffect(() => {
+		document.body.style.backgroundColor = `#edece8`; // Set the new background color
+	}, [])
 
 	return (
 		<>
@@ -30,9 +33,9 @@ export default function Home({ projects }) {
 					initial="initial"
 					animate="animate"
 					exit="exit"
-					className="px-4 md:px-16 mt-18 md:mt-32 font-ppmori"
+					className="px-4 md:px-6 mt-16 font-satoshi"
 				>
-					<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-16 lg:gap-4">
+					<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
 						{projects.map((project, i) => {
 							return isMobile ? (
 								<ProjectThumbnailMobile

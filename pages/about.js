@@ -5,6 +5,8 @@ import { query } from "@components/queries/aboutPageQuery.js";
 import { pageTransition } from "@components/animation/animations";
 import { motion } from "framer-motion";
 import { useCursorStore } from "@components/GlobalStore";
+import { getRandomHue } from "@components/utils/getRandomHue";
+import { useEffect } from "react";
 
 export default function About({ about }) {
 	const { setCursorType } = useCursorStore();
@@ -19,6 +21,7 @@ export default function About({ about }) {
 		awards,
 		skills,
 		edu,
+		profilePic,
 	} = about;
 
 	const filterClients = workExperience
@@ -28,6 +31,10 @@ export default function About({ about }) {
 	const clients = [...new Set(filterClients)];
 	const filterAwards = awards.map((e) => e.awardName);
 	const awardList = [...new Set(filterAwards)];
+
+	useEffect(() => {
+		document.body.style.backgroundColor = `hsl(${getRandomHue()}deg, 100%, 94%)`; // Set the new background color
+	}, []);
 
 	return (
 		<>
@@ -45,20 +52,30 @@ export default function About({ about }) {
 					initial="initial"
 					animate="animate"
 					exit="exit"
-					className="my-32 lg:mt-48 mb-16 font-ppmori"
+					className="mt-16 mb-16 font-satoshi"
 				>
-					<div className="px-4 md:px-16 text-xl">
-						<div className="headline lg:-ml-2 pb-8">
-							<p className="ml-auto lg:w-3/4 text-8xl font-migra aboutHeadline">
+					<div className="px-4 md:px-6 text-xl">
+						<div className="pb-16 lg:flex">
+							<div className="lg:w-1/3 lg:pr-16 md:max-w-[40%]">
+								<div className="profilePic relative w-full rounded-lg overflow-hidden safari-fix">
+									<div className="absolute w-full h-full">
+										<motion.img
+											className="object-cover w-full"
+											src={profilePic}
+										/>
+									</div>
+								</div>
+							</div>
+							<p className="lg:w-2/3 md:w-11/12 lg:-ml-1 text-8xl aboutHeadline self-end lg:-mb-2 mt-6 lg:mt-0 lg:pr-16">
 								{headline}
 							</p>
 						</div>
 						<div className="contact">
 							<div className="lg:flex">
-								<p className="opacity-30 text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-8 pb-3">
+								<p className="text-2xl lg:text-xl uppercase lg:w-1/3 lg:py-8 pb-3 lg:text-right lg:pr-16">
 									Contact
 								</p>
-								<div className="lg:w-3/4 border-b lg:py-8 pb-8">
+								<div className="lg:w-2/3 lg:py-8 pb-8">
 									<a
 										className="hover:text-tdblue"
 										href={`tel:+1-${phone}`}
@@ -113,21 +130,21 @@ export default function About({ about }) {
 						</div>
 						<div className="bio">
 							<div className="lg:flex pt-12 lg:pt-0">
-								<p className="opacity-30 text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-16 pb-3">
+								<p className="text-2xl lg:text-xl uppercase lg:w-1/3 lg:py-12 pb-3 lg:text-right lg:pr-16">
 									About
 								</p>
 								<p
-									className="lg:w-3/4 border-b lg:py-16 pb-12"
+									className="lg:w-2/3 lg:py-12 pb-8 lg:pr-24"
 									dangerouslySetInnerHTML={{ __html: bio }}
 								></p>
 							</div>
 						</div>
 						<div className="experience">
 							<div className="lg:flex pt-12 lg:pt-0">
-								<p className="opacity-30 text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-16 pb-3">
+								<p className="text-2xl lg:text-xl uppercase lg:w-1/3 lg:py-12 pb-3 lg:text-right lg:pr-16">
 									Experience
 								</p>
-								<div className="lg:w-3/4 lg:col-count-2 c-gap border-b lg:py-16 pb-12">
+								<div className="lg:w-2/3 lg:col-count-2 c-gap lg:py-12 pb-8">
 									{workExperience.map((exp, i) => {
 										return (
 											<div
@@ -149,10 +166,10 @@ export default function About({ about }) {
 						</div>
 						<div className="brands">
 							<div className="lg:flex pt-12 lg:pt-0">
-								<p className="opacity-30 text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-16 pb-3">
+								<p className="text-2xl lg:text-xl uppercase lg:w-1/3 lg:py-12 pb-3 lg:text-right lg:pr-16">
 									Brands
 								</p>
-								<div className="lg:w-3/4 md:col-count-2 lg:col-count-3 c-gap border-b lg:py-16 pb-12">
+								<div className="lg:w-2/3 md:col-count-2 lg:col-count-3 c-gap lg:py-12 pb-8">
 									{clients.map((client, j) => {
 										return (
 											<div className="" key={j}>
@@ -165,10 +182,10 @@ export default function About({ about }) {
 						</div>
 						<div className="awards">
 							<div className="lg:flex pt-12 lg:pt-0">
-								<p className="opacity-30 text-2xl lg:text-xl uppercase lg:w-1/4 lg:py-16 pb-3">
+								<p className="text-2xl lg:text-xl uppercase lg:w-1/3 lg:py-12 pb-3 lg:text-right lg:pr-16">
 									Recognition
 								</p>
-								<div className="lg:w-3/4 lg:col-count-3 c-gap  lg:py-16 pb-12">
+								<div className="lg:w-2/3 lg:col-count-3 c-gap  lg:py-12 pb-8">
 									{awardList.map((aw, k) => {
 										return (
 											<div className="" key={k}>

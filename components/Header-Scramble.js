@@ -22,7 +22,7 @@ export default function Header() {
 				onMouseOver={() => setCursorType("hover")}
 				onMouseLeave={() => setCursorType("default")}
 			>
-				<div className="fixed top-9 left-6 z-50 font-ppmori mix-blend-difference text-white text-xl">
+				<div className="fixed top-9 left-6 z-50 font-satoshi mix-blend-difference text-white text-xl">
 					<div className="w-9 h-9">
 						<svg
 							width="100%"
@@ -45,7 +45,7 @@ export default function Header() {
 							</div>
 						</div> */}
 			</Link>
-			<div className="flex leading-looser fixed top-9 right-6 z-50 font-ppmori mix-blend-difference text-white text-xl">
+			<div className="flex leading-looser fixed top-9 right-6 z-50 font-satoshi mix-blend-difference text-white text-xl">
 				<div
 					onMouseEnter={() => ref1.current.handleHover()}
 					onMouseLeave={() => ref1.current.handleLeave()}

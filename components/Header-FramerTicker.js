@@ -33,7 +33,7 @@ export default function Header() {
 
 	return (
 		<>
-			<div className="nav flex text-white px-6 py-6 w-full justify-between items-baseline fixed top-0 z-50 mix-blend-difference font-ppmori">
+			<div className="nav flex text-white px-6 py-6 w-full justify-between items-baseline fixed top-0 z-50 mix-blend-difference font-satoshi">
 				<Link
 					href="/"
 					scroll={false}

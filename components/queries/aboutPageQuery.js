@@ -20,6 +20,7 @@ export const query = `
 				headline
 				name
 				phone
+				profilePic
 				skills {
 					skillName
 				}
