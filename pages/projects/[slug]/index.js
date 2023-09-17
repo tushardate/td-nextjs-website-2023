@@ -34,6 +34,7 @@ export default function Project({
 
 	const [winW, winH] = useWindowSize();
 	const [height, setHeight] = useState("100vw");
+	const [revealVideo, setRevealVideo] = useState(false)
 
 	useEffect(() => {
 		if (winW / winH < 1) {
@@ -75,7 +76,7 @@ export default function Project({
 
 						<motion.div
 							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
+							animate={{ opacity: !thumbnailVideo ? 1 : revealVideo ? 1 : 0 }}
 							transition={{ duration: 1, delay: 0.5 }}
 							className="overflow-hidden w-full h-full relative"
 						>
@@ -87,6 +88,7 @@ export default function Project({
 									muted
 									loop
 									src={thumbnailVideo}
+									onCanPlayThrough={() => setRevealVideo(true)}
 								/>
 							) : (
 								<>

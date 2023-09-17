@@ -22,7 +22,7 @@ function ProjectThumbnailMobile(props) {
 					<div className="w-full h-full">
 						<div className="absolute top-0 left-0 w-full h-full bg" />
 						<div
-							className={`absolute top-0 left-0 w-full h-full p-6 lg:p-12 flex flex-col gap-0 lg:gap-2 justify-end items-start`}
+							className={`absolute top-0 left-0 w-full h-full px-6 py-5 flex flex-col gap-0 lg:gap-0.5 justify-end items-start`}
 						>
 							<p className="text-white text-base">
 								{project.client}
