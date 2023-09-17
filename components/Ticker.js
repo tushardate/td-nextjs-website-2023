@@ -11,7 +11,7 @@ const textVariants = {
 		y: 0,
 		transition: {
 			duration: 0.65,
-			ease: "easeOut",
+			ease: [0.16, 1, 0.3, 1],
 		},
 	},
 	exit: {
@@ -19,7 +19,8 @@ const textVariants = {
 		y: -3,
 		transition: {
 			duration: 0.65,
-			ease: "easeIn",
+
+			ease: [0.7, 0, 0.84, 0],
 		},
 	},
 };
@@ -32,7 +33,7 @@ const Ticker = () => {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
-		}, 4000);
+		}, 3200);
 
 		return () => clearInterval(interval);
 	}, []);

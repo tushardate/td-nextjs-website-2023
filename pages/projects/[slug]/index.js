@@ -13,6 +13,7 @@ import {
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useWindowSize } from "@react-hook/window-size";
+import { getRandomHue } from "@components/utils/getRandomHue";
 
 export default function Project({
 	singleProjectData,
@@ -43,13 +44,8 @@ export default function Project({
 	}, [winW, winH]);
 
 	useEffect(() => {
-		function getRandomMultiple() {
-			const randomNumber = Math.floor(Math.random() * 21);
-			const multipleOf18 = randomNumber * 18;
-			const result = Math.min(multipleOf18, 360);
-			return result;
-		}
-		document.body.style.backgroundColor = `hsl(${getRandomMultiple()}deg, 100%, 95%)`; // Set the new background color
+		console.log(document.body.style.backgroundColor)
+		document.body.style.backgroundColor = `hsl(${getRandomHue()}deg, 100%, 94%)`; // Set the new background color
 	}, []);
 
 	return (

@@ -15,7 +15,6 @@ export default function TDCarousel({ images, slidesPerBreakpoint }) {
 	const [showNavigation, setShowNavigation] = useState(true);
 
 	useEffect(() => {
-		console.log(winWidth)
 		if (winWidth < 768) {
 			setNumberOfSlides(slidesPerBreakpoint.small);
 		} else if (winWidth >= 768 && winWidth < 1024) {

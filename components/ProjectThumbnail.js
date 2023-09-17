@@ -1,9 +1,5 @@
 import Link from "next/link";
-import {
-	motion,
-	useAnimationControls,
-	useAnimate,
-} from "framer-motion";
+import { motion, useAnimationControls, useAnimate } from "framer-motion";
 import { useCursorStore } from "./GlobalStore";
 import { useEffect, useLayoutEffect } from "react";
 
@@ -16,8 +12,8 @@ function ProjectThumbnail(props) {
 	useEffect(() => {
 		animate(".thumbnailOverlay", { opacity: 0 }, { duration: 0.00001 });
 		animate(
-			".thumbnailInfo p",
-			{ x: -10, opacity: 0 },
+			".thumbnailInfo .client",
+			{ y: 5, opacity: 0 },
 			{ duration: 0.00001 }
 		);
 		animate(".thumbnailImage", { scale: 1 }, { duration: 0.00001 });
@@ -30,16 +26,16 @@ function ProjectThumbnail(props) {
 
 	function handleHoverStart() {
 		setCursorType("arrowBottomRight");
-		animate(".thumbnailOverlay", { opacity: 0.72 }, transition);
-		animate(".thumbnailInfo p", { x: 0, opacity: 1 }, transition);
+		animate(".thumbnailOverlay", { opacity: 0.7 }, transition);
+		animate(".thumbnailInfo .client", { y: 0, opacity: 1 }, transition);
 		animate(".thumbnailImage", { scale: 1.035 }, transition);
 	}
 
 	function handleHoverEnd() {
 		setCursorType("default");
 		animate(".thumbnailOverlay", { opacity: 0 }, transition);
-		animate(".thumbnailInfo p", { x: -10, opacity: 0 }, transition);
-		animate(".thumbnailImage", { scale: 1 }, transition);
+		animate(".thumbnailInfo .client", { y: 5, opacity: 0 }, transition);
+		animate(".thumbnailImage", { scale: 1, }, transition);
 	}
 
 	return (
@@ -61,14 +57,15 @@ function ProjectThumbnail(props) {
 						/>
 					</div>
 					<div className="w-full h-full">
+						<motion.div className="absolute top-0 left-0 bottom-0 right-0 bg thumbnailGradient" />
 						<motion.div className="absolute top-0 left-0 w-full h-full bg thumbnailOverlay" />
 						<motion.div
-							className={`thumbnailInfo absolute top-0 left-0 w-full h-full p-4 sm:p-6 flex flex-col gap-0 lg:gap-0.5 justify-end items-start`}
+							className={`thumbnailInfo absolute top-0 left-0 w-full h-full px-6 py-5 flex flex-col gap-0 lg:gap-0.5 justify-end items-start`}
 						>
-							<p className="text-white text-base">
+							<p className="text-white text-base client">
 								{project.client}
 							</p>
-							<p className="text-3xl sm:text-5xl text-white sm:w-5/6 thumbnailTitle">
+							<p className="text-3xl sm:text-3xl text-white sm:w-5/6 thumbnailTitle">
 								{title}
 							</p>
 						</motion.div>

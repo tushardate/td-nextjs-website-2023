@@ -40,7 +40,7 @@
 .menu-strikethrough a {
 	position: relative;
 	line-height: 1rem;
-	padding: 4px;
+	padding: 6px;
 
 	&:hover {
 		&::after,
@@ -54,10 +54,10 @@
 	&::before {
 		content: "";
 		position: absolute;
-		top: calc(50% - 2px);
+		top: calc(50% + 1.5px);
 		width: 0;
 		right: 0;
-		height: 2px;
+		height: 3px;
 		background-color: white;
 	}
 
@@ -70,66 +70,66 @@
 	}
 }
 
-.logo svg path {
-	fill: white;
-}
+// .logo svg path {
+// 	fill: white;
+// }
 
-.tickerWrapper {
-	height: 1.35rem;
-	overflow: hidden;
-}
+// .tickerWrapper {
+// 	height: 1.35rem;
+// 	overflow: hidden;
+// }
 
-.tickerWrapper2 {
-	height: 1rem;
-	white-space: nowrap;
-	// overflow: hidden;
-}
+// .tickerWrapper2 {
+// 	height: 1rem;
+// 	white-space: nowrap;
+// 	// overflow: hidden;
+// }
 
-.ticker {
-	display: flex;
-	flex-direction: column;
-	animation: move 10s normal infinite;
-}
+// .ticker {
+// 	display: flex;
+// 	flex-direction: column;
+// 	animation: move 10s normal infinite;
+// }
 
-.message {
-	position: relative;
-	/* top: 1rem; */
-}
+// .message {
+// 	position: relative;
+// 	/* top: 1rem; */
+// }
 
-.navParent {
-	position: relative;
-	color: white;
-}
-.underline {
-	height: 2px;
-	width: 100%;
-	position: absolute;
-	background-color: white;
-}
+// .navParent {
+// 	position: relative;
+// 	color: white;
+// }
+// .underline {
+// 	height: 2px;
+// 	width: 100%;
+// 	position: absolute;
+// 	background-color: white;
+// }
 
-@keyframes move {
-	0% {
-		transform: translatey(0);
-	}
-	31% {
-		transform: translatey(0rem);
-	}
-	33% {
-		transform: translatey(-1.35rem);
-	}
-	64% {
-		transform: translatey(-1.35rem);
-	}
-	66% {
-		transform: translatey(-2.75rem);
-	}
-	97% {
-		transform: translatey(-2.75rem);
-	}
-	99.99% {
-		transform: translatey(-4.1rem);
-	}
-	100% {
-		transform: translatey(0rem);
-	}
-}
+// @keyframes move {
+// 	0% {
+// 		transform: translatey(0);
+// 	}
+// 	31% {
+// 		transform: translatey(0rem);
+// 	}
+// 	33% {
+// 		transform: translatey(-1.35rem);
+// 	}
+// 	64% {
+// 		transform: translatey(-1.35rem);
+// 	}
+// 	66% {
+// 		transform: translatey(-2.75rem);
+// 	}
+// 	97% {
+// 		transform: translatey(-2.75rem);
+// 	}
+// 	99.99% {
+// 		transform: translatey(-4.1rem);
+// 	}
+// 	100% {
+// 		transform: translatey(0rem);
+// 	}
+// }

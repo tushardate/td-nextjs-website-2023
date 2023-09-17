@@ -1,10 +1,11 @@
 .bg {
 	background-color: black;
-    opacity: 0.35;
+	opacity: 0.35;
 }
 
 .thumbnailTitle {
 	// letter-spacing: -0.015em;
+	text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 }
 
 .thumbnailRatio {
@@ -14,5 +15,18 @@
 }
 
 .dropShadow {
-	background: linear-gradient(10deg, rgba(0,0,0,0.35) 0%, rgba(255,255,255,0) 100%);
+	background: linear-gradient(
+		10deg,
+		rgba(0, 0, 0, 0.35) 0%,
+		rgba(255, 255, 255, 0) 100%
+	);
+}
+
+.thumbnailGradient {
+	background: rgb(0, 0, 0);
+	background: linear-gradient(
+		6deg,
+		rgba(0, 0, 0, 0.7) 20%,
+		rgba(0, 0, 0, 0) 50%
+	);
 }
