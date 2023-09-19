@@ -32,9 +32,6 @@ export default function Header() {
 	}, [winWidth]);
 
 	const anim = {
-		initial: {
-			opacity: 0,
-		},
 		visible: {
 			opacity: 1,
 			transition: {
@@ -52,7 +49,6 @@ export default function Header() {
 		<>
 			<motion.div
 				variants={anim}
-				initial="initial"
 				animate={hidden ? "hidden" : "visible"}
 				onMouseOver={() => setHidden(false)}
 				className="nav uppercase flex align-baseline text-white px-4 md:px-16 pt-6 md:pt-12 pb-6 w-full justify-between fixed top-0 z-50 mix-blend-difference font-ppmori text-base md:text-xl"
