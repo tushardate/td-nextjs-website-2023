@@ -13,7 +13,7 @@ import {
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useWindowSize } from "@react-hook/window-size";
-import { getRandomHue } from "@components/utils/getRandomHue";
+import { useCursorStore, useBGColorStore } from "@components/GlobalStore";
 
 export default function Project({
 	singleProjectData,
@@ -34,7 +34,8 @@ export default function Project({
 
 	const [winW, winH] = useWindowSize();
 	const [height, setHeight] = useState("100vw");
-	const [revealVideo, setRevealVideo] = useState(false)
+	const [revealVideo, setRevealVideo] = useState(false);
+	const { previousRandom, getRandomHue } = useBGColorStore();
 
 	useEffect(() => {
 		if (winW / winH < 1) {
@@ -44,10 +45,13 @@ export default function Project({
 		}
 	}, [winW, winH]);
 
-	useEffect(() => {
-		console.log(document.body.style.backgroundColor)
-		document.body.style.backgroundColor = `hsl(${getRandomHue()}deg, 100%, 94%)`; // Set the new background color
-	}, []);
+	// useEffect(() => {
+	// 	getRandomHue();
+	// }, []);
+
+	// useEffect(() => {
+	// 	document.body.style.backgroundColor = `hsl(${previousRandom}deg, 100%, 95%)`; // Set the new background color
+	// }, [previousRandom]);
 
 	return (
 		<>
@@ -76,7 +80,13 @@ export default function Project({
 
 						<motion.div
 							initial={{ opacity: 0 }}
-							animate={{ opacity: !thumbnailVideo ? 1 : revealVideo ? 1 : 0 }}
+							animate={{
+								opacity: !thumbnailVideo
+									? 1
+									: revealVideo
+									? 1
+									: 0,
+							}}
 							transition={{ duration: 1, delay: 0.5 }}
 							className="overflow-hidden w-full h-full relative"
 						>
@@ -88,7 +98,9 @@ export default function Project({
 									muted
 									loop
 									src={thumbnailVideo}
-									onCanPlayThrough={() => setRevealVideo(true)}
+									onCanPlayThrough={() =>
+										setRevealVideo(true)
+									}
 								/>
 							) : (
 								<>
@@ -118,17 +130,17 @@ export default function Project({
 
 					<motion.div
 						variants={pageTransition}
-						className="w-full p-4 md:p-6 md:pt-18"
+						className="w-full p-4 md:p-6 lg:pt-18"
 					>
-						<div className="project-details-wrapper md:flex justify-between mb-16">
+						<div className="project-details-wrapper lg:flex justify-between mb-16">
 							<motion.div
 								variants={singleItemAnim}
 								initial="initial"
 								whileInView="whileInView"
 								viewport={singleItemAnim.viewport}
-								className="md:w-6/12"
+								className="lg:w-6/12"
 							>
-								<p className="headline text-5xl leading-tighter py-6 md:py-0">
+								<p className="headline text-5xl leading-tighter py-6 lg:py-0">
 									{headline ? headline : title}
 								</p>
 							</motion.div>
@@ -137,9 +149,9 @@ export default function Project({
 								initial="initial"
 								whileInView="whileInView"
 								viewport={singleItemAnim.viewport}
-								className="md:w-4/12"
+								className="lg:w-4/12"
 							>
-								<p className="text-xl pb-6 md:pb-8">
+								<p className="text-xl pb-6 lg:pb-8">
 									{summary}
 								</p>
 								<p className="text-xl">{`Role: ${role}`}</p>

@@ -3,6 +3,7 @@
 	&::before {
 		width: 100% !important;
 	}
+	color: #0030ff;
 }
 .menu a {
 	position: relative;
@@ -58,7 +59,7 @@
 		width: 0;
 		right: 0;
 		height: 3px;
-		background-color: white;
+		background-color: yellow;
 	}
 
 	&::before {

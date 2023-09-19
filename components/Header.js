@@ -32,8 +32,16 @@ export default function Header() {
 	}, [winWidth]);
 
 	const anim = {
+		initial: {
+			opacity: 0,
+		},
 		visible: {
 			opacity: 1,
+			transition: {
+				delay: 0.1,
+				duration: 1,
+				ease: [0.33, 1, 0.68, 1],
+			},
 		},
 		hidden: {
 			opacity: 0,
@@ -44,9 +52,10 @@ export default function Header() {
 		<>
 			<motion.div
 				variants={anim}
+				initial="initial"
 				animate={hidden ? "hidden" : "visible"}
 				onMouseOver={() => setHidden(false)}
-				className="nav flex align-baseline text-white py-4 px-4 md:px-6 w-full justify-between fixed top-0 z-50 mix-blend-difference font-satoshi font-medium text-xl md:text-2xl"
+				className="nav flex align-baseline  py-4 px-4 md:px-6 w-full justify-between fixed top-0 z-50 font-satoshi font-medium text-xl md:text-2xl"
 			>
 				<Link
 					href="/"
@@ -56,7 +65,7 @@ export default function Header() {
 				>
 					<div className="relative">
 						<motion.div className="flex">
-							<div className="">Tushar Date</div>
+							<div>Tushar Date</div>
 							{showTicker && (
 								<>
 									<span className="px-2">&middot;</span>

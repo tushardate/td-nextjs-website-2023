@@ -8,7 +8,8 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				tdblue: "#007eff",
+				tdblue: "#0030ff",
+				tdyellow: "#ffff00",
 			},
 			fontFamily: {
 				ppmori: ["PP Mori"],
@@ -18,6 +19,7 @@ module.exports = {
 				moret: ["Moret"],
 				resist: ["Resist Sans Text"],
 				satoshi: ["Satoshi"],
+				austin: ["Austin"]
 			},
 			fontSize: {
 				2.25: "1.625rem",

@@ -13,10 +13,16 @@ function ProjectThumbnail(props) {
 		animate(".thumbnailOverlay", { opacity: 0 }, { duration: 0.00001 });
 		animate(
 			".thumbnailInfo .client",
-			{ y: 5, opacity: 0 },
+			{ y: 5, opacity: 0, color: "white" },
+			{ duration: 0.00001 }
+		);
+		animate(
+			".thumbnailInfo .thumbnailTitle",
+			{ color: "white" },
 			{ duration: 0.00001 }
 		);
 		animate(".thumbnailImage", { scale: 1 }, { duration: 0.00001 });
+		animate(".thumbnailGradient", { opacity: 1 }, { duration: 0.00001 });
 	}, []);
 
 	const transition = {
@@ -26,16 +32,44 @@ function ProjectThumbnail(props) {
 
 	function handleHoverStart() {
 		setCursorType("arrowBottomRight");
-		animate(".thumbnailOverlay", { opacity: 0.7 }, transition);
-		animate(".thumbnailInfo .client", { y: 0, opacity: 1 }, transition);
-		animate(".thumbnailImage", { scale: 1.035 }, transition);
+		animate(".thumbnailOverlay", { opacity: 0.75 }, transition);
+		animate(
+			".thumbnailInfo .client",
+			{ y: 0, opacity: 1, color: "yellow" },
+			transition
+		);
+		animate(
+			".thumbnailInfo .thumbnailTitle",
+			{ color: "yellow" },
+			transition
+		);
+		animate(
+			".thumbnailImage",
+			{ scale: 1.035, filter: "grayscale(100%) brightness(85%)" },
+			transition
+		);
+		animate(".thumbnailGradient", { opacity: 0 }, transition);
 	}
 
 	function handleHoverEnd() {
 		setCursorType("default");
 		animate(".thumbnailOverlay", { opacity: 0 }, transition);
-		animate(".thumbnailInfo .client", { y: 5, opacity: 0 }, transition);
-		animate(".thumbnailImage", { scale: 1, }, transition);
+		animate(
+			".thumbnailInfo .client",
+			{ y: 5, opacity: 0, color: "white" },
+			transition
+		);
+		animate(
+			".thumbnailInfo .thumbnailTitle",
+			{ color: "white" },
+			transition
+		);
+		animate(
+			".thumbnailImage",
+			{ scale: 1, filter: "grayscale(0%) brightness(100%)" },
+			transition
+		);
+		animate(".thumbnailGradient", { opacity: 1 }, transition);
 	}
 
 	return (
@@ -57,8 +91,8 @@ function ProjectThumbnail(props) {
 						/>
 					</div>
 					<div className="w-full h-full">
-						<motion.div className="absolute top-0 left-0 bottom-0 right-0 bg thumbnailGradient" />
-						<motion.div className="absolute top-0 left-0 w-full h-full bg thumbnailOverlay" />
+						<motion.div className="absolute top-0 left-0 w-full h-full bg-tdblue thumbnailOverlay mix-blend-hard-light" />
+						<motion.div className="absolute top-0 left-0 bottom-0 right-0 thumbnailGradient" />
 						<motion.div
 							className={`thumbnailInfo absolute top-0 left-0 w-full h-full px-6 py-5 flex flex-col gap-0 lg:gap-0.5 justify-end items-start`}
 						>

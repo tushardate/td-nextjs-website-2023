@@ -14,9 +14,9 @@ import { useEffect } from "react";
 export default function Home({ projects }) {
 	const isTouchDevice = useIsTouchDevice();
 
-	useEffect(() => {
-		document.body.style.backgroundColor = `#edece8`; // Set the new background color
-	}, [])
+	// useEffect(() => {
+	// 	document.body.style.backgroundColor = `#edece8`; // Set the new background color
+	// }, [])
 
 	return (
 		<>

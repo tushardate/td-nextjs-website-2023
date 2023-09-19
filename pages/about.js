@@ -2,10 +2,9 @@ import Head from "next/head";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import Layout from "@components/Layout";
 import { query } from "@components/queries/aboutPageQuery.js";
-import { pageTransition } from "@components/animation/animations";
+import { pageTransition, fadeIn } from "@components/animation/animations";
 import { motion } from "framer-motion";
-import { useCursorStore } from "@components/GlobalStore";
-import { getRandomHue } from "@components/utils/getRandomHue";
+import { useCursorStore, useBGColorStore } from "@components/GlobalStore";
 import { useEffect } from "react";
 
 export default function About({ about }) {
@@ -31,10 +30,15 @@ export default function About({ about }) {
 	const clients = [...new Set(filterClients)];
 	const filterAwards = awards.map((e) => e.awardName);
 	const awardList = [...new Set(filterAwards)];
+	const { previousRandom, getRandomHue } = useBGColorStore();
 
-	useEffect(() => {
-		document.body.style.backgroundColor = `hsl(${getRandomHue()}deg, 100%, 94%)`; // Set the new background color
-	}, []);
+	// useEffect(() => {
+	// 	getRandomHue();
+	// }, []);
+
+	// useEffect(() => {
+	// 	document.body.style.backgroundColor = `hsl(${previousRandom}deg, 100%, 95%)`; // Set the new background color
+	// }, [previousRandom]);
 
 	return (
 		<>
@@ -55,8 +59,14 @@ export default function About({ about }) {
 					className="pt-20 mb-16 font-satoshi font-medium"
 				>
 					<div className="px-4 md:px-6 text-xl">
-						<div className="pb-16 lg:flex">
-							<div className="lg:w-1/3 lg:pr-16 md:max-w-[40%]">
+						<div className="pb-16 md:flex">
+							<motion.div
+								variants={fadeIn}
+								initial="initial"
+								animate="animate"
+								exit="exit"
+								className="md:w-1/3 md:pr-16 md:max-w-[40%]"
+							>
 								<div className="profilePic relative w-full rounded-lg overflow-hidden safari-fix">
 									<div className="absolute w-full h-full">
 										<motion.img
@@ -65,8 +75,8 @@ export default function About({ about }) {
 										/>
 									</div>
 								</div>
-							</div>
-							<p className="font-normal lg:w-2/3 md:w-11/12 lg:-ml-1 text-8xl aboutHeadline self-end lg:-mb-2 mt-6 lg:mt-0 lg:pr-16">
+							</motion.div>
+							<p className="font-normal md:w-2/3 md:w-11/12 md:-ml-1 text-8xl aboutHeadline self-end md:-mb-2 mt-6 md:mt-0 lg:pr-16">
 								{headline}
 							</p>
 						</div>

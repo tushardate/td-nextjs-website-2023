@@ -88,7 +88,7 @@ function Cursor() {
 	const iconType = () => {
 		switch (cursorType) {
 			case "arrowBottomRight":
-				return <TfiArrowRight className="w-full h-full rotate-45" />;
+				return <TfiArrowRight className="w-full h-full" />;
 			case "arrowRight":
 				return <TfiArrowRight className="w-full h-full" />;
 			case "arrowLeft":
@@ -112,14 +112,14 @@ function Cursor() {
 					scale: scale,
 				}}
 				variants={variants}
-				className={`cursorDot relative flex justify-center items-center`}
+				className={`cursorDot relative flex justify-center items-center ${cursorType == "default" ? "yellow" : "blue"}`}
 				ref={cursorRef}
 				id="cursor-dot"
 			>
 				<motion.div
 					initial="initial"
 					animate="animate"
-					className="w-1/2 h-1/2 text-black"
+					className="w-1/2 h-1/2 text-tdyellow"
 				>
 					{iconType()}
 				</motion.div>

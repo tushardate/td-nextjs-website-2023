@@ -25,7 +25,11 @@ const textVariants = {
 	},
 };
 
-const texts = ["Creative Director", "Art Director", "Freelance", "Los Angeles"];
+const texts = [
+	"Creative Director",
+	"Art Director",
+	"Freelance",
+];
 
 const Ticker = () => {
 	const [currentTextIndex, setCurrentTextIndex] = useState(0);
