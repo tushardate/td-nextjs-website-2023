@@ -22,10 +22,10 @@
 	&::before {
 		content: "";
 		position: absolute;
-		top: calc(50% - 3px);
+		top: calc(50% - 2px);
 		width: 0;
 		right: 0;
-		height: 3px;
+		height: 2px;
 		background-color: white;
 	}
 

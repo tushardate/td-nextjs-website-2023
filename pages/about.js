@@ -6,6 +6,7 @@ import { pageTransition, fadeIn } from "@components/animation/animations";
 import { motion } from "framer-motion";
 import { useCursorStore } from "@components/GlobalStore";
 import { useEffect } from "react";
+import { FaLinkedin, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 export default function About({ about }) {
 	const { setCursorType } = useCursorStore();
@@ -81,50 +82,58 @@ export default function About({ about }) {
 										className="hover:text-tdblue"
 										href={`tel:+1-${phone}`}
 									>
-										<p
-											className="lg:pb-4"
-											onMouseOver={() =>
-												setCursorType("phone")
-											}
-											onMouseLeave={() =>
-												setCursorType("default")
-											}
-										>
-											{phone}
-										</p>
+										<div className="flex items-center lg:pb-4 gap-3">
+											<FaPhoneAlt className="mb-1" />
+											<p
+												onMouseOver={() =>
+													setCursorType("phone")
+												}
+												onMouseLeave={() =>
+													setCursorType("default")
+												}
+											>
+												{phone}
+											</p>
+										</div>
 									</a>
 									<a
 										className="hover:text-tdblue"
 										href={`mailto:${email}`}
 									>
-										<p
-											className="lg:pb-4"
-											onMouseOver={() =>
-												setCursorType("email")
-											}
-											onMouseLeave={() =>
-												setCursorType("default")
-											}
-										>
-											{email}
-										</p>
+										<div className="flex items-center lg:pb-4 gap-3">
+											<FaEnvelope className="mb-1" />
+											<p
+												onMouseOver={() =>
+													setCursorType("email")
+												}
+												onMouseLeave={() =>
+													setCursorType("default")
+												}
+											>
+												{email}
+											</p>
+										</div>
 									</a>
 									<a
 										className="hover:text-tdblue"
 										href="http://www.linkedin.com/pub/tushar-date/11/315/a25"
 										target="_blank"
 									>
-										<p
-											className="lg:pb-8"
-											onMouseOver={() =>
-												setCursorType("arrowTopRight")
-											}
-											onMouseLeave={() =>
-												setCursorType("default")
-											}
-										>
-											LinkedIn
-										</p>
+										<div className="flex items-center lg:pb-8 gap-3">
+											<FaLinkedin className="mb-1" />
+											<p
+												onMouseOver={() =>
+													setCursorType(
+														"arrowTopRight"
+													)
+												}
+												onMouseLeave={() =>
+													setCursorType("default")
+												}
+											>
+												LinkedIn
+											</p>
+										</div>
 									</a>
 								</div>
 							</div>

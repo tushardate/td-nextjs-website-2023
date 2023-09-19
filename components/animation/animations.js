@@ -22,6 +22,30 @@ export const pageTransition = {
 	},
 };
 
+export const singleProjectTitles = {
+	initial: {
+		y: 25,
+		opacity: 0,
+	},
+	animate: (custom) => ({
+		y: 0,
+		opacity: 1,
+		transition: {
+			delay: (custom * 0.15) + 1,
+			duration: 0.65,
+			ease: [0.33, 1, 0.68, 1],
+		},
+	}),
+	exit: {
+		y: -10,
+		opacity: 0,
+		transition: {
+			duration: 0.5,
+			ease: [0.11, 0, 0.5, 0],
+		},
+	},
+};
+
 export const fadeIn = {
 	initial: {
 		opacity: 0,
@@ -60,7 +84,7 @@ export const singleItemAnim = {
 };
 
 export const prevNextAnim = {
-	initial: { opacity: 0},
+	initial: { opacity: 0 },
 	whileInView: {
 		opacity: 1,
 		y: 0,

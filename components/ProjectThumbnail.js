@@ -30,7 +30,7 @@ function ProjectThumbnail(props) {
 
 	function handleHoverStart() {
 		setCursorType("arrowBottomRight");
-		animate(".thumbnailOverlay", { opacity: 0.5 }, transition);
+		animate(".thumbnailOverlay", { opacity: 0.3 }, transition);
 		animate(".thumbnailInfo p", { x: 0, opacity: 1 }, transition);
 		animate(".thumbnailImage", { scale: 1.035 }, transition);
 	}

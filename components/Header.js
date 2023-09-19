@@ -68,14 +68,14 @@ export default function Header() {
 							<div className="font-bold">Tushar Date</div>
 							{showTicker && (
 								<>
-									<span className="text-base mx-2">:</span>
+									<span className="mx-3">•</span>
 									<Ticker />
 								</>
 							)}
 						</div>
 					</div>
 				</Link>
-				<div className="flex menu-strikethrough font-bold">
+				<div className="flex menu-strikethrough">
 					<div
 						onMouseOver={() => setCursorType("hover")}
 						onMouseLeave={() => setCursorType("default")}

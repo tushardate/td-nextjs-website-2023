@@ -9,6 +9,7 @@ import {
 	pageTransition,
 	fadeIn,
 	singleItemAnim,
+	singleProjectTitles,
 } from "@components/animation/animations";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -90,9 +91,7 @@ export default function Project({
 									muted
 									loop
 									src={thumbnailVideo}
-									onCanPlayThrough={() =>
-										setRevealVideo(true)
-									}
+									onCanPlay={() => setRevealVideo(true)}
 								/>
 							) : (
 								<>
@@ -107,16 +106,17 @@ export default function Project({
 							)}
 						</motion.div>
 
-						<motion.div
-							variants={pageTransition}
-							className="md:w-5/6 absolute left-0 bottom-0 px-4 py-10 md:p-16 text-white"
-						>
-							<p className="md:text-2xl mb-2 lg:mb-4">{`${client}`}</p>
-							{/* <p
-								dangerouslySetInnerHTML={{ __html: title }}
-								className="md:w-4/5 text-8xl font-migra title text-white"
-							></p> */}
-							<p className="text-8xl font-migra font-medium title text-white">{`${title}`}</p>
+						<motion.div className="md:w-5/6 absolute left-0 bottom-0 px-4 py-10 md:p-16 text-white">
+							<motion.p
+								variants={singleProjectTitles}
+								custom={1}
+								className="md:text-2xl mb-2 lg:mb-4"
+							>{`${client}`}</motion.p>
+							<motion.p
+								custom={2}
+								variants={singleProjectTitles}
+								className="text-8xl font-migra font-normal title text-white"
+							>{`${title}`}</motion.p>
 						</motion.div>
 					</motion.div>
 
@@ -132,7 +132,7 @@ export default function Project({
 								viewport={singleItemAnim.viewport}
 								className="md:w-6/12"
 							>
-								<p className="font-migra font-semibold headline text-5xl leading-tighter py-6 md:py-0">
+								<p className="font-migra font-medium headline text-5xl leading-tighter py-6 md:py-0">
 									{headline ? headline : title}
 								</p>
 							</motion.div>

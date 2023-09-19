@@ -1,5 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+	FaMagic,
+	FaPaintBrush,
+	FaThumbsUp,
+	FaMapMarkerAlt,
+	FaPhoneAlt,
+	FaEnvelope,
+	FaFireExtinguisher,
+	FaHandsHelping,
+	FaHandPeace
+} from "react-icons/fa";
 
 const textVariants = {
 	initial: {
@@ -29,6 +40,17 @@ const texts = [
 	"Creative Director",
 	"Art Director",
 	"Freelance",
+	"720-292-0384",
+	"tushardate@gmail.com",
+	"Los Angeles",
+];
+const icons = [
+	FaMagic,
+	FaPaintBrush,
+	FaThumbsUp,
+	FaPhoneAlt,
+	FaEnvelope,
+	FaMapMarkerAlt,
 ];
 
 const Ticker = () => {
@@ -43,21 +65,22 @@ const Ticker = () => {
 	}, []);
 
 	return (
-		<div className="ticker-container">
+		<div className="ticker-container normal-case">
 			<AnimatePresence mode="wait">
-				{texts.map(
-					(text, index) =>
+				{icons.map(
+					(Icon, index) =>
 						index === currentTextIndex && (
 							<motion.div
 								key={index}
-								className="ticker-text"
+								className="ticker-text flex items-center text-lg uppercase gap-2"
 								variants={textVariants}
 								initial="initial"
 								animate="animate"
 								exit="exit"
 								custom={index === 0 ? 0 : 1} // Add a custom delay for the entering text
 							>
-								{text}
+								<Icon className="text-base mb-1" />
+								{texts[index]}
 							</motion.div>
 						)
 				)}
