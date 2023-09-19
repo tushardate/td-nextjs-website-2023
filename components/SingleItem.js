@@ -31,7 +31,7 @@ function RenderSingle({ data }) {
 				initial="initial"
 				whileInView="whileInView"
 				viewport={singleItemAnim.viewport}
-				className={`single-item ${data.imageClasses}`}
+				className={`single-item leading-zero ${data.imageClasses}`}
 			>
 				<ImageLoader src={data.url} />
 				{/* <img src={data.url} alt="" /> */}

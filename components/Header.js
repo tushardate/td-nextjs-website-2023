@@ -1,14 +1,62 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useCursorStore } from "./GlobalStore";
+import { useState, useEffect } from "react";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { useWindowWidth } from "@react-hook/window-size";
+import Ticker from "./Ticker";
 
 export default function Header() {
 	const router = useRouter();
 	const { cursorType, setCursorType } = useCursorStore();
+	const { scrollY } = useScroll();
+	const [hidden, setHidden] = useState(false);
+	const [showTicker, setShowTicker] = useState(true);
+	const winWidth = useWindowWidth();
+
+	useMotionValueEvent(scrollY, "change", (latest) => {
+		const previous = scrollY.getPrevious();
+		if (latest > previous && latest > 24) {
+			setHidden(true);
+		} else {
+			setHidden(false);
+		}
+	});
+
+	useEffect(() => {
+		if (winWidth < 768) {
+			setShowTicker(false);
+		} else {
+			setShowTicker(true);
+		}
+	}, [winWidth]);
+
+	const anim = {
+		initial: {
+			opacity: 0,
+		},
+		visible: {
+			opacity: 1,
+			transition: {
+				delay: 0.1,
+				duration: 1,
+				ease: [0.33, 1, 0.68, 1],
+			},
+		},
+		hidden: {
+			opacity: 0,
+		},
+	};
 
 	return (
 		<>
-			<div className="nav uppercase flex align-baseline text-white px-4 md:px-16 pt-6 md:pt-12 pb-6 w-full justify-between fixed top-0 z-50 mix-blend-difference font-ppmori text-base md:text-xl">
+			<motion.div
+				variants={anim}
+				initial="initial"
+				animate={hidden ? "hidden" : "visible"}
+				onMouseOver={() => setHidden(false)}
+				className="nav uppercase flex align-baseline text-white px-4 md:px-16 pt-6 md:pt-12 pb-6 w-full justify-between fixed top-0 z-50 mix-blend-difference font-ppmori text-base md:text-xl"
+			>
 				<Link
 					href="/"
 					scroll={false}
@@ -17,15 +65,17 @@ export default function Header() {
 				>
 					<div className="relative">
 						<div className="flex text-2.25xl">
-							<div className="">Tushar Date</div>
-							<span className="text-base ml-0.5">®</span>
-							<div className="hidden md:block opacity-30 ml-2">
-								Creative Director
-							</div>
+							<div className="font-bold">Tushar Date</div>
+							{showTicker && (
+								<>
+									<span className="text-base mx-2">:</span>
+									<Ticker />
+								</>
+							)}
 						</div>
 					</div>
 				</Link>
-				<div className="flex menu-strikethrough">
+				<div className="flex menu-strikethrough font-bold">
 					<div
 						onMouseOver={() => setCursorType("hover")}
 						onMouseLeave={() => setCursorType("default")}
@@ -57,7 +107,7 @@ export default function Header() {
 						</Link>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</>
 	);
 }

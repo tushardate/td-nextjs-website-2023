@@ -35,6 +35,7 @@ export default function Project({
 
 	const [winW, winH] = useWindowSize();
 	const [height, setHeight] = useState("100vw");
+	const [revealVideo, setRevealVideo] = useState(false);
 
 	useEffect(() => {
 		if (winW / winH < 1) {
@@ -71,7 +72,13 @@ export default function Project({
 
 						<motion.div
 							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
+							animate={{
+								opacity: !thumbnailVideo
+									? 1
+									: revealVideo
+									? 1
+									: 0,
+							}}
 							transition={{ duration: 1, delay: 0.5 }}
 							className="overflow-hidden w-full h-full relative"
 						>
@@ -83,6 +90,9 @@ export default function Project({
 									muted
 									loop
 									src={thumbnailVideo}
+									onCanPlayThrough={() =>
+										setRevealVideo(true)
+									}
 								/>
 							) : (
 								<>
@@ -106,7 +116,7 @@ export default function Project({
 								dangerouslySetInnerHTML={{ __html: title }}
 								className="md:w-4/5 text-8xl font-migra title text-white"
 							></p> */}
-							<p className="text-8xl font-migra title text-white">{`${title}`}</p>
+							<p className="text-8xl font-migra font-medium title text-white">{`${title}`}</p>
 						</motion.div>
 					</motion.div>
 
@@ -122,7 +132,7 @@ export default function Project({
 								viewport={singleItemAnim.viewport}
 								className="md:w-6/12"
 							>
-								<p className="headline text-5xl leading-tighter py-6 md:py-0">
+								<p className="font-migra font-semibold headline text-5xl leading-tighter py-6 md:py-0">
 									{headline ? headline : title}
 								</p>
 							</motion.div>
@@ -224,5 +234,5 @@ export async function getStaticPaths(params) {
 
 	// We'll pre-render only these paths at build time.
 	// { fallback: false } means other routes should 404.
-	return { paths, fallback: 'blocking' };
+	return { paths, fallback: "blocking" };
 }

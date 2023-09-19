@@ -90,42 +90,50 @@
 	}
 
 	@font-face {
-		font-family: "Migra";
-		src: url("/fonts/Migra/MigraItalic-ExtralightItalic.woff2")
-				format("woff2"),
-			url("/fonts/Migra/MigraItalic-ExtralightItalic.woff") format("woff");
-		font-weight: normal;
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "Migra";
-		src: url("/fonts/Migra/Migra-Extralight.woff2") format("woff2"),
-			url("/fonts/Migra/Migra-Extralight.woff") format("woff");
-		font-weight: normal;
+		font-family: 'Migra';
+		src: url('/fonts/Migra/Migra-Medium.woff2') format('woff2'),
+			url('/fonts/Migra/Migra-Medium.woff') format('woff');
+		font-weight: 500;
 		font-style: normal;
 		font-display: swap;
 	}
-
+	
 	@font-face {
-		font-family: "Migra";
-		src: url("/fonts/Migra/Migra-Extrabold.woff2") format("woff2"),
-			url("/fonts/Migra/Migra-Extrabold.woff") format("woff");
+		font-family: 'Migra';
+		src: url('/fonts/Migra/Migra-Bold.woff2') format('woff2'),
+			url('/fonts/Migra/Migra-Bold.woff') format('woff');
 		font-weight: bold;
 		font-style: normal;
 		font-display: swap;
 	}
-
+	
 	@font-face {
-		font-family: "Migra";
-		src: url("/fonts/Migra/MigraItalic-ExtraboldItalic.woff2")
-				format("woff2"),
-			url("/fonts/Migra/MigraItalic-ExtraboldItalic.woff") format("woff");
-		font-weight: bold;
-		font-style: italic;
+		font-family: 'Migra';
+		src: url('/fonts/Migra/Migra-Light.woff2') format('woff2'),
+			url('/fonts/Migra/Migra-Light.woff') format('woff');
+		font-weight: 300;
+		font-style: normal;
 		font-display: swap;
 	}
+	
+	@font-face {
+		font-family: 'Migra';
+		src: url('/fonts/Migra/Migra-Semibold.woff2') format('woff2'),
+			url('/fonts/Migra/Migra-Semibold.woff') format('woff');
+		font-weight: 600;
+		font-style: normal;
+		font-display: swap;
+	}
+	
+	@font-face {
+		font-family: 'Migra';
+		src: url('/fonts/Migra/Migra-Regular.woff2') format('woff2'),
+			url('/fonts/Migra/Migra-Regular.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+		
 
 	@font-face {
 		font-family: "PolySans";

@@ -49,11 +49,8 @@ export const singleItemAnim = {
 		opacity: 1,
 		y: 0,
 		transition: {
-			// duration: 1,
-			// ease: "circInOut",
-			type: "spring",
-			stiffness: 20,
-			// ease: [0.33, 1, 0.68, 1],
+			duration: 1,
+			ease: "easeOut",
 		},
 	},
 	viewport: {
@@ -63,13 +60,13 @@ export const singleItemAnim = {
 };
 
 export const prevNextAnim = {
-	initial: { opacity: 0, y: 16 },
+	initial: { opacity: 0},
 	whileInView: {
 		opacity: 1,
 		y: 0,
 		transition: {
-			type: "spring",
-			stiffness: 20,
+			duration: 1,
+			ease: "easeOut",
 		},
 	},
 	viewport: {
