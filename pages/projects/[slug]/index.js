@@ -1,4 +1,5 @@
 import Head from "next/head";
+import dynamic from "next/dynamic";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { query } from "@components/queries/singleProjectQuery.js";
 import { allProjectSlugsQuery } from "@components/queries/allProjectSlugsQuery.js";
@@ -16,6 +17,7 @@ import { useEffect, useState } from "react";
 import { useWindowSize } from "@react-hook/window-size";
 import Footer from "@components/Footer";
 import Header from "@components/Header";
+import VideoPoster from "@components/VideoPoster";
 
 export default function Project({
 	singleProjectData,
@@ -36,7 +38,6 @@ export default function Project({
 
 	const [winW, winH] = useWindowSize();
 	const [height, setHeight] = useState("100vw");
-	const [revealVideo, setRevealVideo] = useState(false);
 
 	useEffect(() => {
 		if (winW / winH < 1) {
@@ -67,39 +68,31 @@ export default function Project({
 						<img
 							fetchpriority="high"
 							className="absolute top-0 left-0 right-0 bottom-0 object-cover w-full h-full blur-3xl scale-125"
-							src={`${thumbnailImage}tr=w-1920`}
+							src={`${thumbnailImage}tr=w-200,bl-30,q-50`}
 							alt=""
 						/>
-						
-						<motion.div
-							initial={{ opacity: 0 }}
-							animate={{
-								opacity: 1,
-							}}
-							transition={{ duration: 1 }}
-							className="overflow-hidden w-full h-full relative"
-						>
-							{thumbnailVideo ? (
-								<video
-									className="h-full w-full object-cover absolute inset-0"
-									autoPlay
-									playsInline
-									muted
-									loop
-									src={thumbnailVideo}
+
+						{thumbnailVideo ? (
+							<VideoPoster src={thumbnailVideo} />
+						) : (
+							<motion.div
+								initial={{ opacity: 0 }}
+								animate={{
+									opacity: 1,
+								}}
+								transition={{ duration: 1 }}
+								className="overflow-hidden w-full h-full relative"
+							>
+								<div className="absolute inset-0 bg-black opacity-40" />
+								<img
+									fetchpriority="high"
+									className="object-cover w-full h-full"
+									src={`${thumbnailImage}tr=w-1920`}
+									alt=""
 								/>
-							) : (
-								<>
-									<div className="absolute inset-0 bg-black opacity-40" />
-									<img
-										fetchpriority="high"
-										className="object-cover w-full h-full"
-										src={`${thumbnailImage}tr=w-1920`}
-										alt=""
-									/>
-								</>
-							)}
-						</motion.div>
+							</motion.div>
+						)}
+
 						<motion.div className="md:w-5/6 absolute left-0 bottom-0 px-4 py-10 md:p-16 text-white">
 							<motion.p
 								variants={singleProjectTitles}
