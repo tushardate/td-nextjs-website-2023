@@ -35,11 +35,13 @@ export default function VideoPoster({ src }) {
 			animate={{
 				opacity: revealVideo ? 1 : 0,
 			}}
-			transition={{ duration: 1, delay: 0.1 }}
+			transition={{ duration: 1, delay: 0.4 }}
 			className="overflow-hidden w-full h-full relative"
 		>
 			<video
 				className="h-full w-full object-cover absolute inset-0"
+				width="1920"
+				height="1080"
 				autoPlay
 				playsInline
 				muted
