@@ -56,6 +56,7 @@ export default function TDCarousel({ images, slidesPerBreakpoint }) {
 								src={`${el.image}tr=w-1440`}
 								srcSet={`${el.image}tr=w-800 800w, ${el.image}tr=w-1200 1200w, ${el.image}tr=w-1500 1500w, ${el.image}tr=w-1920 1920w,`}
 								sizes="(max-width: 1024px) 100vw, 50vw"
+								alt="picture"
 							/>
 						</div>
 					</SwiperSlide>

@@ -40,6 +40,7 @@ export default function ImageCompare({ before, after }) {
 				src={`${before}tr=w-1440`}
 				srcSet={`${before}tr=w-800 800w, ${before}tr=w-1200 1200w, ${before}tr=w-1500 1500w, ${before}tr=w-1920 1920w,`}
 				sizes="(max-width: 1024px) 100vw, 50vw"
+				alt="picture"
 			/>
 			<div className="image-after-wrapper">
 				<motion.img
@@ -51,6 +52,7 @@ export default function ImageCompare({ before, after }) {
 					src={`${after}tr=w-1440`}
 					srcSet={`${after}tr=w-800 800w, ${after}tr=w-1200 1200w, ${after}tr=w-1500 1500w, ${after}tr=w-1920 1920w,`}
 					sizes="(max-width: 1024px) 100vw, 50vw"
+					alt="picture"
 				/>
 			</div>
 		</motion.div>

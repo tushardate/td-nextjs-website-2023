@@ -64,7 +64,7 @@ function ProjectThumbnail(props) {
 							src={`${project.thumbnailImage}tr=w-1440`}
 							srcSet={`${project.thumbnailImage}tr=w-800 800w, ${project.thumbnailImage}tr=w-1200 1200w, ${project.thumbnailImage}tr=w-1500 1500w, ${project.thumbnailImage}tr=w-1920 1920w,`}
 							sizes="(max-width: 1024px) 100vw, 50vw"
-							alt=""
+							alt="picture"
 						/>
 					</div>
 					<div className="w-full h-full">
