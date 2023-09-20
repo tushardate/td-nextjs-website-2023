@@ -1,7 +1,9 @@
 import "@components/styles/globals.scss";
 import { AnimatePresence } from "framer-motion";
-import { useCursorStore } from "@components/GlobalStore";
+import { useCursorStore, useTickerStore } from "@components/GlobalStore";
+import { useEffect } from "react";
 import Cursor from "@components/Cursor";
+import TickerCounterUpdater from "@components/TicketCounterUpdates";
 
 export default function App({ Component, pageProps, router }) {
 	const { setCursorType } = useCursorStore();
@@ -9,6 +11,7 @@ export default function App({ Component, pageProps, router }) {
 	return (
 		<>
 			{/* <Cursor /> */}
+			<TickerCounterUpdater />
 			<AnimatePresence
 				mode="wait"
 				// initial={false}
