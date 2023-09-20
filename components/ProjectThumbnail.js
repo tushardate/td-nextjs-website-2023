@@ -54,9 +54,9 @@ function ProjectThumbnail(props) {
 					<div className="thumbnail absolute w-full h-full">
 						<motion.img
 							className="object-cover w-full thumbnailImage"
-							src={`${project.thumbnailImage}tr=w-1024`}
-							srcSet={`${project.thumbnailImage}tr=w-1024 1024w, ${project.thumbnailImage}tr=w-1920 1920w,`}
-							sizes="(min-width: 1024px) 50vw, 100vw"
+							src={`${project.thumbnailImage}tr=w-1440`}
+							srcSet={`${project.thumbnailImage}tr=w-800 800w, ${project.thumbnailImage}tr=w-1200 1200w, ${project.thumbnailImage}tr=w-1500 1500w, ${project.thumbnailImage}tr=w-1920 1920w,`}
+							sizes="(max-width: 1024px) 100vw, 50vw"
 							alt=""
 						/>
 					</div>

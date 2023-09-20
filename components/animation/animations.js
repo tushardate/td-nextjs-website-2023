@@ -24,14 +24,14 @@ export const pageTransition = {
 
 export const singleProjectTitles = {
 	initial: {
-		y: 25,
+		y: 10,
 		opacity: 0,
 	},
 	animate: (custom) => ({
 		y: 0,
 		opacity: 1,
 		transition: {
-			delay: (custom * 0.15) + 1,
+			delay: (custom * 0.1) + 0.5,
 			duration: 0.65,
 			ease: [0.33, 1, 0.68, 1],
 		},

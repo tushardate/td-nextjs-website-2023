@@ -64,23 +64,19 @@ export default function Project({
 						style={{ height }}
 						className="w-full h-80 overflow-hidden relative rounded-b-2xl"
 					>
-						{/* <img
+						<img
 							fetchpriority="high"
 							className="absolute top-0 left-0 right-0 bottom-0 object-cover w-full h-full blur-3xl scale-125"
 							src={`${thumbnailImage}tr=w-1920`}
 							alt=""
-						/> */}
-
+						/>
+						
 						<motion.div
 							initial={{ opacity: 0 }}
 							animate={{
-								opacity: !thumbnailVideo
-									? 1
-									: revealVideo
-									? 1
-									: 0,
+								opacity: 1,
 							}}
-							transition={{ duration: 1, delay: 0.5 }}
+							transition={{ duration: 1 }}
 							className="overflow-hidden w-full h-full relative"
 						>
 							{thumbnailVideo ? (
@@ -91,7 +87,6 @@ export default function Project({
 									muted
 									loop
 									src={thumbnailVideo}
-									onCanPlay={() => setRevealVideo(true)}
 								/>
 							) : (
 								<>
@@ -105,7 +100,6 @@ export default function Project({
 								</>
 							)}
 						</motion.div>
-
 						<motion.div className="md:w-5/6 absolute left-0 bottom-0 px-4 py-10 md:p-16 text-white">
 							<motion.p
 								variants={singleProjectTitles}

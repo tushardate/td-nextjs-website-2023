@@ -68,15 +68,20 @@ module.exports = {
 	safelist: [
 		{
 			pattern:
+				/^(grid|flex)/,
+			variants: ["md", "lg"],
+		},
+		{
+			pattern:
 				/^(w|justify|items|self|gap|place|grid|flex|max|row|col|text|order)-.*/,
 			variants: ["md", "lg"],
 		},
-		{ pattern: /^p[tmrbxy]-.*/, variants: ["md", "lg"] },
-		{ pattern: /^m[tmrbxy]-.*/, variants: ["md", "lg"] },
+		{ pattern: /^p[tlrbxy]-.*/, variants: ["md", "lg"] },
+		{ pattern: /^m[tlrbxy]-.*/, variants: ["md", "lg"] },
 		"text-center",
 		"text-left",
 		"text-justify",
 		"text-right",
-		"bg-red-500"
+		"bg-red-500",
 	],
 };
