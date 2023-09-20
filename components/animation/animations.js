@@ -78,7 +78,7 @@ export const singleItemAnim = {
 		},
 	},
 	viewport: {
-		amount: 0.165,
+		amount: 0.05,
 		once: true,
 	},
 };

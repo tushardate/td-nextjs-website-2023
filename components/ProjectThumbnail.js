@@ -1,14 +1,11 @@
 import Link from "next/link";
-import {
-	motion,
-	useAnimationControls,
-	useAnimate,
-} from "framer-motion";
+import Image from "next/image";
+import { motion, useAnimationControls, useAnimate } from "framer-motion";
 import { useCursorStore } from "./GlobalStore";
 import { useEffect, useLayoutEffect } from "react";
 
 function ProjectThumbnail(props) {
-	const { title, id, slug, project } = props.data;
+	const { title, id, slug, project, index } = props.data;
 	const { cursorType, setCursorType } = useCursorStore();
 	const controls = useAnimationControls();
 	const [scope, animate] = useAnimate();
@@ -52,13 +49,23 @@ function ProjectThumbnail(props) {
 			>
 				<div className="thumbnailRatio relative w-full rounded-lg overflow-hidden safari-fix">
 					<div className="thumbnail absolute w-full h-full">
-						<motion.img
+						<Image
+							className="object-cover w-full thumbnailImage"
+							quality={100}
+							width={676}
+							height={380}
+							src={`${project.thumbnailImage}`}
+							sizes="(max-width: 1024px) 100vw, 50vw)"
+							alt={title}
+							priority={index < 4}
+						/>
+						{/* <motion.img
 							className="object-cover w-full thumbnailImage"
 							src={`${project.thumbnailImage}tr=w-1440`}
 							srcSet={`${project.thumbnailImage}tr=w-800 800w, ${project.thumbnailImage}tr=w-1200 1200w, ${project.thumbnailImage}tr=w-1500 1500w, ${project.thumbnailImage}tr=w-1920 1920w,`}
 							sizes="(max-width: 1024px) 100vw, 50vw"
 							alt=""
-						/>
+						/> */}
 					</div>
 					<div className="w-full h-full">
 						<motion.div className="absolute top-0 left-0 w-full h-full thumbnailOverlay" />

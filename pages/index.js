@@ -42,7 +42,7 @@ export default function Home({ projects }) {
 							) : (
 								<ProjectThumbnail
 									key={project.id}
-									data={{ ...project }}
+									data={{ ...project, index: i }}
 								/>
 							);
 						})}
