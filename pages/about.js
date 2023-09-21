@@ -64,6 +64,7 @@ export default function About({ about }) {
 										<motion.img
 											className="object-cover w-full"
 											src={profilePic}
+											alt="profile picture"
 										/>
 									</div>
 								</div>

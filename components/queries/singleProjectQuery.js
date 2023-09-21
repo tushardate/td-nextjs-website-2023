@@ -58,6 +58,7 @@ export const query = `query getProjectBySlug($slug: ID!) {
         }
         client
         role
+        awards
       }
       title
       id

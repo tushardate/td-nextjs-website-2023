@@ -1,16 +1,4 @@
-import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-	FaMagic,
-	FaPaintBrush,
-	FaThumbsUp,
-	FaMapMarkerAlt,
-	FaPhoneAlt,
-	FaEnvelope,
-	FaFireExtinguisher,
-	FaHandsHelping,
-	FaHandPeace,
-} from "react-icons/fa";
 import { useTickerStore } from "./GlobalStore";
 
 const textVariants = {

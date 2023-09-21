@@ -1,11 +1,7 @@
 import Link from "next/link";
-import {
-	motion,
-	useAnimationControls,
-	useAnimate,
-} from "framer-motion";
+import { motion, useAnimationControls, useAnimate } from "framer-motion";
 import { useCursorStore } from "./GlobalStore";
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect } from "react";
 
 function ProjectThumbnail(props) {
 	const { title, id, slug, project } = props.data;

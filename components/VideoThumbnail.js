@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-export default function VideoPoster({ src }) {
+export default function VideoThumbnail({ src }) {
 	const [revealVideo, setRevealVideo] = useState(false);
 
 	function handleCanPlayThrough() {
