@@ -63,33 +63,6 @@
 	}
 
 	@font-face {
-		font-family: "Neue Machina";
-		src: url("/fonts/NeueMachina/NeueMachina-Bold.woff2") format("woff2"),
-			url("/fonts/NeueMachina/NeueMachina-Bold.woff") format("woff");
-		font-weight: bold;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "Neue Machina";
-		src: url("/fonts/NeueMachina/NeueMachina-Black.woff2") format("woff2"),
-			url("/fonts/NeueMachina/NeueMachina-Black.woff") format("woff");
-		font-weight: 900;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "Neue Machina";
-		src: url("/fonts/NeueMachina/NeueMachina-Regular.woff2") format("woff2"),
-			url("/fonts/NeueMachina/NeueMachina-Regular.woff") format("woff");
-		font-weight: normal;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
 		font-family: 'Migra';
 		src: url('/fonts/Migra/Migra-Medium.woff2') format('woff2'),
 			url('/fonts/Migra/Migra-Medium.woff') format('woff');
@@ -133,151 +106,11 @@
 		font-style: normal;
 		font-display: swap;
 	}
-		
+}
 
-	@font-face {
-		font-family: "PolySans";
-		src: url("/fonts/PolySans/PolySansTrial-BulkyItalic.woff2")
-				format("woff2"),
-			url("/fonts/PolySans/PolySansTrial-BulkyItalic.woff") format("woff");
-		font-weight: bold;
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "PolySans";
-		src: url("/fonts/PolySans/PolySansTrial-Bulky.woff2") format("woff2"),
-			url("/fonts/PolySans/PolySansTrial-Bulky.woff") format("woff");
-		font-weight: bold;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "PolySans";
-		src: url("/fonts/PolySans/PolySansTrial-Bulky.woff2") format("woff2"),
-			url("/fonts/PolySans/PolySansTrial-Bulky.woff") format("woff");
-		font-weight: bold;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "PolySans";
-		src: url("/fonts/PolySans/PolySansTrial-Neutral.woff2") format("woff2"),
-			url("/fonts/PolySans/PolySansTrial-Neutral.woff") format("woff");
-		font-weight: normal;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "PolySans";
-		src: url("/fonts/PolySans/PolySansTrial-BulkyItalic.woff2")
-				format("woff2"),
-			url("/fonts/PolySans/PolySansTrial-BulkyItalic.woff") format("woff");
-		font-weight: bold;
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "PolySans";
-		src: url("/fonts/PolySans/PolySansTrial-SlimItalic.woff2")
-				format("woff2"),
-			url("/fonts/PolySans/PolySansTrial-SlimItalic.woff") format("woff");
-		font-weight: 300;
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "PolySans";
-		src: url("/fonts/PolySans/PolySansTrial-Slim.woff2") format("woff2"),
-			url("/fonts/PolySans/PolySansTrial-Slim.woff") format("woff");
-		font-weight: 300;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "PolySans";
-		src: url("/fonts/PolySans/PolySansTrial-NeutralItalic.woff2")
-				format("woff2"),
-			url("/fonts/PolySans/PolySansTrial-NeutralItalic.woff")
-				format("woff");
-		font-weight: normal;
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "PolySans";
-		src: url("/fonts/PolySans/PolySansTrial-NeutralItalic.woff2")
-				format("woff2"),
-			url("/fonts/PolySans/PolySansTrial-NeutralItalic.woff")
-				format("woff");
-		font-weight: normal;
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "PolySans";
-		src: url("/fonts/PolySans/PolySansTrial-Neutral.woff2") format("woff2"),
-			url("/fonts/PolySans/PolySansTrial-Neutral.woff") format("woff");
-		font-weight: normal;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "PolySans";
-		src: url("/fonts/PolySans/PolySansTrial-Slim.woff2") format("woff2"),
-			url("/fonts/PolySans/PolySansTrial-Slim.woff") format("woff");
-		font-weight: 300;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "PolySans";
-		src: url("/fonts/PolySans/PolySansTrial-SlimItalic.woff2")
-				format("woff2"),
-			url("/fonts/PolySans/PolySansTrial-SlimItalic.woff") format("woff");
-		font-weight: 300;
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "Moret";
-		src: url("/fonts/Moret/Moret-Bold.woff2") format("woff2"),
-			url("/fonts/Moret/Moret-Bold.woff") format("woff");
-		font-weight: bold;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "Moret";
-		src: url("/fonts/Moret/Moret-Regular.woff2") format("woff2"),
-			url("/fonts/Moret/Moret-Regular.woff") format("woff");
-		font-weight: normal;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "Moret";
-		src: url("/fonts/Moret/Moret-ExtraBold.woff2") format("woff2"),
-			url("/fonts/Moret/Moret-ExtraBold.woff") format("woff");
-		font-weight: bold;
-		font-style: normal;
-		font-display: swap;
-	}
-	
+::selection {
+	background-color: #0030ff;
+	color: #ffff00;
 }
 
 body {

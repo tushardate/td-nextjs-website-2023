@@ -51,7 +51,7 @@ export default function About({ about }) {
 					className="pt-32 mb-16 font-ppmori"
 				>
 					<div className="px-4 md:px-16 text-xl">
-						<div className="pb-16 md:flex">
+						<div className="pb-20 md:flex">
 							<motion.div
 								variants={fadeIn}
 								initial="initial"
