@@ -138,14 +138,18 @@ export default function Project({
 								<p className="lg:text-xl pb-6 lg:pb-8">
 									{summary}
 								</p>
-								<div className="flex gap-2 pb-2">
-									<FaCog className="mt-0.5" />
-									<p>{role}</p>
+								<div className="pb-2">
+									<div className="inline-grid grid-flow-col gap-2">
+										<FaCog className="mt-0.5" />
+										<p className="">{role}</p>
+									</div>
 								</div>
 								{awards ? (
-									<div className="">
-										<FaTrophy className="mt-0.5" />
-										<p>{awards}</p>
+									<div>
+										<div className="inline-grid grid-flow-col gap-2">
+											<FaTrophy className="mt-0.5" />
+											<p>{awards}</p>
+										</div>
 									</div>
 								) : (
 									<></>
