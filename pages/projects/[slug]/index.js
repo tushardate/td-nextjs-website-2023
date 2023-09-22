@@ -139,12 +139,12 @@ export default function Project({
 									{summary}
 								</p>
 								<div className="flex gap-2 pb-2">
-									<FaCog className="min-w-fit mt-0.5" />
+									<FaCog className="mt-0.5" />
 									<p>{role}</p>
 								</div>
 								{awards ? (
-									<div className="flex gap-2 pb-2">
-										<FaTrophy className="min-w-fit mt-0.5" />
+									<div className="">
+										<FaTrophy className="mt-0.5" />
 										<p>{awards}</p>
 									</div>
 								) : (
