@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import { GraphQLClient } from "graphql-request";
 import Layout from "@components/Layout";
 import { query } from "@components/queries/aboutPageQuery.js";
 import { pageTransition, fadeIn } from "@components/animation/animations";
@@ -29,8 +29,12 @@ export default function About({ about }) {
 		.flat()
 		.sort();
 	const clients = [...new Set(filterClients)];
-	const filterAwards = awards.map((e) => e.awardName);
+	const filterAwards = awards.data.map((e) => e.name);
 	const awardList = [...new Set(filterAwards)];
+
+	useEffect(() => {
+		console.log(profilePic);
+	});
 
 	return (
 		<>
@@ -215,20 +219,19 @@ export default function About({ about }) {
 }
 
 export async function getStaticProps() {
-	const client = new ApolloClient({
-		uri: `${process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL}/graphql`,
-		cache: new InMemoryCache(),
+	const endpoint = `${process.env.NEXT_PUBLIC_DATOCMS_SITE_URL}`;
+	const client = new GraphQLClient(endpoint, {
+		headers: {
+			"content-type": "application/json",
+			authorization: `Bearer ${process.env.DATOCMS_KEY}`,
+		},
 	});
 
-	const { data } = await client.query({
-		query: gql`
-			${query}
-		`,
-	});
+	const data = await client.request(query);
 
 	return {
 		props: {
-			about: data.pageBy.about,
+			about: data.about,
 		},
 		revalidate: 1,
 	};

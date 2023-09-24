@@ -10,7 +10,7 @@ export default function SingleItem({ data }) {
 }
 
 function RenderSingle({ data }) {
-	if (data.fieldGroupName === "Project_Project_sections_Items_Text") {
+	if (data._modelApiKey === "text") {
 		if (data.content !== "") {
 			return (
 				<motion.div
@@ -24,7 +24,7 @@ function RenderSingle({ data }) {
 				</motion.div>
 			);
 		}
-	} else if (data.fieldGroupName === "Project_Project_sections_Items_Image") {
+	} else if (data._modelApiKey === "image") {
 		return (
 			<motion.div
 				variants={singleItemAnim}
@@ -37,8 +37,8 @@ function RenderSingle({ data }) {
 				{/* <img src={data.url} alt="" /> */}
 			</motion.div>
 		);
-	} else if (data.fieldGroupName === "Project_Project_sections_Items_Video") {
-		if (data.type === "VIDEOPOSTER") {
+	} else if (data._modelApiKey === "video") {
+		if (data.videoType === "VIDEOPOSTER") {
 			return (
 				<motion.div
 					variants={singleItemAnim}
@@ -74,12 +74,12 @@ function RenderSingle({ data }) {
 					<Player
 						url={data.url}
 						poster={data.poster}
-						type={data.type}
+						type={data.videoType}
 					/>
 				</motion.div>
 			);
 		}
-	} else if (data.fieldGroupName === "Project_Project_sections_Items_Embed") {
+	} else if (data._modelApiKey === "embed") {
 		return (
 			<motion.div
 				variants={singleItemAnim}
@@ -92,7 +92,7 @@ function RenderSingle({ data }) {
 			</motion.div>
 		);
 	} else if (
-		data.fieldGroupName === "Project_Project_sections_Items_ImageCompare"
+		data._modelApiKey === "image_compare"
 	) {
 		return (
 			<motion.div
@@ -106,7 +106,7 @@ function RenderSingle({ data }) {
 			</motion.div>
 		);
 	} else if (
-		data.fieldGroupName === "Project_Project_sections_Items_Carousel"
+		data._modelApiKey === "carousel"
 	) {
 		return (
 			<motion.div
@@ -118,7 +118,7 @@ function RenderSingle({ data }) {
 			>
 				<TDCarousel
 					images={data.images}
-                    slidesPerBreakpoint={data.slidesPerBreakpoint}
+					slidesPerBreakpoint={data.slidesPerBreakpoint}
 				/>
 			</motion.div>
 		);

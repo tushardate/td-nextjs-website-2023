@@ -1,37 +1,21 @@
 export const query = `
 	{
-		pageBy(uri: "about") {
-			about {
-				awards {
-					awardCategory
-					awardClient
-					awardDate
-					awardName
-					awardProject
-					awardType
-				}
-				bio
-				edu {
-					eduDates
-					eduDegree
-					eduName
-				}
-				email
-				headline
-				name
-				phone
-				profilePic
-				skills {
-					skillName
-				}
-				title
-				workExperience {
-					expAgency
-					expClients
-					expDates
-					expRole
-				}
+		about {
+			awards
+			bio(markdown: false)
+			name
+			phone
+			title
+			edu
+			workExperience {
+			  expAgency
+			  expClients
+			  expDates
+			  expRole
 			}
-		}
+			email
+			headline
+			profilePic
+		  }
 	}
 `;

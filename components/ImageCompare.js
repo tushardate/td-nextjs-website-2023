@@ -1,12 +1,4 @@
-import {
-	anticipate,
-	motion,
-	useMotionValue,
-	useMotionValueEvent,
-	useSpring,
-	useTransform,
-} from "framer-motion";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function ImageCompare({ before, after }) {
 	const anim = {
@@ -44,9 +36,6 @@ export default function ImageCompare({ before, after }) {
 			<div className="image-after-wrapper">
 				<motion.img
 					variants={anim}
-					// style={{
-					// 	clipPath: `polygon(calc(${pos.get()}% + 1px) 0, 100% 0, 100% 100%, calc(${pos.get()}% + 1px) 100%)`,
-					// }}
 					className="image image-after"
 					src={`${after}tr=w-1440`}
 					srcSet={`${after}tr=w-800 800w, ${after}tr=w-1200 1200w, ${after}tr=w-1500 1500w, ${after}tr=w-1920 1920w,`}

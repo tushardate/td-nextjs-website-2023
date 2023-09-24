@@ -1,6 +1,5 @@
-import Image from "next/image";
 import Head from "next/head";
-import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import { GraphQLClient } from "graphql-request";
 import { query } from "@components/queries/homepageQuery.js";
 import ProjectThumbnail from "@components/ProjectThumbnail";
 import Layout from "@components/Layout";
@@ -9,11 +8,14 @@ import { motion } from "framer-motion";
 import useIsTouchDevice from "@components/hooks/useIsTouchDevice";
 import ProjectThumbnailMobile from "@components/ProjectThumbnailMobile";
 import { isMobile } from "react-device-detect";
-import Header from "@components/Header-StaggerHover";
-import Footer from "@components/Footer";
+import { useEffect } from "react";
 
 export default function Home({ projects }) {
 	const isTouchDevice = useIsTouchDevice();
+
+	useEffect(() => {
+		console.log(projects);
+	});
 
 	return (
 		<>
@@ -54,20 +56,18 @@ export default function Home({ projects }) {
 }
 
 export async function getStaticProps() {
-	const client = new ApolloClient({
-		uri: `${process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL}/graphql`,
-		cache: new InMemoryCache(),
+	const endpoint = `${process.env.NEXT_PUBLIC_DATOCMS_SITE_URL}`;
+	const client = new GraphQLClient(endpoint, {
+		headers: {
+			"content-type": "application/json",
+			authorization: `Bearer ${process.env.DATOCMS_KEY}`,
+		},
 	});
 
-	const { data } = await client.query({
-		query: gql`
-			${query}
-		`,
-	});
-
+	const data = await client.request(query);
 	return {
 		props: {
-			projects: data.projects.nodes,
+			projects: data.allProjects,
 		},
 		revalidate: 1,
 	};

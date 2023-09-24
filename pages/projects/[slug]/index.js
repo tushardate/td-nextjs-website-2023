@@ -1,6 +1,5 @@
 import Head from "next/head";
-import dynamic from "next/dynamic";
-import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import { GraphQLClient } from "graphql-request";
 import { query } from "@components/queries/singleProjectQuery.js";
 import { allProjectSlugsQuery } from "@components/queries/allProjectSlugsQuery.js";
 import PrevNext from "@components/PrevNext";
@@ -15,8 +14,6 @@ import {
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useWindowSize } from "@react-hook/window-size";
-import Footer from "@components/Footer";
-import Header from "@components/Header";
 import VideoThumbnail from "@components/VideoThumbnail";
 import { FaTrophy, FaCog } from "react-icons/fa";
 
@@ -26,17 +23,17 @@ export default function Project({
 	prev,
 	allProjects,
 }) {
-	const { project, title } = singleProjectData;
 	const {
+		title,
 		summary,
 		headline,
 		client,
 		role,
 		thumbnailImage,
 		thumbnailVideo,
-		sections,
+		items,
 		awards,
-	} = project;
+	} = singleProjectData;
 
 	const [winW, winH] = useWindowSize();
 	const [height, setHeight] = useState("100vw");
@@ -159,17 +156,17 @@ export default function Project({
 
 						<div className="project-details-wrapper">
 							<div className="w-full text-xl relative">
-								{sections.map((section, i) => {
+								{items.map((item, i) => {
 									return (
 										<div className={``} key={i}>
 											<div
-												className={`w-full mt-16 ${section.sectionClasses}`}
+												className={`w-full mt-16 ${item.classes}`}
 											>
-												{section.items.map(
-													(item, j) => {
+												{item.section.map(
+													(section, j) => {
 														return (
 															<SingleItem
-																data={item}
+																data={section}
 																key={j}
 															/>
 														);
@@ -189,22 +186,20 @@ export default function Project({
 	);
 }
 export async function getStaticProps({ params }) {
-	const client = new ApolloClient({
-		uri: `${process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL}/graphql`,
-		cache: new InMemoryCache(),
-	});
-
-	const { data } = await client.query({
-		query: gql`
-			${query}
-		`,
-		variables: {
-			slug: params.slug,
+	const endpoint = `${process.env.NEXT_PUBLIC_DATOCMS_SITE_URL}`;
+	const client = new GraphQLClient(endpoint, {
+		headers: {
+			"content-type": "application/json",
+			authorization: `Bearer ${process.env.DATOCMS_KEY}`,
 		},
 	});
+	const variables = {
+		slug: params.slug,
+	};
 
-	const { project: singleProjectData, projects } = data;
-	const allProjects = projects.nodes;
+	const data = await client.request(query, variables);
+
+	const { project: singleProjectData, allProjects } = data;
 
 	const currentIdx = allProjects.findIndex((p) => p.slug === params.slug);
 	const nextIdx = (currentIdx + 1) % allProjects.length;
@@ -222,18 +217,17 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths(params) {
-	const client = new ApolloClient({
-		uri: `${process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL}/graphql`,
-		cache: new InMemoryCache(),
+	const endpoint = `${process.env.NEXT_PUBLIC_DATOCMS_SITE_URL}`;
+	const client = new GraphQLClient(endpoint, {
+		headers: {
+			"content-type": "application/json",
+			authorization: `Bearer ${process.env.DATOCMS_KEY}`,
+		},
 	});
 
-	const { data } = await client.query({
-		query: gql`
-			${allProjectSlugsQuery}
-		`,
-	});
+	const data = await client.request(allProjectSlugsQuery);
 
-	const paths = data.projects.nodes.map((project) => ({
+	const paths = data.allProjects.map((project) => ({
 		params: {
 			slug: project.slug.toString(),
 		},
