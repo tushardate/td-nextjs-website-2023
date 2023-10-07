@@ -1,18 +1,48 @@
 .thumbnailOverlay {
-	background-color: black;
-    opacity: 0;
-}
-
-.thumbnailTitle {
-	// letter-spacing: -0.015em;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 37%, rgb(0, 0, 0) 50%);
+	opacity: 0.6;
 }
 
 .thumbnailRatio {
 	overflow: hidden;
 	width: 100%;
-	padding-bottom: 56.25%;
+	// padding-top: 56.25%;
+	aspect-ratio: 16/9;
+}
+
+.imageWrapper {
+	overflow: hidden;
+	aspect-ratio: 16/9;
+}
+
+.thumbnailInfo {
+	perspective: 1000px;
+	perspective-origin: 300px;
+}
+
+.thumbnailBlueTab {
+	transform-origin: 100px;
 }
 
 .dropShadow {
-	background: linear-gradient(6deg, rgba(0,0,0,0.5) 5%, rgba(255,255,255,0) 40%);
+	background: linear-gradient(
+		6deg,
+		rgba(0, 0, 0, 0.5) 5%,
+		rgba(255, 255, 255, 0) 40%
+	);
+}
+
+.scaled-div {
+	background: orange;
+	transform-origin: top center; /* Set the transform origin to the top center */
+	transition: transform 0.3s ease; /* Add a transition for smooth scaling */
+}
+
+/* Apply scaling with a hover effect as an example */
+.scaled-div:hover {
+	transform: scaleY(0.75); /* Scale vertically by a factor of 1.5 */
+}
+
+.active {
+	border-color: #0030ff;
 }

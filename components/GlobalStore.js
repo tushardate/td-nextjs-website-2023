@@ -27,6 +27,7 @@ export const useTickerStore = create((set) => ({
 		FaMapMarkerAlt,
 	],
 	texts: [
+		"Tushar Date",
 		"Creative Director",
 		"Art Director",
 		"Freelance",
@@ -34,7 +35,9 @@ export const useTickerStore = create((set) => ({
 		"tushardate@gmail.com",
 		"Los Angeles",
 	],
-	increment: () =>
-		set((state) => ({ counter: (state.counter + 1) % state.texts.length })),
+	increment: () => {
+		set((state) => ({ counter: (state.counter + 1) % state.texts.length }));
+	},
 	setCounter: (val) => set((state) => ({ counter: val })),
+	setLast: () => set((state) => ({ counter: 0 })),
 }));

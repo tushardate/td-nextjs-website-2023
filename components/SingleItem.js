@@ -1,9 +1,10 @@
 import ImageCompare from "./ImageCompare";
 import Player from "./Player";
 import { motion } from "framer-motion";
-import { singleItemAnim } from "./animation/animations";
+import { singleItemAnim, clipPathAnim } from "./animation/animations";
 import ImageLoader from "./ImageLoader";
 import TDCarousel from "./TDCarousel";
+import TDTextLineReveal2 from "./TDTextLineReveal2";
 
 export default function SingleItem({ data }) {
 	return <RenderSingle data={data}></RenderSingle>;
@@ -14,10 +15,10 @@ function RenderSingle({ data }) {
 		if (data.content !== "") {
 			return (
 				<motion.div
-					variants={singleItemAnim}
-					initial="initial"
-					whileInView="whileInView"
-					viewport={singleItemAnim.viewport}
+					// variants={singleItemAnim}
+					// initial="initial"
+					// whileInView="whileInView"
+					// viewport={singleItemAnim.viewport}
 					className={`single-item ${data.textClasses}`}
 				>
 					<div>{data.content}</div>
@@ -27,11 +28,11 @@ function RenderSingle({ data }) {
 	} else if (data._modelApiKey === "image") {
 		return (
 			<motion.div
-				variants={singleItemAnim}
+				variants={clipPathAnim}
 				initial="initial"
 				whileInView="whileInView"
-				viewport={singleItemAnim.viewport}
-				className={`single-item leading-zero ${data.imageClasses}`}
+				viewport={clipPathAnim.viewport}
+				className={`single-item td-rounded leading-zero ${data.imageClasses}`}
 			>
 				<ImageLoader src={data.url} />
 				{/* <img src={data.url} alt="" /> */}
@@ -41,11 +42,11 @@ function RenderSingle({ data }) {
 		if (data.videoType === "VIDEOPOSTER") {
 			return (
 				<motion.div
-					variants={singleItemAnim}
+					variants={clipPathAnim}
 					initial="initial"
 					whileInView="whileInView"
-					viewport={singleItemAnim.viewport}
-					className={`single-item ${data.videoClasses} w-full h-full rounded-xl safari-fix`}
+					viewport={clipPathAnim.viewport}
+					className={`single-item ${data.videoClasses} w-full h-full td-rounded safari-fix`}
 				>
 					<div
 						className="overflow-hidden w-full h-0 relative"
@@ -65,11 +66,11 @@ function RenderSingle({ data }) {
 		} else {
 			return (
 				<motion.div
-					variants={singleItemAnim}
+					variants={clipPathAnim}
 					initial="initial"
 					whileInView="whileInView"
-					viewport={singleItemAnim.viewport}
-					className={`single-item ${data.videoClasses} overflow-hidden rounded-xl`}
+					viewport={clipPathAnim.viewport}
+					className={`single-item ${data.videoClasses} overflow-hidden td-rounded`}
 				>
 					<Player
 						url={data.url}
@@ -91,23 +92,19 @@ function RenderSingle({ data }) {
 				<div> dangerouslySetInnerHTML={{ __html: data.content }}</div>
 			</motion.div>
 		);
-	} else if (
-		data._modelApiKey === "image_compare"
-	) {
+	} else if (data._modelApiKey === "image_compare") {
 		return (
 			<motion.div
-				variants={singleItemAnim}
+				variants={clipPathAnim}
 				initial="initial"
 				whileInView="whileInView"
-				viewport={singleItemAnim.viewport}
-				className={`single-item ${data.imageCompareClasses}`}
+				viewport={clipPathAnim.viewport}
+				className={`single-item ${data.imageCompareClasses}  overflow-hidden td-rounded`}
 			>
 				<ImageCompare before={data.urlLeft} after={data.urlRight} />
 			</motion.div>
 		);
-	} else if (
-		data._modelApiKey === "carousel"
-	) {
+	} else if (data._modelApiKey === "carousel") {
 		return (
 			<motion.div
 				variants={singleItemAnim}

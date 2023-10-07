@@ -1,9 +1,18 @@
-.h-80 {
-	height: 100vh;
+.heroBanner {
+	height: 80vh;
 	min-height: 400px;
 }
+
+.td-rounded-banner {
+	clip-path: inset(0% 0% 0% 0% round 16px 16px 16px 0px);
+}
+
+.td-rounded {
+	clip-path: inset(0% 0% 0% 0% round 16px);
+}
+
 .td-letter-spacing {
-	letter-spacing: -0.015em;
+	// letter-spacing: -0.015em;
 }
 
 .title {
@@ -13,8 +22,9 @@
 }
 
 .headline {
-	font-size: max(40px, 3.75vw);
-	// letter-spacing: -0.0075em;
+	// font-size: max(40px, 5.615vw);
+	// line-height: 1rem;
+	// letter-spacing: -0.035em;
 }
 .pt {
 	padding-top: 56.25%;
@@ -54,6 +64,34 @@
 	-webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
+.perspective {
+	perspective: 2000px;
+	perspective-origin: center;
+}
+
+// .pill::after {
+// 	content: "";
+// 	height: 64px;
+// 	width: 32px;
+// 	background-color: orange;
+// 	display: block;
+// 	position: absolute;
+// 	top: 0;
+// 	right: -32px;
+// 	border-radius: 0 32px 32px 0;
+// }
+
+// .pill::before {
+// 	content: "";
+// 	height: 64px;
+// 	width: 32px;
+// 	background-color: orange;
+// 	display: block;
+// 	position: absolute;
+// 	top: 0;
+// 	left: -32px;
+// 	border-radius: 32px 0px 0px 32px;
+// }
 
 //****** CAROUSEL *********//
 
@@ -61,7 +99,8 @@
 	--swiper-theme-color: white !important;
 }
 
-.swiper-button-next, .swiper-button-prev {
+.swiper-button-next,
+.swiper-button-prev {
 	mix-blend-mode: difference;
 }
 

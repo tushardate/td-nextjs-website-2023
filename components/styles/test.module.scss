@@ -1,0 +1,22 @@
+.text {
+	color: orange;
+}
+.text:hover {
+	display: block;
+	color: red;
+}
+.wrapper {
+	transform-style: preserve-3d;
+	transition: all 0.35s;
+    transition: translateY(-10px);
+}
+
+.container:hover .wrapper{
+	transform: rotateX(-90deg);
+    transform-origin: top center;
+}
+.container {
+    perspective: 200px;
+    background-color: purple;
+    width: max-content;
+}

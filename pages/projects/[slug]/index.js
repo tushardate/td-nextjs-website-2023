@@ -11,11 +11,13 @@ import {
 	singleItemAnim,
 	singleProjectTitles,
 } from "@components/animation/animations";
-import { motion } from "framer-motion";
+import { motion, useAnimate, usePresence, stagger } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useWindowSize } from "@react-hook/window-size";
 import VideoThumbnail from "@components/VideoThumbnail";
 import { FaTrophy, FaCog } from "react-icons/fa";
+import TDSplitText from "@components/TDSplitText";
+import TDTextLineReveal2 from "@components/TDTextLineReveal2";
 
 export default function Project({
 	singleProjectData,
@@ -36,15 +38,91 @@ export default function Project({
 	} = singleProjectData;
 
 	const [winW, winH] = useWindowSize();
-	const [height, setHeight] = useState("100vw");
+	const [height, setHeight] = useState("80vh");
+	const [animComplete, setAnimComplete] = useState(false);
+
+	const [isPresent, safeToRemove] = usePresence();
+	const [scope, animate] = useAnimate();
 
 	useEffect(() => {
 		if (winW / winH < 1) {
-			setHeight(`max(100vw, 80vh)`);
+			setHeight(`max(100vw, 70vh)`);
 		} else {
-			setHeight("100vh");
+			setHeight("70vh");
 		}
 	}, [winW, winH]);
+
+	useEffect(() => {
+		if (isPresent) {
+			let enterAnim = async () => {
+				await animate([
+					[
+						".heroBanner",
+						{
+							clipPath: [
+								"inset(0% 98% 0% 0% round 16px 16px 16px 16px)",
+								"inset(0% 0% 0% 0% round 16px 16px 16px 16px)",
+							],
+							opacity: [0, 1, 1, 1],
+						},
+						{
+							duration: 1,
+							ease: [0.75, 0, 0, 1],
+						},
+					],
+					[
+						".heroBanner",
+						{
+							clipPath: [
+								"inset(0% 0% 0% 0% round 16px 16px 16px 16px)",
+								"inset(0% 0% 0% 0% round 16px 16px 16px 0px)",
+							],
+						},
+					],
+					[
+						".pill",
+						{
+							rotateX: ["90deg", "0deg"],
+							y: [-32, 0],
+							opacity: [0, 1, 1, 1],
+						},
+						{
+							duration: 0.75,
+							ease: [0.75, 0, 0, 1.2],
+							at: "<",
+						},
+					],
+					[
+						".projectName",
+						{ opacity: [0, 1] },
+						{ duration: 0.5, at: "-0.25" },
+					],
+					[
+						".word",
+						{ y: ["30%", "0%"], opacity: [0, 1] },
+						{
+							delay: stagger(0.07),
+							duration: 0.75,
+							ease: [0.75, 0, 0, 1.2],
+						},
+					],
+				]);
+			};
+			enterAnim().then(() => setAnimComplete(true));
+		} else {
+			let exitAnim = async () => {
+				await animate([
+					[
+						scope.current,
+						{ opacity: [1, 0], x: [0, 10] },
+						{ duration: 0.5, ease: [0.11, 0, 0.5, 0] },
+					],
+				]);
+				safeToRemove();
+			};
+			exitAnim();
+		}
+	}, [isPresent]);
 
 	return (
 		<>
@@ -58,93 +136,90 @@ export default function Project({
 					animate="animate"
 					exit="exit"
 					className="font-ppmori"
+					ref={scope}
 				>
-					<motion.div
-						variants={fadeIn}
-						style={{ height }}
-						className="w-full h-80 overflow-hidden relative rounded-b-2xl"
-					>
-						<img
-							fetchpriority="high"
-							className="absolute top-0 left-0 right-0 bottom-0 object-cover w-full h-full blur-3xl scale-125"
-							src={`${thumbnailImage}tr=w-200,bl-30,q-50`}
-							alt=""
-						/>
-
-						{thumbnailVideo ? (
-							<>
-								<VideoThumbnail src={thumbnailVideo} />
-								<div className="absolute inset-0 dropShadow" />
-							</>
-						) : (
-							<motion.div
-								initial={{ opacity: 0 }}
-								animate={{
-									opacity: 1,
-								}}
-								transition={{ duration: 1 }}
-								className="overflow-hidden w-full h-full relative"
-							>
-								<div className="absolute inset-0 bg-black opacity-40" />
-								<img
-									fetchpriority="high"
-									className="object-cover w-full h-full"
-									src={`${thumbnailImage}tr=w-1920`}
-									alt=""
-								/>
-							</motion.div>
-						)}
-
-						<motion.div className="md:w-5/6 absolute left-0 bottom-0 px-4 py-10 md:p-16 text-white">
-							<motion.p
-								variants={singleProjectTitles}
-								custom={1}
-								className="md:text-2xl mb-2 lg:mb-4"
-							>{`${client}`}</motion.p>
-							<motion.p
-								custom={2}
-								variants={singleProjectTitles}
-								className="text-8xl font-migra font-normal title text-white"
-							>{`${title}`}</motion.p>
+					<div className="px-4 md:px-16 md:mt-28">
+						<motion.div
+							style={{ height }}
+							className="w-full heroBanner overflow-hidden relative td-rounded-banner"
+						>
+							<img
+								fetchpriority="high"
+								className="absolute inset-0 object-cover w-full h-full blur-3xl scale-125"
+								src={`${thumbnailImage}tr=w-200,bl-30,q-50`}
+								alt=""
+							/>
+							{thumbnailVideo ? (
+								<>
+									<VideoThumbnail src={thumbnailVideo} />
+								</>
+							) : (
+								<motion.div
+									initial={{ opacity: 0 }}
+									animate={{
+										opacity: 1,
+									}}
+									transition={{ duration: 1 }}
+									className="overflow-hidden w-full h-full relative"
+								>
+									<img
+										fetchpriority="high"
+										className="absolute inset-0 object-cover w-full h-full"
+										src={`${thumbnailImage}tr=w-1920`}
+										alt=""
+									/>
+								</motion.div>
+							)}
 						</motion.div>
-					</motion.div>
+					</div>
 
-					<motion.div
-						variants={pageTransition}
-						className="w-full p-4 md:px-16 lg:pt-18"
-					>
-						<div className="project-details-wrapper lg:flex justify-between mb-16">
-							<motion.div
-								variants={singleItemAnim}
-								initial="initial"
-								whileInView="whileInView"
-								viewport={singleItemAnim.viewport}
-								className="lg:w-6/12"
-							>
-								<p className="font-migra font-medium headline text-5xl leading-tighter py-6 lg:py-0">
-									{headline ? headline : title}
-								</p>
+					<motion.div className="bottomWrapper w-full px-4 md:px-16 -translate-y-8">
+						<div className="perspective">
+							<motion.div className="pill h-16 bg-tdblue w-max px-8 rounded-full mb-10">
+								<motion.p className="md:text-3xl md:leading-[68px] text-white">{`${client}: ${title}`}</motion.p>
 							</motion.div>
+						</div>
+						<div className="project-details-wrapper grid grid-cols-12 gap-4">
+							<div className="col-span-9">
+								<motion.div className="mb-10">
+									<TDSplitText
+										types="words"
+										onComplete={animComplete}
+										className="font-migra font-bold headline text-80px leading-max tracking-touchtight"
+									>
+										{headline ? headline : title}
+									</TDSplitText>
+								</motion.div>
+
+								<motion.div
+									variants={singleItemAnim}
+									initial="initial"
+									whileInView="whileInView"
+									viewport={singleItemAnim.viewport}
+									className="w-9/12"
+								>
+									<motion.div className="">
+										<p className="md:text-2xl font-semibold">{summary}</p>
+									</motion.div>
+								</motion.div>
+							</div>
 							<motion.div
 								variants={singleItemAnim}
 								initial="initial"
 								whileInView="whileInView"
 								viewport={singleItemAnim.viewport}
-								className="lg:w-4/12"
+								className="col-span-2 col-start-11 flex flex-col justify-end"
 							>
-								<p className="lg:text-xl pb-6 lg:pb-8">
-									{summary}
-								</p>
-								<div className="pb-2">
-									<div className="inline-grid grid-flow-col gap-2">
-										<FaCog className="mt-0.5" />
+								<div>
+									<div className="">
+										<p>Role:</p>
 										<p className="">{role}</p>
 									</div>
 								</div>
 								{awards ? (
 									<div>
-										<div className="inline-grid grid-flow-col gap-2">
-											<FaTrophy className="mt-0.5" />
+										<div className="pt-8">
+											<p>Awards:</p>
 											<p>{awards}</p>
 										</div>
 									</div>

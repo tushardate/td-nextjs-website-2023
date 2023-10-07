@@ -1,17 +1,51 @@
 import Link from "next/link";
 import { useCursorStore } from "./GlobalStore";
 import { motion } from "framer-motion";
-import {
-	prevNextAnim,
-} from "@components/animation/animations";
+import { clipPathAnim } from "@components/animation/animations";
+import TDAnimText from "./TDAnimText";
 
 export default function PrevNext(props) {
 	const { prev, next } = props;
 	const { setCursorType } = useCursorStore();
 
 	return (
-		<motion.div className="z-50 px-4 md:px-16 pt-4 md:pt-8 flex justify-between font-migra font-medium text-5xl md:text-8xl">
+		<motion.div className="flex flex-col items-center z-50 px-4 md:px-16 pt-4 md:mt-24 md:mb-16">
+			<motion.div className="w-12 h-1 rounded-full bg-tdblue mb-4"></motion.div>
+
 			<Link
+				as={`/projects/${next.slug}`}
+				href="/projects/[slug]"
+				scroll={false}
+				className="w-full "
+				onMouseEnter={() => setCursorType("arrowRight")}
+				onMouseLeave={() => setCursorType("default")}
+			>
+				<motion.div className="flex flex-col gap-2 items-center">
+					<div className="text-30px">Next Project</div>
+					<div className="text-54px font-bold leading-tighter mb-5">
+						{next.title}
+					</div>
+					<motion.div
+						variants={clipPathAnim}
+						initial="initial"
+						whileInView="whileInView"
+						viewport={clipPathAnim.viewport}
+						className="relative overflow-hidden safari-fix rounded-2xl imageWrapper w-5/12"
+					>
+						<div className="absolute w-full">
+							<motion.img
+								className="object-cover w-full thumbnailImage"
+								src={`${next.thumbnailImage}tr=w-1440`}
+								srcSet={`${next.thumbnailImage}tr=w-800 800w, ${next.thumbnailImage}tr=w-1200 1200w, ${next.thumbnailImage}tr=w-1500 1500w, ${next.thumbnailImage}tr=w-1920 1920w,`}
+								sizes="(max-width: 1024px) 100vw, 50vw"
+								alt=""
+							/>
+						</div>
+					</motion.div>
+				</motion.div>
+			</Link>
+			<TDAnimText text="Test Text" className="tdAnimText" el="p" />
+			{/* <Link
 				as={`/projects/${prev.slug}`}
 				href="/projects/[slug]"
 				scroll={false}
@@ -48,7 +82,7 @@ export default function PrevNext(props) {
 				>
 					Next
 				</motion.span>
-			</Link>
+			</Link> */}
 		</motion.div>
 	);
 }

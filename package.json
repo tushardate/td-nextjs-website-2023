@@ -19,6 +19,7 @@
     "framer-motion": "^10.12.4",
     "graphql": "^16.6.0",
     "graphql-request": "^6.1.0",
+    "gsap": "^3.12.2",
     "next": "13.3.0",
     "plyr-react": "^5.2.0",
     "postcss": "8.4.23",

@@ -9,115 +9,128 @@
 
 @layer base {
 	@font-face {
-		font-family: "PP Mori";
-		src: url("/fonts/PPMori/PPMori-Extralight.woff2") format("woff2"),
-			url("/fonts/PPMori/PPMori-Extralight.woff") format("woff");
-		font-weight: 100;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "PP Mori";
-		src: url("/fonts/PPMori/PPMori-SemiBoldItalic.woff2") format("woff2"),
-			url("/fonts/PPMori/PPMori-SemiBoldItalic.woff") format("woff");
-		font-weight: 600;
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "PP Mori";
-		src: url("/fonts/PPMori/PPMori-ExtralightItalic.woff2") format("woff2"),
-			url("/fonts/PPMori/PPMori-ExtralightItalic.woff") format("woff");
-		font-weight: 100;
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "PP Mori";
-		src: url("/fonts/PPMori/PPMori-Regular.woff2") format("woff2"),
-			url("/fonts/PPMori/PPMori-Regular.woff") format("woff");
-		font-weight: normal;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "PP Mori";
-		src: url("/fonts/PPMori/PPMori-SemiBold.woff2") format("woff2"),
-			url("/fonts/PPMori/PPMori-SemiBold.woff") format("woff");
-		font-weight: 600;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "PP Mori";
-		src: url("/fonts/PPMori/PPMori-RegularItalic.woff2") format("woff2"),
-			url("/fonts/PPMori/PPMori-RegularItalic.woff") format("woff");
-		font-weight: normal;
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'Migra';
-		src: url('/fonts/Migra/Migra-Medium.woff2') format('woff2'),
-			url('/fonts/Migra/Migra-Medium.woff') format('woff');
+		font-family: "Favorit";
+		src: url("/fonts/Favorit/Favorit-Medium.woff2") format("woff2"),
+			url("/fonts/Favorit/Favorit-Medium.woff") format("woff");
 		font-weight: 500;
 		font-style: normal;
 		font-display: swap;
 	}
-	
+
 	@font-face {
-		font-family: 'Migra';
-		src: url('/fonts/Migra/Migra-Bold.woff2') format('woff2'),
-			url('/fonts/Migra/Migra-Bold.woff') format('woff');
+		font-family: "Favorit";
+		src: url("/fonts/Favorit/Favorit-Bold.woff2") format("woff2"),
+			url("/fonts/Favorit/Favorit-Bold.woff") format("woff");
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Favorit";
+		src: url("/fonts/Favorit/Favorit-Regular.woff2") format("woff2"),
+			url("/fonts/Favorit/Favorit-Regular.woff") format("woff");
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'At Hauss Std';
+		src: url('/fonts/Hauss/AtHaussStd-Bold.woff2') format('woff2'),
+			url('/fonts/Hauss/AtHaussStd-Bold.woff') format('woff');
 		font-weight: bold;
 		font-style: normal;
 		font-display: swap;
 	}
 	
 	@font-face {
-		font-family: 'Migra';
-		src: url('/fonts/Migra/Migra-Light.woff2') format('woff2'),
-			url('/fonts/Migra/Migra-Light.woff') format('woff');
-		font-weight: 300;
+		font-family: 'At Hauss Std';
+		src: url('/fonts/Hauss/AtHaussStd-Regular.woff2') format('woff2'),
+			url('/fonts/Hauss/AtHaussStd-Regular.woff') format('woff');
+		font-weight: normal;
 		font-style: normal;
 		font-display: swap;
 	}
 	
 	@font-face {
-		font-family: 'Migra';
-		src: url('/fonts/Migra/Migra-Semibold.woff2') format('woff2'),
-			url('/fonts/Migra/Migra-Semibold.woff') format('woff');
+		font-family: 'At Hauss Std Retina';
+		src: url('/fonts/Hauss/AtHaussStd-Retina.woff2') format('woff2'),
+			url('/fonts/Hauss/AtHaussStd-Retina.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+	
+	@font-face {
+		font-family: 'At Hauss Std';
+		src: url('/fonts/Hauss/AtHaussStd-Medium.woff2') format('woff2'),
+			url('/fonts/Hauss/AtHaussStd-Medium.woff') format('woff');
+		font-weight: 500;
+		font-style: normal;
+		font-display: swap;
+	}
+	
+	@font-face {
+		font-family: 'PP Mori';
+		src: url('/fonts/PPMori/PPMori-Bold.woff2') format('woff2'),
+			url('/fonts/PPMori/PPMori-Bold.woff') format('woff');
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+	
+	@font-face {
+		font-family: 'PP Mori';
+		src: url('/fonts/PPMori/PPMori-SemiBold.woff2') format('woff2'),
+			url('/fonts/PPMori/PPMori-SemiBold.woff') format('woff');
 		font-weight: 600;
 		font-style: normal;
 		font-display: swap;
 	}
 	
 	@font-face {
-		font-family: 'Migra';
-		src: url('/fonts/Migra/Migra-Regular.woff2') format('woff2'),
-			url('/fonts/Migra/Migra-Regular.woff') format('woff');
-		font-weight: normal;
+		font-family: 'PP Mori';
+		src: url('/fonts/PPMori/PPMori-Medium.woff2') format('woff2'),
+			url('/fonts/PPMori/PPMori-Medium.woff') format('woff');
+		font-weight: 500;
 		font-style: normal;
 		font-display: swap;
 	}
+	
+	@font-face {
+		font-family: 'PP Mori';
+		src: url('/fonts/PPMori/PPMori-Regular.woff2') format('woff2'),
+			url('/fonts/PPMori/PPMori-Regular.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}	
+	
 }
 
-::selection {
-	background-color: #0030ff;
-	color: #ffff00;
+// ::selection {
+// 	background-color: #0030ff;
+// 	color: #ffff00;
+// }
+
+* {
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
 
 body {
 	// background-color: #14171a;
 	// color: white;
-	background-color: #edece8;
-	color: #131313;
+	background-color: #f2f2f2;
+	color: #000ce4;
+	font-kerning: normal;
+	letter-spacing: -0.01em;
+	font-weight: 500;
+}
+
+.grid-overlay {
+	background-image: url("../../public/images/GridLine_16px.png");
 }
 
 // * {
@@ -142,3 +155,8 @@ body {
 	text-transform: uppercase;
 	color: white;
 }
+
+.kerning-none {
+	font-kerning: none;
+}
+

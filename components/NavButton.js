@@ -1,7 +1,7 @@
 import { stagger, useAnimate } from "framer-motion";
 import { useEffect, useState } from "react";
 
-export default function NavButton({ text }) {
+export default function NavButton({ text, className }) {
 	const letters = Array.from(text);
 	const [scope, animate] = useAnimate();
 	const [canAnimate, setCanAnimate] = useState(false);
@@ -11,9 +11,9 @@ export default function NavButton({ text }) {
 			animate([
 				[
 					".letter",
-					{ y: -24 },
+					{ y: -20 },
 					{
-						duration: 0.5,
+						duration: 0.65,
 						type: "spring",
 						delay: stagger(0.02),
 					},
@@ -24,15 +24,15 @@ export default function NavButton({ text }) {
 	const onMouseLeave = (e) => {
 		if (canAnimate) {
 			animate([
-				// [
-				// 	".letter",
-				// 	{ y: 0 },
-				// 	{
-				// 		duration: 0.5,
-				// 		type: "spring",
-				// 		delay: stagger(0.02),
-				// 	},
-				// ],
+				[
+					".letter",
+					{ y: 0 },
+					{
+						duration: 0.65,
+						type: "spring",
+						delay: stagger(0.02),
+					},
+				],
 				[
 					".letter",
 					{ y: 0 },
@@ -60,13 +60,14 @@ export default function NavButton({ text }) {
 			onMouseLeave={onMouseLeave}
 			onClick={onClick}
 			ref={scope}
+			className={`flex items-center justify-center ${className} px-2 py-1 border-2 border-transparent rounded-full`}
 		>
-			<button className="relative py-2">
-				<span className="block h-6 overflow-hidden">
+			<button className="relative">
+				<span className="block overflow-hidden">
 					{letters.map((letter, index) => (
 						<span
 							data-letter={letter}
-							className="letter relative inline-block h-6 leading-6 after:absolute after:left-0 after:top-full after:h-6 after:content-[attr(data-letter)]"
+							className="letter relative inline-block h-5 leading-[26px] after:absolute after:left-0 after:top-full after:h-5 after:content-[attr(data-letter)]"
 							key={`${letter}-${index}`}
 						>
 							{letter}

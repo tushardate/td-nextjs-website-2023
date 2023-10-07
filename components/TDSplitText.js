@@ -1,39 +1,56 @@
-import { useEffect } from "react";
+"use client";
+import { useEffect, useState } from "react";
 import SplitType from "split-type";
-import { motion, stagger, useAnimate } from "framer-motion";
 
-export default function TDSplitText({ children }) {
-	const [scope, animate] = useAnimate();
+export default function TDSplitText({
+	types,
+	className,
+	onComplete,
+	children,
+	lineClass = "line",
+	wordClass = "word",
+	charClass = "char",
+	splitClass = null,
+}) {
+	const [text, setText] = useState(null);
 
 	useEffect(() => {
-		const text = new SplitType("#td-split-text");
-		const lines = document.getElementsByClassName("line");
-		for (let i = 0; i < lines.length; i++) {
-			lines[i].style.opacity = 0
+		if (types) {
+			let res = new SplitType("#td-split-text", {
+				types: types,
+				lineClass,
+				wordClass,
+				charClass,
+				splitClass,
+			});
+			setText(res);
+		} else {
+			let res = new SplitType("#td-split-text", {
+				lineClass,
+				wordClass,
+				charClass,
+				splitClass,
+			});
+			setText(res);
 		}
-
-
-		const anim = async () => {
-			await animate(
-				".line",
-				{ opacity: 0, y: 15 },
-				{ duration: 0.000001 }
-			);
-			await animate(
-				".line",
-				{ opacity: 1, y: 0 },
-				{ duration: 2, delay: stagger(0.3) }
-			);
-		};
-
-		anim();
 	}, []);
 
+	// useEffect(() => {
+	// 	if (text !== null) {
+	// 		text.lines.map((el) => (el.style.opacity = 0));
+	// 	}
+	// }, [text]);
+
+	useEffect(() => {
+		if (onComplete && text !== null) {
+			text.revert();
+			setText(null);
+		}
+	}, [onComplete]);
+
 	return (
-		<div className="w-1/2">
-			<motion.div ref={scope} id="td-split-text">
-				{children}
-			</motion.div>
+		<div className={className} id="td-split-text">
+			{children}
 		</div>
 	);
 }

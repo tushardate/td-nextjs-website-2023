@@ -1,18 +1,19 @@
 import Layout from "@components/Layout";
+import styles from "@components/styles/test.module.scss";
 import TDSplitText from "@components/TDSplitText";
 
 export default function Test() {
+	const { text, wrapper, container } = styles;
 	return (
 		<Layout>
 			<div className="min-h-screen">
-				<div className="min-w-screen bg-red-600 h-48"></div>
-				<TDSplitText>
-					The SplitType class splits the text content of the target
-					elements using the provided options. It returns a SplitType
-					instance which provides access to the split text nodes. By
-					default, text will be split into lines, words, and
-					characters, using relative position.
-				</TDSplitText>
+				<div className={`${container}`}>
+					<div className={`mt-28 px-16 textWrap ${wrapper}`}>
+						<div className={`${text} text-4xl pointer-events-none`}>
+							Lorem Ipsum
+						</div>
+					</div>
+				</div>
 			</div>
 		</Layout>
 	);

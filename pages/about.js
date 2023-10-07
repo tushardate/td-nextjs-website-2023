@@ -52,9 +52,9 @@ export default function About({ about }) {
 					initial="initial"
 					animate="animate"
 					exit="exit"
-					className="pt-32 mb-16 font-ppmori"
+					className="pt-28 mb-16 font-ppmori"
 				>
-					<div className="px-4 md:px-16 text-xl">
+					<div className="px-4 md:px-16 text-2xl">
 						<div className="pb-20 md:flex">
 							<motion.div
 								variants={fadeIn}
@@ -73,7 +73,7 @@ export default function About({ about }) {
 									</div>
 								</div>
 							</motion.div>
-							<p className="font-migra font-medium md:w-2/3 md:w-11/12 md:-ml-1 text-8xl aboutHeadline self-end md:-mb-[1.5vw] mt-6 md:mt-0 lg:pr-16">
+							<p className="font-migra font-bold md:w-2/3 md:-ml-1 text-140px aboutHeadline leading-max self-end md:-mb-[1.5vw] mt-6 md:mt-0 lg:pr-16">
 								{headline}
 							</p>
 						</div>

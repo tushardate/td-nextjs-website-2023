@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useWindowWidth } from "@react-hook/window-size";
 import Ticker from "./Ticker";
+import TDLogo from "./TDLogo";
+import NavButton from "./NavButton";
 
 export default function Header() {
 	const router = useRouter();
@@ -13,10 +15,22 @@ export default function Header() {
 	const [hidden, setHidden] = useState(false);
 	const [showTicker, setShowTicker] = useState(true);
 	const winWidth = useWindowWidth();
+	const isWorkPage = () => {
+		if (router.asPath === "/" || router.pathname.startsWith("/projects")) {
+			return true;
+		}
+		return false;
+	};
+	const isAboutPage = () => {
+		if (router.asPath === "/about") {
+			return true;
+		}
+		return false;
+	};
 
 	useMotionValueEvent(scrollY, "change", (latest) => {
 		const previous = scrollY.getPrevious();
-		if (latest > previous && latest > 24) {
+		if (latest > previous && latest > 300) {
 			setHidden(true);
 		} else {
 			setHidden(false);
@@ -51,57 +65,61 @@ export default function Header() {
 				variants={anim}
 				animate={hidden ? "hidden" : "visible"}
 				onMouseOver={() => setHidden(false)}
-				className="nav uppercase flex align-baseline text-white px-4 md:px-16 pt-6 md:pt-12 pb-6 w-full justify-between fixed top-0 z-50 mix-blend-difference font-ppmori text-base md:text-xl"
+				className="font-semibold uppercase flex gap-4 h-8 mt-8 px-16 w-full justify-between items-baseline fixed top-0 z-50 font-ppmori text-xl"
 			>
 				<Link
 					href="/"
 					scroll={false}
 					onMouseOver={() => setCursorType("hover")}
 					onMouseLeave={() => setCursorType("default")}
+					className="basis-8/12"
 				>
-					<div className="relative">
-						<div className="flex text-2.25xl">
-							<div className="font-bold">Tushar Date</div>
-							{showTicker && (
-								<>
-									<span className="mx-3">•</span>
-									<Ticker />
-								</>
-							)}
-						</div>
+					<div className="relative flex items-end">
+						<TDLogo />
+						<span className="pl-8 w-full">
+							{showTicker && <Ticker />}
+						</span>
 					</div>
 				</Link>
-				<div className="flex menu-strikethrough">
-					<div
-						onMouseOver={() => setCursorType("hover")}
-						onMouseLeave={() => setCursorType("default")}
-						className="px-3 md:px-4 lg:px-6"
-					>
-						<Link
-							className={`${
-								router.asPath === "/" ? "active" : ""
-							}`}
-							href="/"
-							scroll={false}
-						>
-							Work
-						</Link>
-					</div>
-					<div
-						onMouseOver={() => setCursorType("hover")}
-						onMouseLeave={() => setCursorType("default")}
-						className="pl-3 md:pl-9 lg:pl-16"
-					>
-						<Link
-							className={`${
-								router.asPath === "/about" ? "active" : ""
-							} `}
-							href="/about"
-							scroll={false}
-						>
-							About
-						</Link>
-					</div>
+				<div
+					onMouseOver={() => setCursorType("hover")}
+					onMouseLeave={() => setCursorType("default")}
+					className="leading-none relative"
+				>
+					{isWorkPage() && (
+						<motion.div
+							layout
+							layoutId="navPill"
+							className="absolute w-full h-full border-2 border-tdblue rounded-full"
+						></motion.div>
+					)}
+					<Link href="/" scroll={false}>
+						<NavButton
+							text="WORK"
+							// className={`${isWorkPage() ? "active w-max" : ""}`}
+						/>
+					</Link>
+				</div>
+				<div
+					onMouseOver={() => setCursorType("hover")}
+					onMouseLeave={() => setCursorType("default")}
+					className="leading-none text-right relative"
+				>
+					{isAboutPage() && (
+						<motion.div
+							layout
+							layoutId="navPill"
+							className="absolute w-full h-full border-2 border-tdblue rounded-full"
+						></motion.div>
+					)}
+					<Link href="/about" scroll={false}>
+						<NavButton
+							text="ABOUT"
+							// className={`${
+							// 	router.asPath === "/about" ? "active w-max" : ""
+							// }`}
+						/>
+					</Link>
 				</div>
 			</motion.div>
 		</>

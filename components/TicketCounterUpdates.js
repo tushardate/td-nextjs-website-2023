@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useTickerStore } from "./GlobalStore";
 
 const TickerCounterUpdater = () => {
-	const { setCounter, increment } = useTickerStore();
+	const { setLast, increment } = useTickerStore();
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -12,7 +12,7 @@ const TickerCounterUpdater = () => {
 
 		const timeOut = setTimeout(() => {
 			clearInterval(interval);
-      setCounter(0);
+			setLast();
 		}, 10 * 60 * 1000); // 10 minutes in milliseconds
 		return () => {
 			clearInterval(interval);
