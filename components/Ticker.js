@@ -29,7 +29,7 @@ const Ticker = () => {
 	const { counter, icons, texts } = useTickerStore();
 
 	return (
-		<div className="ticker-container normal-case">
+		<div className="ticker-container normal-case opacity-30">
 			<AnimatePresence mode="wait" initial={false}>
 				{icons &&
 					icons.map(
@@ -37,14 +37,14 @@ const Ticker = () => {
 							index === counter && (
 								<motion.div
 									key={index}
-									className="ticker-text flex items-center text-lg uppercase gap-2"
+									className="ticker-text flex items-center uppercase gap-1.5"
 									variants={textVariants}
 									initial="initial"
 									animate="animate"
 									exit="exit"
 									custom={index === 0 ? 0 : 1} // Add a custom delay for the entering text
 								>
-									<Icon className="text-base mb-1" />
+									{/* <Icon className="text-base mb-1" /> */}
 									{texts && texts[index]}
 								</motion.div>
 							)

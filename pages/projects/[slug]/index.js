@@ -104,7 +104,7 @@ export default function Project({
 							<motion.p
 								custom={2}
 								variants={singleProjectTitles}
-								className="text-8xl font-migra font-normal title text-white"
+								className="lg:w-3/5 text-8xl font-migra font-normal title text-white"
 							>{`${title}`}</motion.p>
 						</motion.div>
 					</motion.div>
@@ -121,7 +121,7 @@ export default function Project({
 								viewport={singleItemAnim.viewport}
 								className="lg:w-6/12"
 							>
-								<p className="font-migra font-medium headline text-5xl leading-tighter py-6 lg:py-0">
+								<p className="font-medium headline text-5xl leading-tighter py-6 lg:py-0">
 									{headline ? headline : title}
 								</p>
 							</motion.div>

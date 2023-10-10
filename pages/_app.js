@@ -9,7 +9,7 @@ export default function App({ Component, pageProps, router }) {
 
 	return (
 		<>
-			{/* <Cursor /> */}
+			<Cursor />
 			<TickerCounterUpdater />
 			<AnimatePresence
 				mode="wait"

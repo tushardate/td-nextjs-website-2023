@@ -52,7 +52,7 @@ export default function About({ about }) {
 					initial="initial"
 					animate="animate"
 					exit="exit"
-					className="pt-32 mb-16 font-ppmori"
+					className="pt-40 mb-16 font-ppmori"
 				>
 					<div className="px-4 md:px-16 text-xl">
 						<div className="pb-20 md:flex">
@@ -73,13 +73,13 @@ export default function About({ about }) {
 									</div>
 								</div>
 							</motion.div>
-							<p className="font-migra font-medium md:w-2/3 md:w-11/12 md:-ml-1 text-8xl aboutHeadline self-end md:-mb-[1.5vw] mt-6 md:mt-0 lg:pr-16">
+							<p className="font-migra md:w-2/3 md:w-11/12 md:-ml-1 text-8xl aboutHeadline self-end md:-mb-[1.5vw] mt-6 md:mt-0 lg:pr-16">
 								{headline}
 							</p>
 						</div>
 						<div className="contact">
 							<div className="lg:flex">
-								<p className="text-2xl lg:text-xl uppercase lg:w-1/3 lg:py-8 pb-3 lg:text-right lg:pr-16">
+								<p className="opacity-30 text-2xl lg:text-xl uppercase lg:w-1/3 lg:py-8 pb-3 lg:text-right lg:pr-16">
 									Contact
 								</p>
 								<div className="lg:w-2/3 lg:py-8 pb-8">
@@ -145,7 +145,7 @@ export default function About({ about }) {
 						</div>
 						<div className="bio">
 							<div className="lg:flex pt-12 lg:pt-0">
-								<p className="text-2xl lg:text-xl uppercase lg:w-1/3 lg:py-12 pb-3 lg:text-right lg:pr-16">
+								<p className="opacity-30 text-2xl lg:text-xl uppercase lg:w-1/3 lg:py-12 pb-3 lg:text-right lg:pr-16">
 									About
 								</p>
 								<p
@@ -156,7 +156,7 @@ export default function About({ about }) {
 						</div>
 						<div className="experience">
 							<div className="lg:flex pt-12 lg:pt-0">
-								<p className="text-2xl lg:text-xl uppercase lg:w-1/3 lg:py-12 pb-3 lg:text-right lg:pr-16">
+								<p className="opacity-30 text-2xl lg:text-xl uppercase lg:w-1/3 lg:py-12 pb-3 lg:text-right lg:pr-16">
 									Experience
 								</p>
 								<div className="lg:w-2/3 lg:col-count-2 c-gap lg:py-12 pb-8">
@@ -181,7 +181,7 @@ export default function About({ about }) {
 						</div>
 						<div className="awards">
 							<div className="lg:flex pt-12 lg:pt-0">
-								<p className="text-2xl lg:text-xl uppercase lg:w-1/3 lg:py-12 pb-3 lg:text-right lg:pr-16">
+								<p className="opacity-30 text-2xl lg:text-xl uppercase lg:w-1/3 lg:py-12 pb-3 lg:text-right lg:pr-16">
 									Recognition
 								</p>
 								<div className="lg:w-2/3 lg:col-count-3 c-gap  lg:py-12 pb-8">
@@ -197,7 +197,7 @@ export default function About({ about }) {
 						</div>
 						<div className="brands">
 							<div className="lg:flex pt-12 lg:pt-0">
-								<p className="text-2xl lg:text-xl uppercase lg:w-1/3 lg:py-12 pb-3 lg:text-right lg:pr-16">
+								<p className="opacity-30 text-2xl lg:text-xl uppercase lg:w-1/3 lg:py-12 pb-3 lg:text-right lg:pr-16">
 									Brands
 								</p>
 								<div className="lg:w-2/3 md:col-count-2 lg:col-count-3 c-gap lg:py-12 pb-8">

@@ -32,7 +32,7 @@ export default function Home({ projects }) {
 					initial="initial"
 					animate="animate"
 					exit="exit"
-					className="px-4 md:px-16 mt-18 md:mt-32 font-ppmori"
+					className="px-4 md:px-16 mt-18 md:mt-40 font-ppmori"
 				>
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-16 lg:gap-4">
 						{projects.map((project, i) => {

@@ -26,7 +26,7 @@ function ProjectThumbnail(props) {
 
 	function handleHoverStart() {
 		setCursorType("arrowBottomRight");
-		animate(".thumbnailOverlay", { opacity: 0.3 }, transition);
+		animate(".thumbnailOverlay", { opacity: 0.7 }, transition);
 		animate(".thumbnailInfo p", { x: 0, opacity: 1 }, transition);
 		animate(".thumbnailImage", { scale: 1.035 }, transition);
 	}
@@ -64,7 +64,7 @@ function ProjectThumbnail(props) {
 							<p className="text-white text-base">
 								{client}
 							</p>
-							<p className="text-3xl sm:text-5xl text-white sm:w-5/6 thumbnailTitle font-migra font-medium">
+							<p className="text-3xl sm:text-5xl text-white sm:w-5/6 thumbnailTitle font-migra">
 								{title}
 							</p>
 						</motion.div>

@@ -61,10 +61,11 @@ export default function Header() {
 				>
 					<div className="relative">
 						<div className="flex text-2.25xl">
-							<div className="font-bold">Tushar Date</div>
+							<div className="">Tushar Date</div>
 							{showTicker && (
 								<>
-									<span className="mx-3">•</span>
+									{/* <span className="mx-3">•</span> */}
+									<span className="text-base ml-0.5 mr-2">®</span>
 									<Ticker />
 								</>
 							)}
