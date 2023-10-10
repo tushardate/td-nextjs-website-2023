@@ -20,9 +20,9 @@ function ProjectThumbnailMobile(props) {
 						/>
 					</div>
 					<div className="w-full h-full">
-						<div className="absolute top-0 left-0 w-full h-full bg" />
+						<div className="absolute top-0 left-0 w-full h-full thumbnailOverlayMobile" />
 						<div
-							className={`absolute top-0 left-0 w-full h-full px-9 py-6 sm:px-14 sm:py-11 flex flex-col gap-0 lg:gap-2 justify-end items-start`}
+							className={`absolute top-0 left-0 w-full h-full px-4 py-2 sm:px-14 sm:py-11 flex flex-col gap-0 lg:gap-2 justify-end items-start`}
 						>
 							<p className="text-white text-base">
 								{client}

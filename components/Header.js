@@ -65,7 +65,9 @@ export default function Header() {
 							{showTicker && (
 								<>
 									{/* <span className="mx-3">•</span> */}
-									<span className="text-base ml-0.5 mr-2">®</span>
+									<span className="text-base ml-0.5 mr-2">
+										®
+									</span>
 									<Ticker />
 								</>
 							)}

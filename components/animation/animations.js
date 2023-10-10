@@ -31,7 +31,7 @@ export const singleProjectTitles = {
 		y: 0,
 		opacity: 1,
 		transition: {
-			delay: (custom * 0.1) + 0.5,
+			delay: (custom * 0.1),
 			duration: 0.65,
 			ease: [0.33, 1, 0.68, 1],
 		},
@@ -68,13 +68,14 @@ export const fadeIn = {
 };
 
 export const singleItemAnim = {
-	initial: { opacity: 0, y: 32 },
+	initial: { opacity: 0, y: 48, scale: 0.98},
 	whileInView: {
 		opacity: 1,
 		y: 0,
+		scale: 1,
 		transition: {
-			duration: 1,
-			ease: "easeOut",
+			duration: 0.75,
+			ease: [0.33, 1, 0.68, 1],
 		},
 	},
 	viewport: {

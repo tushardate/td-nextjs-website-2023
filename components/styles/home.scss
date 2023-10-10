@@ -1,6 +1,14 @@
 .thumbnailOverlay {
 	background-color: black;
-    opacity: 0;
+	opacity: 0;
+}
+.thumbnailOverlayMobile {
+	background: rgb(0, 0, 0);
+	background: linear-gradient(
+		0deg,
+		rgba(0, 0, 0, 0.7) 0%,
+		rgba(0, 0, 0, 0) 60%
+	);
 }
 
 .thumbnailTitle {
@@ -14,5 +22,9 @@
 }
 
 .dropShadow {
-	background: linear-gradient(6deg, rgba(0,0,0,0.5) 5%, rgba(255,255,255,0) 40%);
+	background: linear-gradient(
+		6deg,
+		rgba(0, 0, 0, 0.5) 5%,
+		rgba(255, 255, 255, 0) 40%
+	);
 }
