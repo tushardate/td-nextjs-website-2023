@@ -22,17 +22,22 @@ function ProjectThumbnail(props) {
 			let enter = animate([
 				[
 					".thumbnailImage",
-					{ opacity: 0, scale: 1.05 },
-					{ duration: 0.25, ease: "anticipate" },
+					{ scale: 1.05 },
+					{ duration: 0.35, ease: "anticipate" },
+				],
+				[
+					".blueOverlay",
+					{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },
+					{ duration: 0.35, ease: [0.75, 0, 0, 1], at: "<" },
 				],
 				[
 					".item",
-					{ y: 0, opacity: 1 },
+					{ x: 0, opacity: [0, 1] },
 					{
 						duration: 0.5,
 						ease: "anticipate",
 						delay: stagger(0.03),
-						at: "-0.2",
+						at: "-0.25",
 					},
 				],
 			]);
@@ -40,13 +45,18 @@ function ProjectThumbnail(props) {
 			let exit = animate([
 				[
 					".item",
-					{ y: 10, opacity: 0 },
+					{ x: 5, opacity: 0 },
 					{ duration: 0.3, ease: "anticipate" },
 				],
 				[
+					".blueOverlay",
+					{ clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)" },
+					{ duration: 0.35, ease: [0.75, 0, 0, 1], at: "<" },
+				],
+				[
 					".thumbnailImage",
-					{ opacity: 1, scale: 1 },
-					{ duration: 0.2, ease: "anticipate", at: "-0.2" },
+					{ scale: 1 },
+					{ duration: 0.4, ease: "anticipate", at: "<" },
 				],
 			]);
 		}
@@ -74,33 +84,6 @@ function ProjectThumbnail(props) {
 					onHoverEnd={() => handleHoverEnd()}
 					className="projectThumbnail thumbnailRatio relative overflow-hidden rounded-2xl"
 				>
-					<div className="w-full h-full absolute top-0 left-0 bg-tdblue"></div>
-					{/* <motion.div className="absolute top-0 left-0 w-full h-full thumbnailOverlay" /> */}
-
-					<div className="w-full h-full absolute top-0 left-0 text-white">
-						<motion.div
-							className={`thumbnailInfo absolute top-0 left-0 w-full h-full px-16 py-14 flex flex-col`}
-						>
-							<p className="item thumbnailClient text-xl mb-1">
-								{client}
-							</p>
-							<TDSplitText
-								type="words"
-								wordClass="item"
-								className="thumbnailTitle text-[4vw] leading-tightest font-bold -ml-0.5"
-							>
-								{title}
-							</TDSplitText>
-							{/* <p className="item thumbnailTitle text-[3.35vw] leading-tight font-bold -ml-0.5">
-								{title}
-							</p> */}
-							<div className="thumbnailTags flex gap-3 text-white border-tdblue pb-[1px] mt-auto">
-								<Tag className="item" text="Branding" />
-								<Tag className="item" text="Campaign" />
-								<Tag className="item" text="Social" />
-							</div>
-						</motion.div>
-					</div>
 					<div className="overflow-hidden safari-fix rounded-2xl imageWrapper absolute w-full">
 						<div className="absolute w-full h-full">
 							<motion.img
@@ -111,6 +94,34 @@ function ProjectThumbnail(props) {
 								alt=""
 							/>
 						</div>
+					</div>
+					<div className="blueOverlay w-full h-full absolute top-0 left-0 bg-tdblue rounded-2xl"></div>
+					{/* <div className="w-full h-full absolute top-0 left-0 bg-tdblue"></div> */}
+					{/* <motion.div className="absolute top-0 left-0 w-full h-full thumbnailOverlay" /> */}
+
+					<div className="w-full h-full absolute top-0 left-0 text-white">
+						<motion.div
+							className={`thumbnailInfo absolute top-0 left-0 w-full h-full px-16 py-14 flex flex-col`}
+						>
+							<p className="item thumbnailClient text-xl mb-1 opacity-0">
+								{client}
+							</p>
+							<TDSplitText
+								type="words"
+								wordClass="item opacity-0"
+								className="thumbnailTitle text-[4vw] leading-tightest font-semibold -ml-0.5"
+							>
+								{title}
+							</TDSplitText>
+							{/* <p className="item thumbnailTitle text-[3.35vw] leading-tight font-bold -ml-0.5">
+								{title}
+							</p> */}
+							<div className="thumbnailTags flex gap-3 text-white border-tdblue pb-[1px] mt-auto">
+								<Tag className="item opacity-0" text="Branding" />
+								<Tag className="item opacity-0" text="Campaign" />
+								<Tag className="item opacity-0" text="Social" />
+							</div>
+						</motion.div>
 					</div>
 				</motion.div>
 			</Link>

@@ -67,7 +67,7 @@ export default function NavButton({ text, className }) {
 					{letters.map((letter, index) => (
 						<span
 							data-letter={letter}
-							className="letter relative inline-block h-5 leading-[26px] after:absolute after:left-0 after:top-full after:h-5 after:content-[attr(data-letter)]"
+							className="letter relative inline-block h-5 leading-5 after:absolute after:left-0 after:top-full after:h-5 after:content-[attr(data-letter)]"
 							key={`${letter}-${index}`}
 						>
 							{letter}

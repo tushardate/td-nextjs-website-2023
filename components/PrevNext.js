@@ -10,7 +10,7 @@ export default function PrevNext(props) {
 
 	return (
 		<motion.div className="flex flex-col items-center z-50 px-4 md:px-16 pt-4 md:mt-24 md:mb-16">
-			<motion.div className="w-12 h-1 rounded-full bg-tdblue mb-4"></motion.div>
+			{/* <motion.div className="w-8 h-1 rounded-full bg-tdblue mb-5"></motion.div> */}
 
 			<Link
 				as={`/projects/${next.slug}`}
@@ -20,9 +20,9 @@ export default function PrevNext(props) {
 				onMouseEnter={() => setCursorType("arrowRight")}
 				onMouseLeave={() => setCursorType("default")}
 			>
-				<motion.div className="flex flex-col gap-2 items-center">
-					<div className="text-30px">Next Project</div>
-					<div className="text-54px font-bold leading-tighter mb-5">
+				<motion.div className="flex flex-col gap-3 items-center">
+					<div className="text-xl border-2 border-tdblue rounded-full px-3 py-0.5 font-medium">Next Project</div>
+					<div className="text-54px font-semibold mb-2">
 						{next.title}
 					</div>
 					<motion.div
@@ -44,7 +44,7 @@ export default function PrevNext(props) {
 					</motion.div>
 				</motion.div>
 			</Link>
-			<TDAnimText text="Test Text" className="tdAnimText" el="p" />
+			<TDAnimText text="Test Text" className="tdAnimText mt-8" el="p" />
 			{/* <Link
 				as={`/projects/${prev.slug}`}
 				href="/projects/[slug]"

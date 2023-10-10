@@ -36,77 +36,170 @@
 	}
 
 	@font-face {
-		font-family: 'At Hauss Std';
-		src: url('/fonts/Hauss/AtHaussStd-Bold.woff2') format('woff2'),
-			url('/fonts/Hauss/AtHaussStd-Bold.woff') format('woff');
+		font-family: "At Hauss Std";
+		src: url("/fonts/Hauss/AtHaussStd-Bold.woff2") format("woff2"),
+			url("/fonts/Hauss/AtHaussStd-Bold.woff") format("woff");
 		font-weight: bold;
 		font-style: normal;
 		font-display: swap;
 	}
-	
+
 	@font-face {
-		font-family: 'At Hauss Std';
-		src: url('/fonts/Hauss/AtHaussStd-Regular.woff2') format('woff2'),
-			url('/fonts/Hauss/AtHaussStd-Regular.woff') format('woff');
+		font-family: "At Hauss Std";
+		src: url("/fonts/Hauss/AtHaussStd-Regular.woff2") format("woff2"),
+			url("/fonts/Hauss/AtHaussStd-Regular.woff") format("woff");
 		font-weight: normal;
 		font-style: normal;
 		font-display: swap;
 	}
-	
+
 	@font-face {
-		font-family: 'At Hauss Std Retina';
-		src: url('/fonts/Hauss/AtHaussStd-Retina.woff2') format('woff2'),
-			url('/fonts/Hauss/AtHaussStd-Retina.woff') format('woff');
+		font-family: "At Hauss Std Retina";
+		src: url("/fonts/Hauss/AtHaussStd-Retina.woff2") format("woff2"),
+			url("/fonts/Hauss/AtHaussStd-Retina.woff") format("woff");
 		font-weight: normal;
 		font-style: normal;
 		font-display: swap;
 	}
-	
+
 	@font-face {
-		font-family: 'At Hauss Std';
-		src: url('/fonts/Hauss/AtHaussStd-Medium.woff2') format('woff2'),
-			url('/fonts/Hauss/AtHaussStd-Medium.woff') format('woff');
+		font-family: "At Hauss Std";
+		src: url("/fonts/Hauss/AtHaussStd-Medium.woff2") format("woff2"),
+			url("/fonts/Hauss/AtHaussStd-Medium.woff") format("woff");
 		font-weight: 500;
 		font-style: normal;
 		font-display: swap;
 	}
-	
+
 	@font-face {
-		font-family: 'PP Mori';
-		src: url('/fonts/PPMori/PPMori-Bold.woff2') format('woff2'),
-			url('/fonts/PPMori/PPMori-Bold.woff') format('woff');
+		font-family: "PP Mori";
+		src: url("/fonts/PPMori/PPMori-Bold.woff2") format("woff2"),
+			url("/fonts/PPMori/PPMori-Bold.woff") format("woff");
 		font-weight: bold;
 		font-style: normal;
 		font-display: swap;
 	}
-	
+
 	@font-face {
-		font-family: 'PP Mori';
-		src: url('/fonts/PPMori/PPMori-SemiBold.woff2') format('woff2'),
-			url('/fonts/PPMori/PPMori-SemiBold.woff') format('woff');
+		font-family: "PP Mori";
+		src: url("/fonts/PPMori/PPMori-SemiBold.woff2") format("woff2"),
+			url("/fonts/PPMori/PPMori-SemiBold.woff") format("woff");
 		font-weight: 600;
 		font-style: normal;
 		font-display: swap;
 	}
-	
+
 	@font-face {
-		font-family: 'PP Mori';
-		src: url('/fonts/PPMori/PPMori-Medium.woff2') format('woff2'),
-			url('/fonts/PPMori/PPMori-Medium.woff') format('woff');
+		font-family: "PP Mori";
+		src: url("/fonts/PPMori/PPMori-Medium.woff2") format("woff2"),
+			url("/fonts/PPMori/PPMori-Medium.woff") format("woff");
 		font-weight: 500;
 		font-style: normal;
 		font-display: swap;
 	}
-	
+
 	@font-face {
-		font-family: 'PP Mori';
-		src: url('/fonts/PPMori/PPMori-Regular.woff2') format('woff2'),
-			url('/fonts/PPMori/PPMori-Regular.woff') format('woff');
+		font-family: "PP Mori";
+		src: url("/fonts/PPMori/PPMori-Regular.woff2") format("woff2"),
+			url("/fonts/PPMori/PPMori-Regular.woff") format("woff");
 		font-weight: normal;
 		font-style: normal;
 		font-display: swap;
-	}	
-	
+	}
+
+	@font-face {
+		font-family: "PP Neue Montreal";
+		src: url("/fonts/NeueMontreal/PPNeueMontreal-Book.woff2")
+				format("woff2"),
+			url("/fonts/NeueMontreal/PPNeueMontreal-Book.woff") format("woff");
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "PP Neue Montreal";
+		src: url("/fonts/NeueMontreal/PPNeueMontreal-Thin.woff2")
+				format("woff2"),
+			url("/fonts/NeueMontreal/PPNeueMontreal-Thin.woff") format("woff");
+		font-weight: 100;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "PP Neue Montreal";
+		src: url("/fonts/NeueMontreal/PPNeueMontreal-Bold.woff2")
+				format("woff2"),
+			url("/fonts/NeueMontreal/PPNeueMontreal-Bold.woff") format("woff");
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "PP Neue Montreal";
+		src: url("/fonts/NeueMontreal/PPNeueMontreal-Medium.woff2")
+				format("woff2"),
+			url("/fonts/NeueMontreal/PPNeueMontreal-Medium.woff") format("woff");
+		font-weight: 500;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Rebond";
+		src: url("/fonts/Rebond/ESRebondGrotesqueTRIAL-Bold.woff2")
+				format("woff2"),
+			url("/fonts/Rebond/ESRebondGrotesqueTRIAL-Bold.woff") format("woff");
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Rebond";
+		src: url("/fonts/Rebond/ESRebondGrotesqueTRIAL-Semibold.woff2")
+				format("woff2"),
+			url("/fonts/Rebond/ESRebondGrotesqueTRIAL-Semibold.woff")
+				format("woff");
+		font-weight: 600;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Rebond";
+		src: url("/fonts/Rebond/ESRebondGrotesqueTRIAL-Regular.woff2")
+				format("woff2"),
+			url("/fonts/Rebond/ESRebondGrotesqueTRIAL-Regular.woff")
+				format("woff");
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Rebond";
+		src: url("/fonts/Rebond/ESRebondGrotesqueTRIAL-Light.woff2")
+				format("woff2"),
+			url("/fonts/Rebond/ESRebondGrotesqueTRIAL-Light.woff")
+				format("woff");
+		font-weight: 300;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Rebond";
+		src: url("/fonts/Rebond/ESRebondGrotesqueTRIAL-Medium.woff2")
+				format("woff2"),
+			url("/fonts/Rebond/ESRebondGrotesqueTRIAL-Medium.woff")
+				format("woff");
+		font-weight: 500;
+		font-style: normal;
+		font-display: swap;
+	}
 }
 
 // ::selection {
@@ -124,9 +217,8 @@ body {
 	// color: white;
 	background-color: #f2f2f2;
 	color: #000ce4;
-	font-kerning: normal;
-	letter-spacing: -0.01em;
-	font-weight: 500;
+	// letter-spacing: -0.01em;
+	// font-weight: 500;
 }
 
 .grid-overlay {
@@ -159,4 +251,3 @@ body {
 .kerning-none {
 	font-kerning: none;
 }
-

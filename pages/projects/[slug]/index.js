@@ -101,7 +101,7 @@ export default function Project({
 						".word",
 						{ y: ["30%", "0%"], opacity: [0, 1] },
 						{
-							delay: stagger(0.07),
+							delay: stagger(0.04),
 							duration: 0.75,
 							ease: [0.75, 0, 0, 1.2],
 						},
@@ -176,7 +176,7 @@ export default function Project({
 					<motion.div className="bottomWrapper w-full px-4 md:px-16 -translate-y-8">
 						<div className="perspective">
 							<motion.div className="pill h-16 bg-tdblue w-max px-8 rounded-full mb-10">
-								<motion.p className="md:text-3xl md:leading-[68px] text-white">{`${client}: ${title}`}</motion.p>
+								<motion.p className="md:text-3xl md:leading-[64px] text-white">{`${client}: ${title}`}</motion.p>
 							</motion.div>
 						</div>
 						<div className="project-details-wrapper grid grid-cols-12 gap-4">
@@ -185,7 +185,7 @@ export default function Project({
 									<TDSplitText
 										types="words"
 										onComplete={animComplete}
-										className="font-migra font-bold headline text-80px leading-max tracking-touchtight"
+										className="headline font-semibold text-80px leading-max tracking-touchtight"
 									>
 										{headline ? headline : title}
 									</TDSplitText>
@@ -199,7 +199,7 @@ export default function Project({
 									className="w-9/12"
 								>
 									<motion.div className="">
-										<p className="md:text-2xl font-semibold">{summary}</p>
+										<p className="md:text-3xl">{summary}</p>
 									</motion.div>
 								</motion.div>
 							</div>
@@ -208,7 +208,7 @@ export default function Project({
 								initial="initial"
 								whileInView="whileInView"
 								viewport={singleItemAnim.viewport}
-								className="col-span-2 col-start-11 flex flex-col justify-end"
+								className="col-span-2 col-start-11 flex flex-col justify-end text-lg leading-5"
 							>
 								<div>
 									<div className="">
@@ -218,7 +218,7 @@ export default function Project({
 								</div>
 								{awards ? (
 									<div>
-										<div className="pt-8">
+										<div className="pt-6">
 											<p>Awards:</p>
 											<p>{awards}</p>
 										</div>

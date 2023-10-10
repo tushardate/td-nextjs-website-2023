@@ -28,7 +28,7 @@ export default function Home({ projects }) {
 					initial="initial"
 					animate="animate"
 					exit="exit"
-					className="px-4 md:px-16 md:mt-28 font-ppmori"
+					className="px-4 md:px-16 md:mt-28 mb-16 font-ppmori"
 				>
 					<div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-4">
 						{projects.map((project, i) => {
