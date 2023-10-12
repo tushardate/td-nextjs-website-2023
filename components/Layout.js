@@ -1,14 +1,18 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import Grid from "./Grid";
+import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 
 export default function Layout({ children }) {
+	const lenis = useLenis(({ scroll }) => {
+		// called every scroll
+	});
 	return (
 		<>
-			<Header />
-			<div>{children}</div>
-			<Footer />
-			<Grid />
+			<ReactLenis root options={{ lerp: 0.14 }}>
+				<Header />
+				<div>{children}</div>
+				<Footer />
+			</ReactLenis>
 		</>
 	);
 }

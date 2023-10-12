@@ -90,7 +90,7 @@ export default function Header() {
 						<motion.div
 							layout
 							layoutId="navPill"
-							className="absolute w-full h-full border-2 border-tdblue rounded-full"
+							className="absolute w-full h-full border-2 border-white rounded-full"
 						></motion.div>
 					)}
 					<Link href="/" scroll={false}>
@@ -109,7 +109,7 @@ export default function Header() {
 						<motion.div
 							layout
 							layoutId="navPill"
-							className="absolute w-full h-full border-2 border-tdblue rounded-full"
+							className="absolute w-full h-full border-2 border-white rounded-full"
 						></motion.div>
 					)}
 					<Link href="/about" scroll={false}>

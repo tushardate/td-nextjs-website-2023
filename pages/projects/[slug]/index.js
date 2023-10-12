@@ -175,8 +175,8 @@ export default function Project({
 
 					<motion.div className="bottomWrapper w-full px-4 md:px-16 -translate-y-8">
 						<div className="perspective">
-							<motion.div className="pill h-16 bg-tdblue w-max px-8 rounded-full mb-10">
-								<motion.p className="md:text-3xl md:leading-[64px] text-white">{`${client}: ${title}`}</motion.p>
+							<motion.div className="pill h-16 bg-white w-max px-8 rounded-full mb-10">
+								<motion.p className="md:text-3xl md:leading-[64px] text-black">{`${client}: ${title}`}</motion.p>
 							</motion.div>
 						</div>
 						<div className="project-details-wrapper grid grid-cols-12 gap-4">

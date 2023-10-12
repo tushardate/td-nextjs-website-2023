@@ -10,7 +10,7 @@ export default function Footer() {
 				whileInView="whileInView"
 				viewport={prevNextAnim.viewport}
 				exit="exit"
-				className="h-20 px-16 w-full md:flex justify-between items-center uppercase text-xl bg-tdblue text-white"
+				className="h-20 px-16 w-full md:flex justify-between items-center uppercase text-xl bg-white text-black"
 			>
 				<p className="">tushardate@gmail.com</p>
 				<p className="">720-292-0384</p>

@@ -82,7 +82,7 @@ function ProjectThumbnail(props) {
 				<motion.div
 					onHoverStart={() => handleHoverStart()}
 					onHoverEnd={() => handleHoverEnd()}
-					className="projectThumbnail thumbnailRatio relative overflow-hidden rounded-2xl"
+					className="projectThumbnail thumbnailRatio relative overflow-hidden rounded-2xl text-black"
 				>
 					<div className="overflow-hidden safari-fix rounded-2xl imageWrapper absolute w-full">
 						<div className="absolute w-full h-full">
@@ -95,11 +95,11 @@ function ProjectThumbnail(props) {
 							/>
 						</div>
 					</div>
-					<div className="blueOverlay w-full h-full absolute top-0 left-0 bg-tdblue rounded-2xl"></div>
-					{/* <div className="w-full h-full absolute top-0 left-0 bg-tdblue"></div> */}
+					<div className="blueOverlay w-full h-full absolute top-0 left-0 bg-white rounded-2xl"></div>
+					{/* <div className="w-full h-full absolute top-0 left-0 bg-white"></div> */}
 					{/* <motion.div className="absolute top-0 left-0 w-full h-full thumbnailOverlay" /> */}
 
-					<div className="w-full h-full absolute top-0 left-0 text-white">
+					<div className="w-full h-full absolute top-0 left-0">
 						<motion.div
 							className={`thumbnailInfo absolute top-0 left-0 w-full h-full px-16 py-14 flex flex-col`}
 						>
@@ -116,7 +116,7 @@ function ProjectThumbnail(props) {
 							{/* <p className="item thumbnailTitle text-[3.35vw] leading-tight font-bold -ml-0.5">
 								{title}
 							</p> */}
-							<div className="thumbnailTags flex gap-3 text-white border-tdblue pb-[1px] mt-auto">
+							<div className="thumbnailTags flex gap-3 border-black pb-[1px] mt-auto">
 								<Tag className="item opacity-0" text="Branding" />
 								<Tag className="item opacity-0" text="Campaign" />
 								<Tag className="item opacity-0" text="Social" />
