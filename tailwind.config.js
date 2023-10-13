@@ -11,9 +11,9 @@ module.exports = {
 				tdblue: "#007eff",
 			},
 			fontFamily: {
-				ppmori: ["PP Mori"],
+				ppmori: ["Rebond Grotesque", "PP Mori"],
 				neuemachina: ["Neue Machina"],
-				migra: ["Migra"],
+				migra: ["Moret", "Migra"],
 				polysans: ["PolySans"],
 				moret: ["Moret"],
 			},
@@ -24,6 +24,8 @@ module.exports = {
 			lineHeight: {
 				zero: "0",
 				11: "3rem",
+				85: "0.85em",
+				95: "0.95em",
 				tighter: "1.125",
 				tightest: "1.0625",
 				looser: "2.5",
@@ -31,15 +33,16 @@ module.exports = {
 				5.5: "5.5rem",
 			},
 			letterSpacing: {
-				ultra: "-.125rem",
-				tightest: "-.075rem",
-				tighter: "-.05rem",
-				tight: "-.025rem",
+				ultra: "-.125em",
+				tightest: "-.075em",
+				tighter: "-.05em",
+				tight: "-.025em",
+				hintTight: "-.015em",
 				normal: "0",
-				wide: ".025rem",
-				wider: ".05rem",
-				widest: ".1rem",
-				widestest: ".25rem",
+				wide: ".025em",
+				wider: ".05em",
+				widest: ".1em",
+				widestest: ".25em",
 			},
 			maxHeight: {
 				"10vh": "10vh",
@@ -67,8 +70,7 @@ module.exports = {
 	plugins: [require("tailwindcss-multi-column")()],
 	safelist: [
 		{
-			pattern:
-				/^(grid|flex)/,
+			pattern: /^(grid|flex)/,
 			variants: ["md", "lg"],
 		},
 		{

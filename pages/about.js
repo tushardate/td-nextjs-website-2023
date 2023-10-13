@@ -73,7 +73,7 @@ export default function About({ about }) {
 									</div>
 								</div>
 							</motion.div>
-							<p className="font-migra md:w-2/3 md:w-11/12 md:-ml-1 text-8xl aboutHeadline self-end md:-mb-[1.5vw] mt-6 md:mt-0 lg:pr-16">
+							<p className="font-migra font-light tracking-hintTight leading-85 md:w-2/3 md:w-11/12 md:-ml-1 text-8xl aboutHeadline self-end md:-mb-[1.5vw] mt-6 md:mt-0 lg:pr-16">
 								{headline}
 							</p>
 						</div>

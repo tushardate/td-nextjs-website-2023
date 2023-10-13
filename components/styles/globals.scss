@@ -63,46 +63,145 @@
 	}
 
 	@font-face {
-		font-family: 'Migra';
-		src: url('/fonts/Migra/Migra-Medium.woff2') format('woff2'),
-			url('/fonts/Migra/Migra-Medium.woff') format('woff');
+		font-family: "Migra";
+		src: url("/fonts/Migra/Migra-Medium.woff2") format("woff2"),
+			url("/fonts/Migra/Migra-Medium.woff") format("woff");
 		font-weight: 500;
 		font-style: normal;
 		font-display: swap;
 	}
-	
+
 	@font-face {
-		font-family: 'Migra';
-		src: url('/fonts/Migra/Migra-Bold.woff2') format('woff2'),
-			url('/fonts/Migra/Migra-Bold.woff') format('woff');
+		font-family: "Migra";
+		src: url("/fonts/Migra/Migra-Bold.woff2") format("woff2"),
+			url("/fonts/Migra/Migra-Bold.woff") format("woff");
 		font-weight: bold;
 		font-style: normal;
 		font-display: swap;
 	}
-	
+
 	@font-face {
-		font-family: 'Migra';
-		src: url('/fonts/Migra/Migra-Light.woff2') format('woff2'),
-			url('/fonts/Migra/Migra-Light.woff') format('woff');
+		font-family: "Migra";
+		src: url("/fonts/Migra/Migra-Light.woff2") format("woff2"),
+			url("/fonts/Migra/Migra-Light.woff") format("woff");
 		font-weight: 300;
 		font-style: normal;
 		font-display: swap;
 	}
-	
+
 	@font-face {
-		font-family: 'Migra';
-		src: url('/fonts/Migra/Migra-Semibold.woff2') format('woff2'),
-			url('/fonts/Migra/Migra-Semibold.woff') format('woff');
+		font-family: "Migra";
+		src: url("/fonts/Migra/Migra-Semibold.woff2") format("woff2"),
+			url("/fonts/Migra/Migra-Semibold.woff") format("woff");
 		font-weight: 600;
 		font-style: normal;
 		font-display: swap;
 	}
-	
+
 	@font-face {
-		font-family: 'Migra';
-		src: url('/fonts/Migra/Migra-Regular.woff2') format('woff2'),
-			url('/fonts/Migra/Migra-Regular.woff') format('woff');
+		font-family: "Migra";
+		src: url("/fonts/Migra/Migra-Regular.woff2") format("woff2"),
+			url("/fonts/Migra/Migra-Regular.woff") format("woff");
 		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Almoneda";
+		src: url("/fonts/Almoneda/Almoneda-Light.woff2") format("woff2"),
+			url("/fonts/Almoneda/Almoneda-Light.woff") format("woff");
+		font-weight: 300;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Almoneda";
+		src: url("/fonts/Almoneda/Almoneda-Regular.woff2") format("woff2"),
+			url("/fonts/Almoneda/Almoneda-Regular.woff") format("woff");
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Almoneda";
+		src: url("/fonts/Almoneda/Almoneda-Bold.woff2") format("woff2"),
+			url("/fonts/Almoneda/Almoneda-Bold.woff") format("woff");
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Rebond Grotesque";
+		src: url("/fonts/Rebond/RebondGrotesque-Semibold.woff2") format("woff2"),
+			url("/fonts/Rebond/RebondGrotesque-Semibold.woff") format("woff");
+		font-weight: 600;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Rebond Grotesque";
+		src: url("/fonts/Rebond/RebondGrotesque.woff2") format("woff2"),
+			url("/fonts/Rebond/RebondGrotesque.woff") format("woff");
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Rebond Grotesque";
+		src: url("/fonts/Rebond/RebondGrotesque-Medium.woff2") format("woff2"),
+			url("/fonts/Rebond/RebondGrotesque-Medium.woff") format("woff");
+		font-weight: 500;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Rebond Grotesque";
+		src: url("/fonts/Rebond/RebondGrotesque-Bold.woff2") format("woff2"),
+			url("/fonts/Rebond/RebondGrotesque-Bold.woff") format("woff");
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Moret";
+		src: url("/fonts/Moret/Moret-Bold.woff2") format("woff2"),
+			url("/fonts/Moret/Moret-Bold.woff") format("woff");
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Moret";
+		src: url("/fonts/Moret/Moret-Regular.woff2") format("woff2"),
+			url("/fonts/Moret/Moret-Regular.woff") format("woff");
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Moret";
+		src: url("/fonts/Moret/Moret-Book.woff2") format("woff2"),
+			url("/fonts/Moret/Moret-Book.woff") format("woff");
+		font-weight: 300;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Moret";
+		src: url("/fonts/Moret/Moret-SemiBold.woff2") format("woff2"),
+			url("/fonts/Moret/Moret-SemiBold.woff") format("woff");
+		font-weight: 600;
 		font-style: normal;
 		font-display: swap;
 	}
@@ -120,9 +219,9 @@ body {
 	// color: #131313;
 }
 
-* {
-	cursor: none !important;
-}
+// * {
+// 	cursor: none !important;
+// }
 
 .cursorDot {
 	width: 64px;

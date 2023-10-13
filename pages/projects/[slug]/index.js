@@ -99,12 +99,12 @@ export default function Project({
 							<motion.p
 								variants={singleProjectTitles}
 								custom={1}
-								className="md:text-2xl mb-2 lg:mb-4"
+								className="md:text-2xl mb-2"
 							>{`${client}`}</motion.p>
 							<motion.p
 								custom={2}
 								variants={singleProjectTitles}
-								className="lg:w-3/5 text-8xl font-migra font-normal title text-white"
+								className="lg:w-3/5 text-8xl font-migra tracking-hintTight title text-white"
 							>{`${title}`}</motion.p>
 						</motion.div>
 					</motion.div>

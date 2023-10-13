@@ -59,12 +59,12 @@ function ProjectThumbnail(props) {
 					<div className="w-full h-full">
 						<motion.div className="absolute top-0 left-0 w-full h-full thumbnailOverlay" />
 						<motion.div
-							className={`thumbnailInfo absolute top-0 left-0 w-full h-full px-9 py-6 sm:px-14 sm:py-11 flex flex-col gap-0 lg:gap-0.5 justify-end items-start`}
+							className={`thumbnailInfo absolute top-0 left-0 w-full h-full px-9 py-6 sm:px-14 sm:py-11 flex flex-col justify-end items-start`}
 						>
 							<p className="text-white text-base">
 								{client}
 							</p>
-							<p className="text-3xl sm:text-5xl text-white sm:w-5/6 thumbnailTitle font-migra">
+							<p className="sm:text-5xl md:text-6xl text-white sm:w-5/6 font-migra font-light tracking-hintTight thumbnailTitle">
 								{title}
 							</p>
 						</motion.div>
