@@ -95,7 +95,7 @@ export default function Project({
 							</motion.div>
 						)}
 
-						<motion.div className="md:w-5/6 absolute left-0 bottom-0 px-4 py-10 md:p-16 text-white">
+						<motion.div className="w-full absolute left-0 bottom-0 px-4 py-10 md:p-16 text-white">
 							<motion.p
 								variants={singleProjectTitles}
 								custom={1}
@@ -104,7 +104,7 @@ export default function Project({
 							<motion.p
 								custom={2}
 								variants={singleProjectTitles}
-								className="lg:w-3/5 text-8xl font-migra tracking-hintTight title text-white"
+								className="text-8xl font-migra tracking-hintTight title text-white"
 							>{`${title}`}</motion.p>
 						</motion.div>
 					</motion.div>

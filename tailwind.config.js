@@ -11,11 +11,15 @@ module.exports = {
 				tdblue: "#007eff",
 			},
 			fontFamily: {
-				ppmori: ["Rebond Grotesque", "PP Mori"],
+				ppmori: [
+					"Rebond Grotesque",
+					"PP Mori",
+					"ui-sans-serif",
+					"system-ui",
+					"sans-serif",
+				],
 				neuemachina: ["Neue Machina"],
-				migra: ["Moret", "Migra"],
-				polysans: ["PolySans"],
-				moret: ["Moret"],
+				migra: ["Moret", "Garamond", "ui-serif", "serif"],
 			},
 			fontSize: {
 				2.25: "1.625rem",

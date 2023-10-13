@@ -29,7 +29,7 @@ const Ticker = () => {
 	const { counter, icons, texts } = useTickerStore();
 
 	return (
-		<div className="ticker-container normal-case opacity-30">
+		<div className="ticker-container normal-case opacity-40">
 			<AnimatePresence mode="wait" initial={false}>
 				{icons &&
 					icons.map(
