@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import { singleItemAnim, clipPathAnim } from "./animation/animations";
 import ImageLoader from "./ImageLoader";
 import TDCarousel from "./TDCarousel";
-import TDTextLineReveal2 from "./TDTextLineReveal2";
-import PlyrReact from "./PlyrReact";
 
 export default function SingleItem({ data }) {
 	return <RenderSingle data={data}></RenderSingle>;
