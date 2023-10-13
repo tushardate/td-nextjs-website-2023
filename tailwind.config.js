@@ -15,8 +15,9 @@ module.exports = {
 			},
 			fontFamily: {
 				ppmori: [
+					// "Studio Feixen Sans",
 					"Rebond",
-					"PP Mori",
+					// "PP Mori",
 					"Helvetica",
 					"ui-sans-serif",
 					"system-ui",

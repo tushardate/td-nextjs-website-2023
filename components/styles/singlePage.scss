@@ -107,3 +107,18 @@
 .swiper-pagination-bullet-active {
 	mix-blend-mode: difference;
 }
+
+div.react-player__play-icon {
+	border-left-color: black !important;
+}
+
+div.react-player__shadow {
+	background-color: white !important;
+	background-image: none !important;
+	width: 128px !important;
+	transition: transform 0.1s ease-in-out;
+}
+
+div.react-player__preview:hover div.react-player__shadow {
+	transform: scale(1.075);
+}

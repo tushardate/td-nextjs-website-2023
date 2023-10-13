@@ -36,10 +36,6 @@ const leaveAnim = {
 const Ticker = () => {
 	const { counter, icons, texts } = useTickerStore();
 
-	useEffect(() => {
-		console.log(texts[counter]);
-	}, [counter]);
-
 	return (
 		<div className="relative overflow-hidden leading-5 -mb-1">
 			<AnimatePresence mode="wait">
