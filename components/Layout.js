@@ -8,7 +8,7 @@ export default function Layout({ children }) {
 	});
 	return (
 		<>
-			<ReactLenis root options={{ lerp: 0.06 }}>
+			<ReactLenis root options={{ lerp: 0.125 }}>
 				<Header />
 				<div>{children}</div>
 				<Footer />
