@@ -1,18 +1,25 @@
 import Header from "./Header";
 import Footer from "./Footer";
-// import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
+import { useEffect } from "react";
 
 export default function Layout({ children }) {
-	// const lenis = useLenis(({ scroll }) => {
-	// 	// called every scroll
-	// });
+	useEffect(() => {
+		(async () => {
+			const LocomotiveScroll = (await import("locomotive-scroll"))
+				.default;
+			const locomotivescroll = new LocomotiveScroll({
+				lenisOptions: {
+					lerp: 0.1,
+					// easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+				},
+			});
+		})();
+	}, []);
 	return (
 		<>
-			{/* <ReactLenis root options={{ lerp: 0.125 }}> */}
-				<Header />
-				<div>{children}</div>
-				<Footer />
-			{/* </ReactLenis> */}
+			<Header />
+			<div>{children}</div>
+			<Footer />
 		</>
 	);
 }

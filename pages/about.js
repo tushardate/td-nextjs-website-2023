@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import { useCursorStore } from "@components/GlobalStore";
 import { useEffect } from "react";
 import { FaLinkedin, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import Lenis from "@studio-freight/lenis";
 
 export default function About({ about }) {
 	const { setCursorType } = useCursorStore();
@@ -32,21 +31,6 @@ export default function About({ about }) {
 	const clients = [...new Set(filterClients)];
 	const filterAwards = awards.data.map((e) => e.name);
 	const awardList = [...new Set(filterAwards)];
-
-	useEffect(() => {
-		const lenis = new Lenis({ lerp: 0.1 });
-
-		function raf(time) {
-			lenis.raf(time);
-			requestAnimationFrame(raf);
-		}
-
-		requestAnimationFrame(raf);
-
-		return () => {
-			lenis.destroy();
-		};
-	}, []);
 
 	return (
 		<>

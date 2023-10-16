@@ -9,25 +9,9 @@ import useIsTouchDevice from "@components/hooks/useIsTouchDevice";
 import ProjectThumbnailMobile from "@components/ProjectThumbnailMobile";
 import { isMobile } from "react-device-detect";
 import { useEffect } from "react";
-import Lenis from "@studio-freight/lenis";
 
 export default function Home({ projects }) {
 	const isTouchDevice = useIsTouchDevice();
-
-	useEffect(() => {
-		const lenis = new Lenis({ lerp: 0.1 });
-
-		function raf(time) {
-			lenis.raf(time);
-			requestAnimationFrame(raf);
-		}
-
-		requestAnimationFrame(raf);
-
-		return () => {
-			lenis.destroy();
-		};
-	}, []);
 
 	return (
 		<>
