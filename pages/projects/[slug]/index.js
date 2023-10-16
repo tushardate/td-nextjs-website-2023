@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import { useWindowSize } from "@react-hook/window-size";
 import VideoThumbnail from "@components/VideoThumbnail";
 import { FaTrophy, FaCog } from "react-icons/fa";
+import Lenis from "@studio-freight/lenis";
 
 export default function Project({
 	singleProjectData,
@@ -37,6 +38,21 @@ export default function Project({
 
 	const [winW, winH] = useWindowSize();
 	const [height, setHeight] = useState("100vw");
+
+	useEffect(() => {
+		const lenis = new Lenis({ lerp: 0.1 });
+
+		function raf(time) {
+			lenis.raf(time);
+			requestAnimationFrame(raf);
+		}
+
+		requestAnimationFrame(raf);
+		
+		return () => {
+			lenis.destroy();
+		};
+	}, []);
 
 	useEffect(() => {
 		if (winW / winH < 1) {

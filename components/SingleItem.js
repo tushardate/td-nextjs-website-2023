@@ -25,15 +25,18 @@ function RenderSingle({ data }) {
 			);
 		}
 	} else if (data._modelApiKey === "image") {
+		const imageWidth = data.fileInfo?.width || 1;
+		const imageHeight = data.fileInfo?.height || 1;
 		return (
 			<motion.div
 				variants={singleItemAnim}
 				initial="initial"
 				whileInView="whileInView"
 				viewport={singleItemAnim.viewport}
-				className={`single-item leading-zero ${data.imageClasses}`}
+				style={{ flexGrow: imageWidth / imageHeight }}
+				className={`single-item flex ${data.imageClasses}`}
 			>
-				<ImageLoader src={data.url} />
+				<ImageLoader src={data.url} fileInfo={data.fileInfo} />
 				{/* <img src={data.url} alt="" /> */}
 			</motion.div>
 		);
@@ -91,9 +94,7 @@ function RenderSingle({ data }) {
 				<div> dangerouslySetInnerHTML={{ __html: data.content }}</div>
 			</motion.div>
 		);
-	} else if (
-		data._modelApiKey === "image_compare"
-	) {
+	} else if (data._modelApiKey === "image_compare") {
 		return (
 			<motion.div
 				variants={singleItemAnim}
@@ -105,9 +106,7 @@ function RenderSingle({ data }) {
 				<ImageCompare before={data.urlLeft} after={data.urlRight} />
 			</motion.div>
 		);
-	} else if (
-		data._modelApiKey === "carousel"
-	) {
+	} else if (data._modelApiKey === "carousel") {
 		return (
 			<motion.div
 				variants={singleItemAnim}
