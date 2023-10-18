@@ -115,10 +115,10 @@ export default function Project({
 					>
 						<div className="project-details-wrapper lg:flex justify-between mb-16">
 							<motion.div
-								variants={singleItemAnim}
+								// variants={singleItemAnim}
 								initial="initial"
 								whileInView="whileInView"
-								viewport={singleItemAnim.viewport}
+								// viewport={singleItemAnim.viewport}
 								className="lg:w-6/12"
 							>
 								<p className="font-medium headline text-5xl leading-tighter py-6 lg:py-0">
@@ -126,10 +126,10 @@ export default function Project({
 								</p>
 							</motion.div>
 							<motion.div
-								variants={singleItemAnim}
+								// variants={singleItemAnim}
 								initial="initial"
 								whileInView="whileInView"
-								viewport={singleItemAnim.viewport}
+								// viewport={singleItemAnim.viewport}
 								className="lg:w-4/12"
 							>
 								<p className="lg:text-xl pb-6 lg:pb-8">
