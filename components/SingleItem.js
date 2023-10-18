@@ -45,7 +45,7 @@ function RenderSingle({ data }) {
 					initial="initial"
 					whileInView="whileInView"
 					viewport={singleItemAnim.viewport}
-					className={`single-item ${data.videoClasses} w-full h-full rounded-xl safari-fix`}
+					className={`single-item w-full aspect-video rounded-xl safari-fix ${data.videoClasses}`}
 				>
 					<div
 						className="overflow-hidden w-full h-0 relative"
@@ -91,9 +91,7 @@ function RenderSingle({ data }) {
 				<div> dangerouslySetInnerHTML={{ __html: data.content }}</div>
 			</motion.div>
 		);
-	} else if (
-		data._modelApiKey === "image_compare"
-	) {
+	} else if (data._modelApiKey === "image_compare") {
 		return (
 			<motion.div
 				variants={singleItemAnim}
@@ -105,9 +103,7 @@ function RenderSingle({ data }) {
 				<ImageCompare before={data.urlLeft} after={data.urlRight} />
 			</motion.div>
 		);
-	} else if (
-		data._modelApiKey === "carousel"
-	) {
+	} else if (data._modelApiKey === "carousel") {
 		return (
 			<motion.div
 				variants={singleItemAnim}
