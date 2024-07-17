@@ -1,7 +1,7 @@
 import "@components/styles/globals.scss";
 import { AnimatePresence } from "framer-motion";
 import { useCursorStore, useTickerStore } from "@components/GlobalStore";
-import Cursor from "@components/Cursor";
+// import Cursor from "@components/Cursor";
 import TickerCounterUpdater from "@components/TicketCounterUpdates";
 
 export default function App({ Component, pageProps, router }) {

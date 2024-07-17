@@ -64,10 +64,10 @@ export default function Header() {
 							<div className="">Tushar Date</div>
 							{showTicker && (
 								<>
-									{/* <span className="mx-3">•</span> */}
-									<span className="text-base ml-0.5 mr-2">
+									<span className="ml-[1.25em] mr-[1.25em] text-[0.3125em]">&#11096;</span>
+									{/* <span className="text-base ml-0.5 mr-2">
 										®
-									</span>
+									</span> */}
 									<Ticker />
 								</>
 							)}
