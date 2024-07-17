@@ -33,6 +33,11 @@
   resolved "https://registry.yarnpkg.com/@cyriacbr/react-split-text/-/react-split-text-1.0.0.tgz#4c6336d402b828216ff738ab179e7313b649f385"
   integrity sha512-WkD88+LjOx1vWVI0hh6flUtnplGnxL7zE1SYFbEFfG0gvAJ3SERwtBqtQV8NoOKNd2dZr/GrfK0sBh460IvtHQ==
 
+"@darkroom.engineering/tempus@^0.0.46":
+  version "0.0.46"
+  resolved "https://registry.yarnpkg.com/@darkroom.engineering/tempus/-/tempus-0.0.46.tgz#3d958807503e4055fcc4a1aeeff83ca0546c62f0"
+  integrity sha512-s5vav3KMHYezvUCl4ee5epg0oimF6M8C9gAaKxFnFaTvX2q3ywFDryIv6XLd0mRFUt3S1uHDJqKaiEcs2ZVSvw==
+
 "@emotion/is-prop-valid@^0.8.2":
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"
@@ -273,11 +278,6 @@
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.2.0.tgz#8be36a1f66f3265389e90b5f9c9962146758f728"
   integrity sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==
-
-"@studio-freight/lenis@1.0.12":
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/@studio-freight/lenis/-/lenis-1.0.12.tgz#819792142d6883516d50c60ef07f75a5730638f2"
-  integrity sha512-iN3JQ6qJVc+L7vh8NjlDibw9dvjjifvlJ+s0UAkfwty+vW9MJxRfszb5X/eAhcbDLZW6MlvjRHoH9WSQH3J8eA==
 
 "@swc/helpers@0.4.14":
   version "0.4.14"
@@ -1770,6 +1770,13 @@ language-tags@=1.0.5:
   dependencies:
     language-subtag-registry "~0.3.2"
 
+lenis@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/lenis/-/lenis-1.1.6.tgz#8610197658604319d2a20c388c206b928eb32036"
+  integrity sha512-MQE2Pz49inEsT/H6enEfYeMysH/Yl6s9Z91th1KAm3RxMDzN0YOEncZzR3o6uvJH44yCCUDnr8ILMvT8o689RA==
+  dependencies:
+    "@darkroom.engineering/tempus" "^0.0.46"
+
 levn@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/levn/-/levn-0.4.1.tgz#ae4562c007473b932a6200d403268dd2fffc6ade"
@@ -1804,13 +1811,6 @@ locate-path@^6.0.0:
   integrity sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==
   dependencies:
     p-locate "^5.0.0"
-
-locomotive-scroll@^5.0.0-beta.8:
-  version "5.0.0-beta.8"
-  resolved "https://registry.yarnpkg.com/locomotive-scroll/-/locomotive-scroll-5.0.0-beta.8.tgz#1c336020b77eba37c75991edd2c5995819e85165"
-  integrity sha512-4Nq12voKr5719aaySZg3FX/gQKQIAaAC4NkBiU27aKEKFnYcTeOB1r8VO5bGpEIOGQo94wsiJQNZuRb3TsxjHA==
-  dependencies:
-    "@studio-freight/lenis" "1.0.12"
 
 lodash.debounce@^4.0.8:
   version "4.0.8"
