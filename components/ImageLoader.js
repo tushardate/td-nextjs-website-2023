@@ -8,7 +8,7 @@ export default function ImageLoader(props) {
 					src={props.src}
 					width={props.fileInfo.width}
 					height={props.fileInfo.height}
-					sizes="100vw"
+					sizes={`(max-width: 640px) 640px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, ${props.fileInfo.width}px`}
 					className={`w-full h-auto overflow-hidden rounded-lg`}
 					alt="Tushar Date Portoflio Image"
 				/>
@@ -16,9 +16,9 @@ export default function ImageLoader(props) {
 				<Image
 					// loader={imageKitLoader}
 					src={props.src}
-					width="0"
-					height="0"
-					sizes="100vw"
+					width={1920}
+					height={1080}
+					sizes="(max-width: 640px) 640px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1536px"
 					className="w-full h-auto overflow-hidden rounded-lg"
 					alt="Tushar Date Portoflio Image"
 				/>
