@@ -64,12 +64,12 @@ export default function Project({
 						style={{ height }}
 						className="w-full h-80 overflow-hidden relative rounded-b-2xl"
 					>
-						<img
+						{/* <img
 							fetchpriority="high"
 							className="absolute top-0 left-0 right-0 bottom-0 object-cover w-full h-full blur-3xl scale-125"
 							src={`${thumbnailImage}tr=w-200,bl-30,q-50`}
 							alt=""
-						/>
+						/> */}
 
 						{thumbnailVideo ? (
 							<>

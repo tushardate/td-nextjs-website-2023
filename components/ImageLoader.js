@@ -5,6 +5,8 @@ export default function ImageLoader({ src, fileInfo }) {
 		<>
 			<img
 				src={src}
+				loading="lazy"
+				decoding="async"
 				alt="Tushar Date Portoflio Image"
 				className="w-full overflow-hidden rounded-lg"
 				sizes="(max-width: 640px) 640px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1536px"
