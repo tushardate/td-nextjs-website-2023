@@ -3,28 +3,13 @@ import Image from "next/image";
 export default function ImageLoader({ src, fileInfo }) {
 	return (
 		<>
-			{/* <div className="relative flex w-full h-full"> */}
-			{fileInfo?.width !== undefined ? (
-				<Image
-					src={src}
-					width={fileInfo.width}
-					height={fileInfo.height}
-					sizes={`(max-width: 640px) 640px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, ${fileInfo.width}px`}
-					className={`md:flex h-full w-auto overflow-hidden rounded-lg`}
-					alt="Tushar Date Portoflio Image"
-				/>
-			) : (
-				<Image
-					// loader={imageKitLoader}
-					src={src}
-					width={fileInfo.width}
-					height={fileInfo.height}
-					sizes="(max-width: 640px) 640px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1536px"
-					className="md:flex h-full w-full overflow-hidden rounded-lg"
-					alt="Tushar Date Portoflio Image"
-				/>
-			)}
-			{/* </div> */}
+			<img
+				src={src}
+				alt="Tushar Date Portoflio Image"
+				className="w-full overflow-hidden rounded-lg"
+				sizes="(max-width: 640px) 640px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1536px"
+				srcSet={`${src}?tr=w-640 640w, ${src}?tr=w-768 768w, ${src}?tr=w-1024 1024w, ${src}?tr=w-1280 1280w, ${src}?tr=w-1536 1536w`}
+			/>
 		</>
 	);
 }
