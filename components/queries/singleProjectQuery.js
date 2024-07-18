@@ -16,6 +16,7 @@ export const query = `query getProjectBySlug($slug: String) {
           _modelApiKey
           imageClasses
           url
+          fileInfo
         }
         ... on VideoRecord {
           poster

@@ -33,7 +33,7 @@ function RenderSingle({ data }) {
 				viewport={singleItemAnim.viewport}
 				className={`single-item leading-zero ${data.imageClasses}`}
 			>
-				<ImageLoader src={data.url} />
+				<ImageLoader src={data.url} fileInfo={data.fileInfo} />
 				{/* <img src={data.url} alt="" /> */}
 			</motion.div>
 		);
