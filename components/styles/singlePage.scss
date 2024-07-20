@@ -55,17 +55,45 @@
 	-webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
-
 //****** CAROUSEL *********//
 
 :root {
 	--swiper-theme-color: white !important;
 }
 
-.swiper-button-next, .swiper-button-prev {
+.swiper-button-next,
+.swiper-button-prev {
 	mix-blend-mode: difference;
 }
 
 .swiper-pagination-bullet-active {
 	mix-blend-mode: difference;
+}
+
+//********** VIDSTACK PLAYER ************//
+.vidstackPlayer:hover {
+	cursor: pointer;
+}
+
+.plyr {
+	--plyr-color-main: #000;
+
+	/* Control */
+	--plyr-control-radius: 4px;
+	--plyr-control-icon-size: 16px;
+
+	/* Range */
+	--plyr-range-track-height: 4px;
+	--plyr-range-fill-background: #000;
+}
+
+.plyr__control--overlaid {
+	--plyr-control-spacing: 24px;
+	--plyr-control-radius: 4px;
+	--plyr-control-icon-size: 40px;
+	opacity: 1 !important;
+}
+
+.plyr__control--overlaid svg {
+	padding-left: 4px;
 }
