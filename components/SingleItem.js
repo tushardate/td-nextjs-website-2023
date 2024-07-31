@@ -4,6 +4,7 @@ import { singleItemAnim } from "./animation/animations";
 import ImageLoader from "./ImageLoader";
 import TDCarousel from "./TDCarousel";
 import VidstackPlayer from "./VidstackPlayer";
+import VideoPoster from "./VideoPoster";
 
 export default function SingleItem({ data }) {
 	return <RenderSingle data={data}></RenderSingle>;
@@ -39,27 +40,19 @@ function RenderSingle({ data }) {
 		);
 	} else if (data._modelApiKey === "video") {
 		if (data.videoType === "VIDEOPOSTER") {
+			let sources = data.sources.links.map((el) => {
+				return { src: el };
+			});
+			console.log(sources);
 			return (
 				<motion.div
 					variants={singleItemAnim}
 					initial="initial"
 					whileInView="whileInView"
 					viewport={singleItemAnim.viewport}
-					className={`single-item w-full aspect-video rounded-xl safari-fix ${data.videoClasses}`}
+					className={`single-item ${data.videoClasses}`}
 				>
-					<div
-						className="overflow-hidden w-full h-0 relative"
-						style={{ paddingBottom: `${data.ratio}%` }}
-					>
-						<video
-							className="h-full w-full object-cover absolute inset-0"
-							autoPlay
-							playsInline
-							muted
-							loop
-							src={data.url}
-						/>
-					</div>
+					<VideoPoster url={data.url} sources={sources} />
 				</motion.div>
 			);
 		} else {
@@ -69,7 +62,7 @@ function RenderSingle({ data }) {
 					initial="initial"
 					whileInView="whileInView"
 					viewport={singleItemAnim.viewport}
-					className={`single-item ${data.videoClasses} overflow-hidden rounded-xl`}
+					className={`single-item ${data.videoClasses}`}
 				>
 					<VidstackPlayer
 						url={data.url}

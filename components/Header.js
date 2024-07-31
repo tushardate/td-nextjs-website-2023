@@ -35,8 +35,8 @@ export default function Header() {
 		visible: {
 			opacity: 1,
 			transition: {
-				delay: 0.1,
-				duration: 1,
+				// delay: 0.1,
+				duration: 0.35,
 				ease: [0.33, 1, 0.68, 1],
 			},
 		},
@@ -64,7 +64,9 @@ export default function Header() {
 							<div className="">Tushar Date</div>
 							{showTicker && (
 								<>
-									<span className="ml-[1.25em] mr-[1.25em] text-[0.3125em]">&#11096;</span>
+									<span className="ml-[1.25em] mr-[1.25em] text-[0.3125em]">
+										&#11096;
+									</span>
 									{/* <span className="text-base ml-0.5 mr-2">
 										®
 									</span> */}

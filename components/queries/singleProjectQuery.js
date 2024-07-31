@@ -22,6 +22,8 @@ export const query = `query getProjectBySlug($slug: String) {
           poster
           ratio
           url
+          sources
+          ratiostring
           videoClasses
           videoType
           _modelApiKey

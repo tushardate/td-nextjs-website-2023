@@ -191,6 +191,7 @@ export async function getStaticProps({ params }) {
 		headers: {
 			"content-type": "application/json",
 			authorization: `Bearer ${process.env.DATOCMS_KEY}`,
+			"X-Environment": "main-copy-2024-07-21-dashmpeg-video",
 		},
 	});
 	const variables = {
@@ -222,6 +223,7 @@ export async function getStaticPaths(params) {
 		headers: {
 			"content-type": "application/json",
 			authorization: `Bearer ${process.env.DATOCMS_KEY}`,
+			"X-Environment": "main-copy-2024-07-21-dashmpeg-video",
 		},
 	});
 

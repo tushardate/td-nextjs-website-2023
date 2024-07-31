@@ -61,6 +61,7 @@ export async function getStaticProps() {
 		headers: {
 			"content-type": "application/json",
 			authorization: `Bearer ${process.env.DATOCMS_KEY}`,
+			"X-Environment": "main-copy-2024-07-21-dashmpeg-video",
 		},
 	});
 
